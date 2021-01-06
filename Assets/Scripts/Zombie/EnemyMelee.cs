@@ -6,11 +6,8 @@ public class EnemyMelee : Enemy
 {
     private EnemyBossZombie m_boss;
     private EnemyZombie m_zombie;
-    [SerializeField]
-    private float m_maxHP;
-    public float m_currentHP;
-    public bool m_isDead;
     private player m_Target;
+    private MonsterAnimCtrl m_animCtrl; //
 
     public enum State
     {
@@ -35,27 +32,30 @@ public class EnemyMelee : Enemy
         m_boss = gameObject.GetComponent<EnemyBossZombie>();
         m_zombie = gameObject.GetComponent<EnemyZombie>();
         StartCoroutine(FSM());
-        m_currentHP = m_maxHP;
         Effect = FindObjectOfType<EffectManager>();
+        m_animCtrl = GetComponent<MonsterAnimCtrl>();
     }
 
-    public void Hit(float damage)
-    {
-        m_currentHP -= damage;
-        if (m_currentHP > 0)
-        {
-            m_Anim.SetTrigger("HIT");
-        }
 
-        if (m_currentHP <= 0 && !m_isDead)
-        {
-            m_Anim.SetTrigger("DEATH");
-            currentState = State.DEATH;
-            m_isDead = true;
-            m_collider.isTrigger = true;
-            StopAllCoroutines();
-        }
-    }
+    //public void Hit(float damage)
+    //{
+    //    m_currentHP -= damage;
+    //    if (m_currentHP > 0)
+    //    {
+    //        m_isHit = true;
+    //        currentState = State.HIT;
+    //    }
+
+    //    if (m_currentHP <= 0 && !m_isDead)
+    //    {
+    //        m_Anim.SetTrigger("DEATH");
+    //        currentState = State.DEATH;
+    //        m_isDead = true;
+    //        m_collider.isTrigger = true;
+    //        m_isHit = false;
+    //        StopAllCoroutines();
+    //    }
+    //}
 
     protected virtual IEnumerator FSM()
     {
@@ -76,6 +76,7 @@ public class EnemyMelee : Enemy
     protected virtual IEnumerator IDLE()
     {
         yield return null;
+        m_isHit = false;
 
         if (!m_Anim.GetCurrentAnimatorStateInfo(0).IsName("IDLE"))
         {
@@ -94,7 +95,7 @@ public class EnemyMelee : Enemy
                 transform.LookAt(m_player.transform.position);
             }
         }
-        else if(distance < 15f)
+        else if(distance < 15f && !(currentState==State.HIT))
         {
             currentState = State.WALK;
         }
@@ -107,6 +108,7 @@ public class EnemyMelee : Enemy
     protected virtual IEnumerator ATTACK()
     {
         yield return null;
+        m_isHit = false;
 
         m_nav.stoppingDistance = 2f;
         m_nav.isStopped = true;
@@ -145,6 +147,7 @@ public class EnemyMelee : Enemy
 
     protected virtual IEnumerator WALK()
     {
+        m_isHit = false;
         yield return null;
 
         if (!m_Anim.GetCurrentAnimatorStateInfo(0).IsName("WALK"))
@@ -165,5 +168,25 @@ public class EnemyMelee : Enemy
             m_nav.SetDestination(m_player.transform.position);
         }
     }
+
+    //protected virtual IEnumerator HIT()
+    //{
+    //    yield return null;
+
+    //    if (m_isHit)
+    //    {
+    //        currentState = State.HIT;
+    //        m_Anim.SetTrigger("HIT");
+    //        m_Anim.ResetTrigger("WALK");
+    //        m_Anim.ResetTrigger("ATTACK");
+    //        WaitForSeconds one = new WaitForSeconds(1);
+    //        yield return one;
+    //        currentState = State.IDLE;
+    //    }
+    //    else
+    //    {
+    //        currentState = State.IDLE;
+    //    }
+    //}
 
 }
