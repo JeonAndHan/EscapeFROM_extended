@@ -39,9 +39,9 @@ public class Enemy : MonoBehaviour
 
     public void Hit(float damage)
     {
-        m_currentHP -= damage;
         if (m_currentHP > 0)
         {
+            m_currentHP -= damage;
             m_isHit = true;
         }
 
