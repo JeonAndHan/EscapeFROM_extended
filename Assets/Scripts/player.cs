@@ -18,15 +18,18 @@ public class player : MonoBehaviour
     Rigidbody m_rigidbody;
     CapsuleCollider m_collider;
     Animator m_Anim;
+    private int m_JumpCount = 0;
+    private bool m_isRun;
+    private bool m_isGunWithRun;
+
+    [Header("Weapon변수")]
     [SerializeField]
     GameObject m_handAttackArea;
     [SerializeField]
     GameObject m_weaponAttackArea;
-
+    [SerializeField]
+    GameObject m_Gun;
     public GameObject m_player_weapon;
-
-    private int m_JumpCount = 0;
-    private bool m_isRun;
     public bool m_is_Weapon_attack = false;
     private float m_weapon_Damage = 50f;
     private float m_hand_Damage = 20f;
@@ -161,11 +164,14 @@ public class player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 m_isRun = true;
+                m_isGunWithRun = true;
+
             }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 m_isRun = false;
+                m_isGunWithRun = false;
             }
         }
 
@@ -239,15 +245,25 @@ public class player : MonoBehaviour
         {
             m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
 
-            if (!m_isRun)
+
+            if(m_isRun && !m_Gun.activeInHierarchy) //달리는것
+            {
+                m_Anim.SetBool("RUN", true);
+                m_Anim.SetBool("RUNWITHGUN", false);
+                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
+            }
+            else if(m_isGunWithRun && m_Gun.activeInHierarchy)
             {
                 m_Anim.SetBool("RUN", false);
-                m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
+                m_Anim.SetBool("RUNWITHGUN", true);
+                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
             }
             else
             {
-                m_Anim.SetBool("RUN", true);
-                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
+                m_Anim.SetBool("RUN", false);
+                m_Anim.SetBool("RUNWITHGUN", false);
+                m_Anim.SetBool("WALK", isMove);
+                m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
             }
         }
     }
