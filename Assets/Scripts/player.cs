@@ -27,8 +27,6 @@ public class player : MonoBehaviour
     GameObject m_handAttackArea;
     [SerializeField]
     GameObject m_weaponAttackArea;
-    [SerializeField]
-    GameObject m_Gun;
     public GameObject m_player_weapon;
     public bool m_is_Weapon_attack = false;
     private float m_weapon_Damage = 50f;
@@ -48,6 +46,17 @@ public class player : MonoBehaviour
     private float m_currentHP;
     EffectManager Effect;
     SoundManager Sound;
+
+    [Header("GUN변수")]
+    [SerializeField]
+    private Transform m_BoltPos;
+    [SerializeField]
+    private BoltPool m_BoltPool;
+    [SerializeField]
+    private float m_BoltGap;
+    [SerializeField]
+    GameObject m_Gun;
+
 
 
     // Start is called before the first frame update
@@ -115,13 +124,19 @@ public class player : MonoBehaviour
 
             if (Input.GetMouseButton(0) && !m_gameCtrl.m_pressR)
             {
-                Effect.EffectPlay(2);
+                
                 if (m_player_weapon.activeInHierarchy)
                 {
                     m_Anim.SetBool("WEAPONATTACK", true);
                     m_Anim.SetBool("WALK", false);
                     m_is_Weapon_attack = true;
-
+                    Effect.EffectPlay(2);
+                }
+                else if (m_Gun.activeInHierarchy)
+                {
+                    m_Anim.SetBool("SHOOT", true);
+                    m_Anim.SetBool("WALK", false);
+                    Fire();
                 }
                 else
                 {
@@ -134,8 +149,12 @@ public class player : MonoBehaviour
             {
                 if (m_player_weapon.activeInHierarchy)
                 {
-                    m_Anim.SetBool("WEAPONATTACK", false);
+                    m_Anim.SetBool("WEAPONATTACK", false);                  
                     // m_weaponAttackArea.SetActive(false);
+                }
+                else if(m_Gun.activeInHierarchy)
+                {
+                    m_Anim.SetBool("SHOOT", false);
                 }
                 else
                 {
@@ -173,8 +192,19 @@ public class player : MonoBehaviour
                 m_isRun = false;
                 m_isGunWithRun = false;
             }
+
+            
         }
 
+    }
+
+    private void Fire()
+    {
+        Vector3 pos = m_BoltPos.position;
+        Bolt newBolt = m_BoltPool.GetFromPool();
+        newBolt.setTargetTag("Enemy");
+        newBolt.transform.position = pos;           
+        
     }
 
     public void AttackAreaTrue()

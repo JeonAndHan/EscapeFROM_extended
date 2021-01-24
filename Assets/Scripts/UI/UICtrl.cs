@@ -14,7 +14,7 @@ public class UICtrl : MonoBehaviour
     public Button m_close_btn;
     public GameObject m_manipulation_UI;
 
-    private bool m_press_btn = true;
+    private bool m_press_btn = false; //true
 
     private void Awake()
     {
