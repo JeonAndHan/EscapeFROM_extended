@@ -10,23 +10,24 @@ public class player : MonoBehaviour
     [SerializeField]
     float m_speed;
     [SerializeField]
-    float m_runSpeed;                    
+    float m_runSpeed;
     [SerializeField]
     Vector3 m_dir;
     private bool m_isDead = false;
-    
+
     Rigidbody m_rigidbody;
     CapsuleCollider m_collider;
     Animator m_Anim;
+    private int m_JumpCount = 0;
+    private bool m_isRun;
+    private bool m_isGunWithRun;
+
+    [Header("Weapon변수")]
     [SerializeField]
     GameObject m_handAttackArea;
     [SerializeField]
     GameObject m_weaponAttackArea;
-
     public GameObject m_player_weapon;
-
-    private int m_JumpCount = 0;
-    private bool m_isRun;
     public bool m_is_Weapon_attack = false;
     private float m_weapon_Damage = 50f;
     private float m_hand_Damage = 20f;
@@ -45,6 +46,17 @@ public class player : MonoBehaviour
     private float m_currentHP;
     EffectManager Effect;
     SoundManager Sound;
+
+    [Header("GUN변수")]
+    [SerializeField]
+    private Transform m_BoltPos;
+    [SerializeField]
+    private BoltPool m_BoltPool;
+    [SerializeField]
+    private float m_BoltGap;
+    [SerializeField]
+    GameObject m_Gun;
+
 
 
     // Start is called before the first frame update
@@ -80,16 +92,16 @@ public class player : MonoBehaviour
 
     public void attackTarget(GameObject target)
     {
-            
-            if (m_player_weapon.activeInHierarchy) //player가 무기를 들고있다면
-            {
-                target.SendMessage("Hit", m_weapon_Damage);
-            }
-            else //player가 맨손이라면
-            {
-                target.SendMessage("Hit", m_hand_Damage);
-            }
-        
+
+        if (m_player_weapon.activeInHierarchy) //player가 무기를 들고있다면
+        {
+            target.SendMessage("Hit", m_weapon_Damage);
+        }
+        else //player가 맨손이라면
+        {
+            target.SendMessage("Hit", m_hand_Damage);
+        }
+
     }
 
     // Update is called once per frame
@@ -112,13 +124,19 @@ public class player : MonoBehaviour
 
             if (Input.GetMouseButton(0) && !m_gameCtrl.m_pressR)
             {
-                Effect.EffectPlay(2);
+                
                 if (m_player_weapon.activeInHierarchy)
                 {
                     m_Anim.SetBool("WEAPONATTACK", true);
                     m_Anim.SetBool("WALK", false);
                     m_is_Weapon_attack = true;
-
+                    Effect.EffectPlay(2);
+                }
+                else if (m_Gun.activeInHierarchy)
+                {
+                    m_Anim.SetBool("SHOOT", true);
+                    m_Anim.SetBool("WALK", false);
+                    Fire();
                 }
                 else
                 {
@@ -131,8 +149,12 @@ public class player : MonoBehaviour
             {
                 if (m_player_weapon.activeInHierarchy)
                 {
-                    m_Anim.SetBool("WEAPONATTACK", false);
+                    m_Anim.SetBool("WEAPONATTACK", false);                  
                     // m_weaponAttackArea.SetActive(false);
+                }
+                else if(m_Gun.activeInHierarchy)
+                {
+                    m_Anim.SetBool("SHOOT", false);
                 }
                 else
                 {
@@ -161,14 +183,28 @@ public class player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 m_isRun = true;
+                m_isGunWithRun = true;
+
             }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 m_isRun = false;
+                m_isGunWithRun = false;
             }
+
+            
         }
 
+    }
+
+    private void Fire()
+    {
+        Vector3 pos = m_BoltPos.position;
+        Bolt newBolt = m_BoltPool.GetFromPool();
+        newBolt.setTargetTag("Enemy");
+        newBolt.transform.position = pos;           
+        
     }
 
     public void AttackAreaTrue()
@@ -209,7 +245,7 @@ public class player : MonoBehaviour
         m_currentCameraRotationX -= cameraRotationX;
         m_currentCameraRotationX = Mathf.Clamp(m_currentCameraRotationX, -m_cameraRotationLimit, m_cameraRotationLimit);
 
-        m_camera.transform.localEulerAngles = new Vector3(m_currentCameraRotationX, 0, 0);       
+        m_camera.transform.localEulerAngles = new Vector3(m_currentCameraRotationX, 0, 0);
     }
 
     private void Move()
@@ -224,7 +260,7 @@ public class player : MonoBehaviour
 
         bool isMove = false;
 
-        if(moveDirX != 0 || moveDirZ!=0)
+        if (moveDirX != 0 || moveDirZ != 0)
         {
             isMove = true;
         }
@@ -239,15 +275,25 @@ public class player : MonoBehaviour
         {
             m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
 
-            if (!m_isRun)
+
+            if (m_isRun && !m_Gun.activeInHierarchy) //달리는것
+            {
+                m_Anim.SetBool("RUN", true);
+                m_Anim.SetBool("RUNWITHGUN", false);
+                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
+            }
+            else if (m_isGunWithRun && m_Gun.activeInHierarchy)
             {
                 m_Anim.SetBool("RUN", false);
-                m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
+                m_Anim.SetBool("RUNWITHGUN", true);
+                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
             }
             else
             {
-                m_Anim.SetBool("RUN", true);
-                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
+                m_Anim.SetBool("RUN", false);
+                m_Anim.SetBool("RUNWITHGUN", false);
+                m_Anim.SetBool("WALK", isMove);
+                m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
             }
         }
     }
