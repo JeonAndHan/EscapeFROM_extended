@@ -16,7 +16,7 @@ public class Bolt : MonoBehaviour
 
     private void OnEnable()
     {
-        m_RB.velocity = transform.up * m_Speed;
+      m_RB.velocity = transform.up * m_Speed;
     }
 
     public void setTargetTag(string tag)

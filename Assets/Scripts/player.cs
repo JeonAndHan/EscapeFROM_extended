@@ -14,6 +14,7 @@ public class player : MonoBehaviour
     [SerializeField]
     Vector3 m_dir;
     private bool m_isDead = false;
+    public bool m_playerHit = false;
 
     Rigidbody m_rigidbody;
     CapsuleCollider m_collider;
@@ -31,6 +32,7 @@ public class player : MonoBehaviour
     public bool m_is_Weapon_attack = false;
     private float m_weapon_Damage = 50f;
     private float m_hand_Damage = 20f;
+    private float m_gun_Damage = 80f;
 
     [Header("camera변수")]
     public Camera m_camera;
@@ -48,12 +50,6 @@ public class player : MonoBehaviour
     SoundManager Sound;
 
     [Header("GUN변수")]
-    [SerializeField]
-    private Transform m_BoltPos;
-    [SerializeField]
-    private BoltPool m_BoltPool;
-    [SerializeField]
-    private float m_BoltGap;
     [SerializeField]
     GameObject m_Gun;
 
@@ -75,14 +71,16 @@ public class player : MonoBehaviour
 
     public void Hit(float damage)
     {
-        if (!m_isDead)
+        if (!m_isDead && m_currentHP>=0)
         {
             m_currentHP -= damage;
             UICtrl.Instance.showHp(m_currentHP, m_maxHP);
+            m_playerHit = true;  //player가 맞았을 때 blood UI 뜨게하기
             if (m_currentHP <= 0)
             {
                 m_Anim.SetTrigger("DIE");
                 m_isDead = true;
+                m_playerHit = false;
                 Sound.Stop();
                 Effect.EffectPlay(1);
                 StartCoroutine(gameover());
@@ -97,10 +95,15 @@ public class player : MonoBehaviour
         {
             target.SendMessage("Hit", m_weapon_Damage);
         }
+        //else if (m_Gun.activeInHierarchy)
+        //{
+        //    target.SendMessage("Hit", m_gun_Damage);
+        //}
         else //player가 맨손이라면
         {
             target.SendMessage("Hit", m_hand_Damage);
         }
+
 
     }
 
@@ -136,7 +139,6 @@ public class player : MonoBehaviour
                 {
                     m_Anim.SetBool("SHOOT", true);
                     m_Anim.SetBool("WALK", false);
-                    Fire();
                 }
                 else
                 {
@@ -152,7 +154,7 @@ public class player : MonoBehaviour
                     m_Anim.SetBool("WEAPONATTACK", false);                  
                     // m_weaponAttackArea.SetActive(false);
                 }
-                else if(m_Gun.activeInHierarchy)
+                else if (m_Gun.activeInHierarchy)
                 {
                     m_Anim.SetBool("SHOOT", false);
                 }
@@ -198,14 +200,6 @@ public class player : MonoBehaviour
 
     }
 
-    private void Fire()
-    {
-        Vector3 pos = m_BoltPos.position;
-        Bolt newBolt = m_BoltPool.GetFromPool();
-        newBolt.setTargetTag("Enemy");
-        newBolt.transform.position = pos;           
-        
-    }
 
     public void AttackAreaTrue()
     {

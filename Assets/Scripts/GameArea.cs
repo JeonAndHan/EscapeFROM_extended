@@ -7,6 +7,9 @@ public class GameArea : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         other.gameObject.SetActive(false);
-        Debug.Log("bolt 부딪침");
+        if (other.CompareTag("Bolt"))
+        {
+            Debug.Log("bolt부딪침");
+        }
     }
 }

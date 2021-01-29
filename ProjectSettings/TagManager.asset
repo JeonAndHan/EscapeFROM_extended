@@ -12,6 +12,7 @@ TagManager:
   - BossZombie
   - Zombie
   - Gun
+  - Bolt
   layers:
   - Default
   - TransparentFX

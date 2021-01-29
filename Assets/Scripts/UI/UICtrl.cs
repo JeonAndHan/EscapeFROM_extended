@@ -13,6 +13,9 @@ public class UICtrl : MonoBehaviour
     public Button m_help_bth;
     public Button m_close_btn;
     public GameObject m_manipulation_UI;
+    [SerializeField]
+    private GameObject[] m_BloodEffect;
+    public player m_playerScript;
 
     private bool m_press_btn = false; //true
 
@@ -26,6 +29,7 @@ public class UICtrl : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     public void showHp(float current,float max)
@@ -50,6 +54,22 @@ public class UICtrl : MonoBehaviour
         {
             m_manipulation_UI.SetActive(false);
         }
+
+        if (m_playerScript.m_playerHit)
+        {
+            for (int i = 0; i < m_BloodEffect.Length; i++)
+            {
+                m_BloodEffect[i].SetActive(true);
+               // Debug.Log("BloodEffect true");
+            }
+        }
+        else
+        {
+            for (int i = 0; i < m_BloodEffect.Length; i++)
+            {
+                m_BloodEffect[i].SetActive(false);
+            }
+        }
     }
 
     public void pressHelp()
@@ -61,4 +81,5 @@ public class UICtrl : MonoBehaviour
     {
         m_press_btn = false;
     }
+
 }
