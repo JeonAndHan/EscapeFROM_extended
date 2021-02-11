@@ -136,7 +136,6 @@ public class player : MonoBehaviour
                 {
                     m_Anim.SetBool("SHOOT", true);
                     m_Anim.SetBool("WALK", false);
-                    Fire();
                 }
                 else
                 {
@@ -198,14 +197,6 @@ public class player : MonoBehaviour
 
     }
 
-    private void Fire()
-    {
-        Vector3 pos = m_BoltPos.position;
-        Bolt newBolt = m_BoltPool.GetFromPool();
-        newBolt.setTargetTag("Enemy");
-        newBolt.transform.position = pos;           
-        
-    }
 
     public void AttackAreaTrue()
     {

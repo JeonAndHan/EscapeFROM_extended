@@ -5510,11 +5510,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3b3ee505810ee49a37f228bad889c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletsPerMag: 30
+  bulletsPerMag: 100
   bulletsTotal: 1500
   currentBullets: 0
   range: 100
-  fireRate: 0.1
+  fireRate: 0.5
   shootPoint: {fileID: 540283306}
 --- !u!4 &172740895 stripped
 Transform:
@@ -48763,7 +48763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1667922087
 Transform:
   m_ObjectHideFlags: 0
@@ -50831,7 +50831,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossZombie
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 116036940835504668, guid: 5923af2ef1430214980b7fa02c766ee1, type: 3}
+    - {fileID: 116036940835504670, guid: 5923af2ef1430214980b7fa02c766ee1, type: 3}
+    - {fileID: 979247942533645112, guid: 5923af2ef1430214980b7fa02c766ee1, type: 3}
+    - {fileID: 979247942533645113, guid: 5923af2ef1430214980b7fa02c766ee1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5923af2ef1430214980b7fa02c766ee1, type: 3}
 --- !u!4 &1736494548 stripped
 Transform:
@@ -64713,7 +64717,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5998523887732795021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.15, y: 1.69, z: 15.46}
+  m_LocalPosition: {x: -35.28, y: 1.69, z: 15.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5998523886878666806}

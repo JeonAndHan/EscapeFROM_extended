@@ -28,7 +28,7 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             if (currentBullets > 0)
                 Fire();
@@ -49,10 +49,23 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(shootPoint.position, shootPoint.transform.up, out hit, range))
         {
-            Debug.Log("Hit");
+            if (hit.collider.gameObject.CompareTag("BossZombie")|| hit.collider.gameObject.CompareTag("Zombie"))
+            {
+                hit.collider.gameObject.SendMessage("Hit", 80);
+                Debug.Log("Hit");
+            }
+            Debug.Log("hit" + hit.collider.gameObject.name);
         }
 
         currentBullets--;
         fireTimer = 0.0f;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draws a 5 unit long red line in front of the object
+        Gizmos.color = Color.red;
+        Vector3 direction = shootPoint.transform.up * 5;
+        Gizmos.DrawRay(transform.position, direction);
     }
 }
