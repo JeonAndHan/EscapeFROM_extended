@@ -49,13 +49,9 @@ public class player : MonoBehaviour
 
     [Header("GUN변수")]
     [SerializeField]
-    private Transform m_BoltPos;
+    public GameObject m_Gun;
     [SerializeField]
-    private BoltPool m_BoltPool;
-    [SerializeField]
-    private float m_BoltGap;
-    [SerializeField]
-    GameObject m_Gun;
+    private Weapon m_weaponScript;
 
 
 
@@ -121,7 +117,7 @@ public class player : MonoBehaviour
                 camera_Rotation();
                 character_Rotation();
             }
-
+         
             if (Input.GetMouseButton(0) && !m_gameCtrl.m_pressR)
             {
                 

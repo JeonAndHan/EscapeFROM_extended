@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
     [SerializeField]
     private int bulletsPerMag; //한 탄창의 탄환 수
-    [SerializeField]
-    private int bulletsTotal; // 잔여 탄환 개수
-    [SerializeField]
-    private int currentBullets; // 현재 장전된 탄환의 수
+    public int bulletsTotal; // 잔여 탄환 개수
+    public int currentBullets; // 현재 장전된 탄환의 수
     [SerializeField]
     private float range; // 총의 사거리
     [SerializeField]
     private float fireRate; // 발사간격
+    public TextMeshProUGUI m_bullet_info_text;  //총알 개수 UI
+    public GameObject m_Gun_UI;
+    public GameObject m_Gun;
 
     private float fireTimer;
 
@@ -23,21 +26,48 @@ public class Weapon : MonoBehaviour
     void Start()
     {
         currentBullets = bulletsPerMag;
+        m_bullet_info_text.text = currentBullets + "/" + bulletsTotal;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (m_Gun.activeInHierarchy)
+        {
+            m_Gun_UI.SetActive(true);
+        }
+        else
+        {
+            m_Gun_UI.SetActive(false);
+        }
+
+        if (Input.GetMouseButton(0) && this.gameObject.activeInHierarchy)
         {
             if (currentBullets > 0)
+            {
                 Fire();
+            }
+            else
+            {
+                Reload();
+            }
         }
 
         if(fireTimer < fireRate)
         {
             fireTimer += Time.deltaTime;
         }
+    }
+
+    public void Reload()
+    {
+        int bulletsToReload = bulletsPerMag - currentBullets;
+        if (bulletsToReload > bulletsTotal)
+            bulletsToReload = bulletsTotal;
+
+        currentBullets += bulletsToReload;
+        bulletsTotal -= bulletsToReload;
+        m_bullet_info_text.text = currentBullets + " / " + bulletsTotal; 
     }
 
     private void Fire()
@@ -59,6 +89,7 @@ public class Weapon : MonoBehaviour
 
         currentBullets--;
         fireTimer = 0.0f;
+        m_bullet_info_text.text = currentBullets + "/" + bulletsTotal;
     }
 
     void OnDrawGizmosSelected()
