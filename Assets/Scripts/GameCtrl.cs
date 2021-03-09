@@ -19,6 +19,8 @@ public class GameCtrl : MonoBehaviour
     public TextTrigger m_Statue2_Text;
     public TextTrigger m_Statue3_Text;
     public TextTrigger m_Room2PW_Text;
+    public TextTrigger m_PrayerRoom_Text;
+    public TextTrigger m_Lab_Report_Text;
 
     [Header("TextTriggerUI")]
     public GameObject m_Room1_Board_UI;
@@ -28,6 +30,8 @@ public class GameCtrl : MonoBehaviour
     public GameObject m_Room1PW_UI;
     public GameObject m_Room2PW_UI;
     public GameObject m_Trick;
+    public GameObject m_Prayer_Diary_UI;
+    public GameObject m_Lab_Report_UI;
     public TextMeshProUGUI m_Investigate_Text;
     public TextMeshProUGUI m_acquire_Text;
     public Canvas m_canvas;
@@ -49,6 +53,8 @@ public class GameCtrl : MonoBehaviour
     private bool m_Statue2_investigate;
     private bool m_Statue3_investigate;
     private bool m_Room2PW_investigate;
+    private bool m_PrayerRoom_investigate;
+    private bool m_Lab_Report_investigate;
 
     [Header("KeyBoardBool")]
     public bool m_pressR;
@@ -203,6 +209,24 @@ public class GameCtrl : MonoBehaviour
             m_Room2PW_UI.SetActive(false);
         }
 
+        if (m_pressR && m_PrayerRoom_investigate) 
+        {
+            m_Prayer_Diary_UI.SetActive(true);
+        }
+        else
+        {
+            m_Prayer_Diary_UI.SetActive(false);
+        }
+
+        if (m_pressR && m_Lab_Report_investigate)
+        {
+            m_Lab_Report_UI.SetActive(true);
+        }
+        else
+        {
+            m_Lab_Report_UI.SetActive(false);
+        }
+
         int i, j;
 
         //timeAttack
@@ -277,6 +301,16 @@ public class GameCtrl : MonoBehaviour
             m_Investigate_Text.gameObject.SetActive(true);
             m_Room2PW_investigate = true;
         }
+        else if (m_PrayerRoom_Text.m_textTrigger)
+        {
+            m_Investigate_Text.gameObject.SetActive(true);
+            m_PrayerRoom_investigate = true;
+        }
+        else if (m_Lab_Report_Text.m_textTrigger)
+        {
+            m_Investigate_Text.gameObject.SetActive(true);
+            m_Lab_Report_investigate = true;
+        }
         else
         {
             m_Investigate_Text.gameObject.SetActive(false);
@@ -290,6 +324,8 @@ public class GameCtrl : MonoBehaviour
             m_Statue2_investigate = false;
             m_Statue3_investigate = false;
             m_Room2PW_investigate = false;
+            m_PrayerRoom_investigate = false;
+            m_Lab_Report_investigate = false;
         }
     }
 

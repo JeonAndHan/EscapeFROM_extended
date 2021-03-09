@@ -21,6 +21,12 @@ public class player : MonoBehaviour
     private int m_JumpCount = 0;
     private bool m_isRun;
     private bool m_isGunWithRun;
+    
+    [Header("ShortCape변수")]
+    public bool m_wearCape;
+    [SerializeField]
+    GameObject m_ShortCape;
+
 
     [Header("Weapon변수")]
     [SerializeField]
@@ -188,7 +194,14 @@ public class player : MonoBehaviour
                 m_isGunWithRun = false;
             }
 
-            
+            if (m_ShortCape.activeInHierarchy)
+            {
+                m_wearCape = true;
+            }
+            else
+            {
+                m_wearCape = false;
+            }
         }
 
     }
