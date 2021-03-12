@@ -21,6 +21,8 @@ public class GameCtrl : MonoBehaviour
     public TextTrigger m_Room2PW_Text;
     public TextTrigger m_PrayerRoom_Text;
     public TextTrigger m_Lab_Report_Text;
+    public TextTrigger m_Recipe1_Text;
+    public TextTrigger m_Recipe2_Text;
 
     [Header("TextTriggerUI")]
     public GameObject m_Room1_Board_UI;
@@ -55,6 +57,8 @@ public class GameCtrl : MonoBehaviour
     private bool m_Room2PW_investigate;
     private bool m_PrayerRoom_investigate;
     private bool m_Lab_Report_investigate;
+    private bool m_Recipe1_investigate;
+    private bool m_Recipe2_investigate;
 
     [Header("KeyBoardBool")]
     public bool m_pressR;
@@ -311,6 +315,14 @@ public class GameCtrl : MonoBehaviour
             m_Investigate_Text.gameObject.SetActive(true);
             m_Lab_Report_investigate = true;
         }
+        else if(m_Recipe1_Text.m_textTrigger){
+            m_Investigate_Text.gameObject.SetActive(true);
+            m_Recipe1_investigate=true;
+        }
+        else if(m_Recipe2_Text.m_textTrigger){
+            m_Investigate_Text.gameObject.SetActive(true);
+            m_Recipe2_investigate=true;
+        }
         else
         {
             m_Investigate_Text.gameObject.SetActive(false);
@@ -326,6 +338,8 @@ public class GameCtrl : MonoBehaviour
             m_Room2PW_investigate = false;
             m_PrayerRoom_investigate = false;
             m_Lab_Report_investigate = false;
+            m_Recipe1_investigate=false;
+            m_Recipe2_investigate=false;
         }
     }
 
