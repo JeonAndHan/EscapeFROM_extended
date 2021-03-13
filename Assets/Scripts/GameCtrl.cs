@@ -289,7 +289,7 @@ public class GameCtrl : MonoBehaviour
             m_acquire_Text.gameObject.SetActive(false);
         }
 
-        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Zombie_Drug_Text.m_TextTrigger)
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Zombie_Drug_Text.m_textTrigger)
         {
             m_zombie_drug.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
@@ -305,7 +305,7 @@ public class GameCtrl : MonoBehaviour
             m_acquire_Text.gameObject.SetActive(false);
         }
 
-        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Antidote_Text.m_TextTrigger)
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Antidote_Text.m_textTrigger)
         {
             m_antidote.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
@@ -320,7 +320,7 @@ public class GameCtrl : MonoBehaviour
         {
             m_acquire_Text.gameObject.SetActive(false);
         }
-        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Key_Text.m_TextTrigger)
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Key_Text.m_textTrigger)
         {
             m_key.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
@@ -335,7 +335,7 @@ public class GameCtrl : MonoBehaviour
         {
             m_acquire_Text.gameObject.SetActive(false);
         }
-        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Cape_Text.m_TextTrigger)
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Cape_Text.m_textTrigger)
         {
             m_cape.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
@@ -350,7 +350,7 @@ public class GameCtrl : MonoBehaviour
         {
             m_acquire_Text.gameObject.SetActive(false);
         }
-        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Room_Bullet_Text.m_TextTrigger)
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Room_Bullet_Text.m_textTrigger)
         {
             m_room_bullet.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
@@ -365,7 +365,7 @@ public class GameCtrl : MonoBehaviour
         {
             m_acquire_Text.gameObject.SetActive(false);
         }
-        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Toilet_Bullet_Text.m_TextTrigger)
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Toilet_Bullet_Text.m_textTrigger)
         {
             m_toilet_bullet.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
@@ -380,7 +380,7 @@ public class GameCtrl : MonoBehaviour
         {
             m_acquire_Text.gameObject.SetActive(false);
         }
-        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Water_Text.m_TextTrigger)
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Water_Text.m_textTrigger)
         {
             m_water.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
@@ -457,7 +457,7 @@ public class GameCtrl : MonoBehaviour
             m_Investigate_Text.gameObject.SetActive(true);
             m_Recipe2_investigate=true;
         }
-        else if(m_Zombie_Mouse_Text.m_TextTrigger)
+        else if(m_Zombie_Mouse_Text.m_textTrigger)
         {
             m_Investigate_Text.gameObject.SetActive(true);
             m_Zombie_Mouse_investigate=true;

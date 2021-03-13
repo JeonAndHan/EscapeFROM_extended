@@ -22231,7 +22231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1744068169883194, guid: ba04b8d03f30146f58b58231278be18f, type: 3}
       propertyPath: m_Name
-      value: Flask_06
+      value: Antidote
       objectReference: {fileID: 0}
     - target: {fileID: 4224169509164800, guid: ba04b8d03f30146f58b58231278be18f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22299,6 +22299,12 @@ PrefabInstance:
 --- !u!4 &694798145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4351349087935228, guid: ba04b8d03f30146f58b58231278be18f,
+    type: 3}
+  m_PrefabInstance: {fileID: 694798144}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &694798146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1744068169883194, guid: ba04b8d03f30146f58b58231278be18f,
     type: 3}
   m_PrefabInstance: {fileID: 694798144}
   m_PrefabAsset: {fileID: 0}
@@ -47779,6 +47785,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1595175699}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1595175701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 23006330e69064940bbc83e550bcf857,
+    type: 3}
+  m_PrefabInstance: {fileID: 1595175699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1596285421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48703,7 +48715,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1822811081740728, guid: 9d79a38f83fd64d7890b96cd421bf2a8, type: 3}
       propertyPath: m_Name
-      value: Flask_05
+      value: Zombie_Drug
       objectReference: {fileID: 0}
     - target: {fileID: 1962619192699980, guid: 9d79a38f83fd64d7890b96cd421bf2a8, type: 3}
       propertyPath: m_IsActive
@@ -48770,6 +48782,12 @@ PrefabInstance:
 --- !u!4 &1631985561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4406544723037318, guid: 9d79a38f83fd64d7890b96cd421bf2a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1631985560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1631985562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1822811081740728, guid: 9d79a38f83fd64d7890b96cd421bf2a8,
     type: 3}
   m_PrefabInstance: {fileID: 1631985560}
   m_PrefabAsset: {fileID: 0}
@@ -50514,6 +50532,13 @@ MonoBehaviour:
   m_Recipe2_Text: {fileID: 1105745373}
   m_Zombie_Mouse_Text: {fileID: 247314629}
   m_Mouse_Text: {fileID: 690112195}
+  m_Zombie_Drug_Text: {fileID: 930215498}
+  m_Antidote_Text: {fileID: 1614448932}
+  m_Key_Text: {fileID: 56256994}
+  m_Cape_Text: {fileID: 164908990}
+  m_Room_Bullet_Text: {fileID: 1547995341}
+  m_Toilet_Bullet_Text: {fileID: 1518476488}
+  m_Water_Text: {fileID: 153744730}
   m_Room1_Board_UI: {fileID: 1899451489}
   m_Room2_Board_UI: {fileID: 28616952}
   m_Desk_UI: {fileID: 1647513076}
@@ -50540,6 +50565,10 @@ MonoBehaviour:
   m_key: {fileID: 319496200}
   m_toilet_bullet: {fileID: 2050050466}
   m_room_bullet: {fileID: 1194570066}
+  m_zombie_drug: {fileID: 1631985562}
+  m_antidote: {fileID: 694798146}
+  m_cape: {fileID: 1595175701}
+  m_water: {fileID: 0}
 --- !u!1001 &1678321203
 PrefabInstance:
   m_ObjectHideFlags: 0
