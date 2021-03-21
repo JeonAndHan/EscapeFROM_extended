@@ -724,109 +724,6 @@ MonoBehaviour:
   - modifiers: []
   - modifiers: []
   - modifiers: []
---- !u!114 &-2839999955813321745
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
-  m_Name: Lohra
-  m_EditorClassIdentifier: 
-  m_Id: 07046059-4d5f-45d7-bbbf-5b7912bf8134
-  m_ItemName: Lohra
-  m_UseItemNameAsDisplayName: 1
-  m_DisplayName: New Item
-  m_Icon: {fileID: 825313862262482097, guid: ed1162d009219214ab9e282868df2b6d, type: 3}
-  m_Prefab: {fileID: 0}
-  m_Description: Be careful outside the town in the first map.
-  m_Category: {fileID: 164684216256526245}
-  m_IsSellable: 0
-  m_BuyPrice: 0
-  m_CanBuyBack: 1
-  m_BuyCurrency: {fileID: -2811142919616601772}
-  m_SellPrice: 0
-  m_SellCurrency: {fileID: -2811142919616601772}
-  m_Stack: 1
-  m_MaxStack: 1
-  m_IsDroppable: 1
-  m_DropSound: {fileID: 0}
-  m_OverridePrefab: {fileID: 0}
-  m_IsCraftable: 0
-  m_CraftingDuration: 2
-  m_UseCraftingSkill: 0
-  m_SkillWindow: Skills
-  m_CraftingSkill: {fileID: 0}
-  m_RemoveIngredientsWhenFailed: 0
-  m_MinCraftingSkillValue: 0
-  m_CraftingAnimatorState: Blacksmithy
-  m_CraftingModifier:
-    modifiers: []
-  ingredients: []
-  properties: []
-  m_UseCategoryCooldown: 1
-  m_Cooldown: 1
-  actions:
-  - id: 0
-  - id: 1
-  - id: 2
-  - id: 3
-  - id: 4
-  - id: 5
-  - id: 6
-  references:
-    version: 1
-    00000000:
-      type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        m_Target: 1
-        m_ComponentName: ThirdPersonController
-        m_Enable: 0
-    00000001:
-      type: {class: Cooldown, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        item: {fileID: -2839999955813321745}
-        m_GlobalCooldown: 1
-    00000002:
-      type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        duration: 1
-    00000003:
-      type: {class: Save, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
-      data:
-        m_Type: 
-        m_Enabled: 1
-    00000004:
-      type: {class: LoadScene, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        m_Scene: Main Scene
-    00000005:
-      type: {class: SetPosition, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        m_Target: 1
-        m_Position: {x: 20.65, y: 0.018, z: -21.71}
-        m_SetCameraRelative: 1
-    00000006:
-      type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        m_Target: 1
-        m_ComponentName: ThirdPersonController
-        m_Enable: 1
 --- !u!114 &-2811142919616601772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1109,7 +1006,6 @@ MonoBehaviour:
   m_Name: Fantasy ItemDatabase
   m_EditorClassIdentifier: 
   items:
-  - {fileID: -2060425377994505070}
   - {fileID: 8429455951140046941}
   - {fileID: 8763039942855579107}
   - {fileID: -1175442255857385599}
@@ -1118,9 +1014,8 @@ MonoBehaviour:
   - {fileID: 6234106693565876968}
   - {fileID: 960666660569578442}
   - {fileID: -6266380644497530537}
+  - {fileID: -2060425377994505070}
   - {fileID: 3129509250564287029}
-  - {fileID: -2839999955813321745}
-  - {fileID: 8692695060773013855}
   currencies: []
   raritys: []
   categories:
@@ -2129,8 +2024,8 @@ MonoBehaviour:
   m_GroupName: Teleporter
   m_Items:
   - {fileID: 2033560685258441697}
-  - {fileID: -2839999955813321745}
-  - {fileID: 8692695060773013855}
+  - {fileID: 0}
+  - {fileID: 0}
   m_Amounts: 010000000100000001000000
   m_Modifiers:
   - modifiers: []
@@ -2239,109 +2134,6 @@ MonoBehaviour:
         m_Type: 
         m_Enabled: 1
         duration: 1
---- !u!114 &8692695060773013855
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
-  m_Name: Seraphina
-  m_EditorClassIdentifier: 
-  m_Id: 08ccfdf8-7007-4ce8-80e9-c7614f351595
-  m_ItemName: Seraphina
-  m_UseItemNameAsDisplayName: 1
-  m_DisplayName: New Item
-  m_Icon: {fileID: -8583486841737024011, guid: ed1162d009219214ab9e282868df2b6d, type: 3}
-  m_Prefab: {fileID: 0}
-  m_Description: Town in the second map.
-  m_Category: {fileID: 164684216256526245}
-  m_IsSellable: 0
-  m_BuyPrice: 0
-  m_CanBuyBack: 1
-  m_BuyCurrency: {fileID: -2811142919616601772}
-  m_SellPrice: 0
-  m_SellCurrency: {fileID: -2811142919616601772}
-  m_Stack: 1
-  m_MaxStack: 1
-  m_IsDroppable: 1
-  m_DropSound: {fileID: 0}
-  m_OverridePrefab: {fileID: 0}
-  m_IsCraftable: 0
-  m_CraftingDuration: 2
-  m_UseCraftingSkill: 0
-  m_SkillWindow: Skills
-  m_CraftingSkill: {fileID: 0}
-  m_RemoveIngredientsWhenFailed: 0
-  m_MinCraftingSkillValue: 0
-  m_CraftingAnimatorState: Blacksmithy
-  m_CraftingModifier:
-    modifiers: []
-  ingredients: []
-  properties: []
-  m_UseCategoryCooldown: 1
-  m_Cooldown: 1
-  actions:
-  - id: 0
-  - id: 1
-  - id: 2
-  - id: 3
-  - id: 4
-  - id: 5
-  - id: 6
-  references:
-    version: 1
-    00000000:
-      type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        m_Target: 1
-        m_ComponentName: ThirdPersonController
-        m_Enable: 0
-    00000001:
-      type: {class: Cooldown, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        item: {fileID: 8692695060773013855}
-        m_GlobalCooldown: 1
-    00000002:
-      type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        duration: 1
-    00000003:
-      type: {class: Save, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
-      data:
-        m_Type: 
-        m_Enabled: 1
-    00000004:
-      type: {class: LoadScene, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        m_Scene: Map2
-    00000005:
-      type: {class: SetPosition, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        m_Target: 1
-        m_Position: {x: -3.45, y: 0.018, z: 3.96}
-        m_SetCameraRelative: 1
-    00000006:
-      type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
-      data:
-        m_Type: 
-        m_Enabled: 1
-        m_Target: 1
-        m_ComponentName: ThirdPersonController
-        m_Enable: 1
 --- !u!114 &8705209814584371102
 MonoBehaviour:
   m_ObjectHideFlags: 1
