@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: 33680378}
   - component: {fileID: 33680377}
   m_Layer: 0
-  m_Name: Recipe1_Text_Trigger
+  m_Name: Recipe_Zombie_Drug_Text_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1258,7 +1258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33680375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.334, y: -8.272, z: -0.237}
+  m_LocalPosition: {x: 5.021, y: -8.272, z: -0.973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 447767046}
@@ -2210,6 +2210,125 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 57701103}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &60958099
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5998523888486664642}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.252
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.309
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.008601838
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.059516575
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.030760126
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9977162
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.77400005
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 6.852
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 3.578
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3289506
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.883476
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.8656688
+      objectReference: {fileID: 0}
+    - target: {fileID: -7262160686350800106, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4845419198383733991, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -259972160606440404, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_Name
+      value: ShortCape
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484530968865723999, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246554803014895378, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026255991596441747, guid: 23006330e69064940bbc83e550bcf857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23006330e69064940bbc83e550bcf857, type: 3}
 --- !u!1 &61337274
 GameObject:
   m_ObjectHideFlags: 0
@@ -9878,13 +9997,19 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 626e24c6b62174fe0b443ac5124270b4,
         type: 3}
       propertyPath: m_Name
-      value: Scroll
+      value: Recipe_Zombie_Drug
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 626e24c6b62174fe0b443ac5124270b4, type: 3}
 --- !u!4 &269704837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 626e24c6b62174fe0b443ac5124270b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 269704836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &269704838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 626e24c6b62174fe0b443ac5124270b4,
     type: 3}
   m_PrefabInstance: {fileID: 269704836}
   m_PrefabAsset: {fileID: 0}
@@ -28833,13 +28958,19 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 626e24c6b62174fe0b443ac5124270b4,
         type: 3}
       propertyPath: m_Name
-      value: Scroll (1)
+      value: Recipe_Antidote
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 626e24c6b62174fe0b443ac5124270b4, type: 3}
 --- !u!4 &931300721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 626e24c6b62174fe0b443ac5124270b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 931300720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &931300722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 626e24c6b62174fe0b443ac5124270b4,
     type: 3}
   m_PrefabInstance: {fileID: 931300720}
   m_PrefabAsset: {fileID: 0}
@@ -34797,7 +34928,7 @@ GameObject:
   - component: {fileID: 1105745374}
   - component: {fileID: 1105745373}
   m_Layer: 0
-  m_Name: Recipe2_Text_Trigger
+  m_Name: Recipe_Antidote_Text_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37008,6 +37139,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5a5dc44bfe769d94ba1bcab91c5c3107,
     type: 3}
   m_PrefabInstance: {fileID: 1020098097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1211060352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 23006330e69064940bbc83e550bcf857,
+    type: 3}
+  m_PrefabInstance: {fileID: 60958099}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1211060353 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 23006330e69064940bbc83e550bcf857,
+    type: 3}
+  m_PrefabInstance: {fileID: 60958099}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1213796441
 PrefabInstance:
@@ -50528,8 +50671,8 @@ MonoBehaviour:
   m_Room2PW_Text: {fileID: 2058949945}
   m_PrayerRoom_Text: {fileID: 786747407}
   m_Lab_Report_Text: {fileID: 1699450484}
-  m_Recipe1_Text: {fileID: 33680377}
-  m_Recipe2_Text: {fileID: 1105745373}
+  m_Recipe_Zombie_Drug_Text: {fileID: 33680377}
+  m_Recipe_Antidote_Text: {fileID: 1105745373}
   m_Zombie_Mouse_Text: {fileID: 247314629}
   m_Mouse_Text: {fileID: 690112195}
   m_Zombie_Drug_Text: {fileID: 930215498}
@@ -50567,8 +50710,11 @@ MonoBehaviour:
   m_room_bullet: {fileID: 1194570066}
   m_zombie_drug: {fileID: 1631985562}
   m_antidote: {fileID: 694798146}
-  m_cape: {fileID: 1595175701}
   m_water: {fileID: 0}
+  m_recipe_zombie_drug: {fileID: 269704838}
+  m_recipe_antidote: {fileID: 931300722}
+  m_player_cape: {fileID: 1211060352}
+  m_hanger_cape: {fileID: 1595175701}
 --- !u!1001 &1678321203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101595,7 +101741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5998523886878666805}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.183, y: 1.68, z: 0.11}
+  m_LocalPosition: {x: 11.3, y: 0.74, z: -2.61}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 5998523888299727526}
@@ -102389,7 +102535,7 @@ Transform:
   m_Children:
   - {fileID: 5998523886667273814}
   m_Father: {fileID: 5998523888486664642}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5998523887233619251
 GameObject:
@@ -103673,6 +103819,7 @@ Transform:
   m_LocalPosition: {x: 0.0010912295, y: 0.27807605, z: -0.011953635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1211060353}
   - {fileID: 5998523888508911261}
   - {fileID: 5998523888739812989}
   - {fileID: 5998523887222587150}
@@ -103854,7 +104001,7 @@ Transform:
   m_Children:
   - {fileID: 5998523887545188749}
   m_Father: {fileID: 5998523888486664642}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5998523888513908032
 GameObject:
@@ -104308,7 +104455,7 @@ Transform:
   m_Children:
   - {fileID: 5998523887787595885}
   m_Father: {fileID: 5998523888486664642}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6000407478992874455
 Transform:

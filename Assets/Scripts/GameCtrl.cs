@@ -21,8 +21,8 @@ public class GameCtrl : MonoBehaviour
     public TextTrigger m_Room2PW_Text;
     public TextTrigger m_PrayerRoom_Text;
     public TextTrigger m_Lab_Report_Text;
-    public TextTrigger m_Recipe1_Text;
-    public TextTrigger m_Recipe2_Text;
+    public TextTrigger m_Recipe_Zombie_Drug_Text;
+    public TextTrigger m_Recipe_Antidote_Text;
     public TextTrigger m_Zombie_Mouse_Text;
     public TextTrigger m_Mouse_Text;
     public TextTrigger m_Zombie_Drug_Text;
@@ -66,8 +66,6 @@ public class GameCtrl : MonoBehaviour
     private bool m_Room2PW_investigate;
     private bool m_PrayerRoom_investigate;
     private bool m_Lab_Report_investigate;
-    private bool m_Recipe1_investigate;
-    private bool m_Recipe2_investigate;
     private bool m_Zombie_Mouse_investigate;
     private bool m_Mouse_investigate;
 
@@ -98,9 +96,13 @@ public class GameCtrl : MonoBehaviour
     public GameObject m_room_bullet;
     public GameObject m_zombie_drug;
     public GameObject m_antidote;
-    public GameObject m_cape;
     public GameObject m_water;
+    public GameObject m_recipe_zombie_drug;
+    public GameObject m_recipe_antidote;
 
+    [Header("Cape")]
+    public GameObject m_player_cape;
+    public GameObject m_hanger_cape;
 
     void Start()
     {
@@ -280,6 +282,25 @@ public class GameCtrl : MonoBehaviour
             m_acquire_Text.gameObject.SetActive(false);
         }
 
+        if(m_Cape_Text.m_textTrigger)
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        }
+        else
+        {
+            m_acquire_Text.gameObject.SetActive(false);
+        }
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Cape_Text.m_textTrigger) // z가 눌렸고, acquiretext가 true라면
+        {
+            m_hanger_cape.gameObject.SetActive(false);
+            m_player_cape.gameObject.SetActive(true);
+        }
+
+        if (m_player_cape.gameObject.activeInHierarchy)
+        {
+            m_acquire_Text.gameObject.SetActive(false);
+        }
+
         if(m_Zombie_Drug_Text.m_textTrigger)
         {
             m_acquire_Text.gameObject.SetActive(true);
@@ -327,21 +348,6 @@ public class GameCtrl : MonoBehaviour
         }
         //TODO: 인벤토리에 추가하면 acquire text inactives
 
-        if(m_Cape_Text.m_textTrigger)
-        {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
-        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Cape_Text.m_textTrigger)
-        {
-            m_cape.gameObject.SetActive(false);
-            //TODO: 인벤토리에 추가
-        }
-        //TODO: 인벤토리에 추가하면 acquire text inactives
-
         if(m_Room_Bullet_Text.m_textTrigger)
         {
             m_acquire_Text.gameObject.SetActive(true);
@@ -385,6 +391,40 @@ public class GameCtrl : MonoBehaviour
             m_water.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
         }
+
+
+        if(m_Recipe_Zombie_Drug_Text.m_textTrigger)
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        }
+        else
+        {
+            m_acquire_Text.gameObject.SetActive(false);
+        }
+
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Recipe_Zombie_Drug_Text.m_textTrigger)
+        {
+            m_recipe_zombie_drug.gameObject.SetActive(false);
+            //TODO: 인벤토리에 추가
+        }
+        //TODO: 인벤토리에 추가하면 acquire text inactives
+
+
+        if(m_Recipe_Antidote_Text.m_textTrigger)
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        }
+        else
+        {
+            m_acquire_Text.gameObject.SetActive(false);
+        }
+
+        if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Recipe_Antidote_Text.m_textTrigger)
+        {
+            m_recipe_antidote.gameObject.SetActive(false);
+            //TODO: 인벤토리에 추가
+        }
+        //TODO: 인벤토리에 추가하면 acquire text inactives
     }
 
     public void investigate_TextTrigger()
@@ -449,14 +489,6 @@ public class GameCtrl : MonoBehaviour
             m_Investigate_Text.gameObject.SetActive(true);
             m_Lab_Report_investigate = true;
         }
-        else if(m_Recipe1_Text.m_textTrigger){
-            m_Investigate_Text.gameObject.SetActive(true);
-            m_Recipe1_investigate=true;
-        }
-        else if(m_Recipe2_Text.m_textTrigger){
-            m_Investigate_Text.gameObject.SetActive(true);
-            m_Recipe2_investigate=true;
-        }
         else if(m_Zombie_Mouse_Text.m_textTrigger)
         {
             m_Investigate_Text.gameObject.SetActive(true);
@@ -481,8 +513,6 @@ public class GameCtrl : MonoBehaviour
             m_Room2PW_investigate = false;
             m_PrayerRoom_investigate = false;
             m_Lab_Report_investigate = false;
-            m_Recipe1_investigate=false;
-            m_Recipe2_investigate=false;
             m_Zombie_Mouse_investigate=false;
             m_Mouse_investigate=false;
         }
