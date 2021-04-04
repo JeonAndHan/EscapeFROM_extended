@@ -116,11 +116,17 @@ public class GameCtrl : MonoBehaviour
     public GameObject m_player_cape;
     public GameObject m_hanger_cape;
 
+    [Header("Safe")]
+    public GameObject m_safe_door;
+    DoorEffectManager DoorEffect;
+
+
     void Start()
     {
         m_explosion.SetActive(false);
         Sound = FindObjectOfType<SoundManager>();
         Effect = FindObjectOfType<EffectManager>();
+        DoorEffect = FindObjectOfType<DoorEffectManager>();
     }
 
     // Update is called once per frame
@@ -274,169 +280,107 @@ public class GameCtrl : MonoBehaviour
 
     public void acquire_TextTrigger()
     {
-        if(m_keypad.m_right && m_Safe_Text.m_textTrigger)
+        if(m_keypad.m_right && m_Safe_Text.m_textTrigger && !m_player_weapon.gameObject.activeInHierarchy)
         {
             m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
+            m_weapon_acquire=true;
+        } else if(m_Cape_Text.m_textTrigger && !m_player_cape.gameObject.activeInHierarchy)
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+            m_cape_acquire=true;
+        } else if(m_Zombie_Drug_Text.m_textTrigger)
+        //TODO: 인벤토리에 추가하면 acquire text inactives
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        } else if(m_Antidote_Text.m_textTrigger)
+        //TODO: 인벤토리에 추가하면 acquire text inactives
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        } else if(m_Key_Text.m_textTrigger && m_key_aquire){
+        //TODO: 인벤토리에 추가하면 acquire text inactives
+            m_acquire_Text.gameObject.SetActive(true);
+        } else if(m_Room_Bullet_Text.m_textTrigger)
+        //TODO: 인벤토리에 추가하면 acquire text inactives
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        } else if(m_Toilet_Bullet_Text.m_textTrigger)
+        //TODO: 인벤토리에 추가하면 acquire text inactives
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        } else if(m_Recipe_Zombie_Drug_Text.m_textTrigger)
+        //TODO: 인벤토리에 추가하면 acquire text inactives
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        } else if(m_Water_Text.m_textTrigger)
+        //TODO: 인벤토리에 추가하면 acquire text inactives
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        } else if(m_Recipe_Antidote_Text.m_textTrigger)
+        //TODO: 인벤토리에 추가하면 acquire text inactives
+        {
+            m_acquire_Text.gameObject.SetActive(true);
+        } else
         {
             m_acquire_Text.gameObject.SetActive(false);
         }
+
+
 
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Safe_Text.m_textTrigger) // z가 눌렸고, acquiretext가 true라면
         {
             m_safe_weapon.gameObject.SetActive(false);
             m_player_weapon.gameObject.SetActive(true);
         }
-
-        if (m_player_weapon.gameObject.activeInHierarchy)
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
-
-        if(m_Cape_Text.m_textTrigger)
-        {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Cape_Text.m_textTrigger) // z가 눌렸고, acquiretext가 true라면
         {
             m_hanger_cape.gameObject.SetActive(false);
             m_player_cape.gameObject.SetActive(true);
         }
-
-        if (m_player_cape.gameObject.activeInHierarchy)
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
-
-        if(m_Zombie_Drug_Text.m_textTrigger)
-        {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
-
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Zombie_Drug_Text.m_textTrigger)
         {
             m_zombie_drug.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
         }
-        //TODO: 인벤토리에 추가하면 acquire text inactives
-
-        if(m_Antidote_Text.m_textTrigger)
-        {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
-
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Antidote_Text.m_textTrigger)
         {
             m_antidote.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
         }
-        //TODO: 인벤토리에 추가하면 acquire text inactives
-
         if(m_Key_Text.m_textTrigger)
         {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
+            m_safe_door.transform.localEulerAngles = new Vector3(0f, -120f, 0f);
+            DoorEffect.Play();
+            m_key_aquire=true;
         }
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Key_Text.m_textTrigger)
         {
             m_key.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
         }
-        //TODO: 인벤토리에 추가하면 acquire text inactives
-
-        if(m_Room_Bullet_Text.m_textTrigger)
-        {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Room_Bullet_Text.m_textTrigger)
         {
             m_room_bullet.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
-        }
-        //TODO: 인벤토리에 추가하면 acquire text inactives
-
-        if(m_Toilet_Bullet_Text.m_textTrigger)
-        {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
         }
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Toilet_Bullet_Text.m_textTrigger)
         {
             m_toilet_bullet.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
         }
-        //TODO: 인벤토리에 추가하면 acquire text inactives
-
-        if(m_Water_Text.m_textTrigger)
-        {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Water_Text.m_textTrigger)
         {
-            m_water.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
         }
-
-
-        if(m_Recipe_Zombie_Drug_Text.m_textTrigger)
-        {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
-
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Recipe_Zombie_Drug_Text.m_textTrigger)
         {
             m_recipe_zombie_drug.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
         }
-        //TODO: 인벤토리에 추가하면 acquire text inactives
-
-
-        if(m_Recipe_Antidote_Text.m_textTrigger)
-        {
-            m_acquire_Text.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_acquire_Text.gameObject.SetActive(false);
-        }
-
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Recipe_Antidote_Text.m_textTrigger)
         {
             m_recipe_antidote.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
         }
-        //TODO: 인벤토리에 추가하면 acquire text inactives
     }
 
     public void investigate_TextTrigger()
