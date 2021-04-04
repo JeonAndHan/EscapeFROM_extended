@@ -69,6 +69,18 @@ public class GameCtrl : MonoBehaviour
     private bool m_Zombie_Mouse_investigate;
     private bool m_Mouse_investigate;
 
+    [Header("TextTriggerBool_Aquire")]
+    private bool m_weapon_acquire;
+    private bool m_cape_acquire;
+    private bool m_zombie_drug_acquire;
+    private bool m_antidote_acquire;
+    private bool m_key_aquire;
+    private bool m_room_bullet_aquire;
+    private bool m_toilet_bullet_aquire;
+    private bool m_water_acquire;
+    private bool m_recipe_zombie_drug_acquire;
+    private bool m_recipe_antidote_acquire;
+
 
     [Header("KeyBoardBool")]
     public bool m_pressR;
