@@ -32,6 +32,7 @@ public class GameCtrl : MonoBehaviour
     public TextTrigger m_Room_Bullet_Text;
     public TextTrigger m_Toilet_Bullet_Text;
     public TextTrigger m_Water_Text;
+    public TextTrigger m_Button_Text;
 
     [Header("TextTriggerUI")]
     public GameObject m_Room1_Board_UI;
@@ -68,6 +69,7 @@ public class GameCtrl : MonoBehaviour
     private bool m_Lab_Report_investigate;
     private bool m_Zombie_Mouse_investigate;
     private bool m_Mouse_investigate;
+    private bool m_Button_investigate;
 
     [Header("TextTriggerBool_Aquire")]
     private bool m_weapon_acquire;
@@ -119,6 +121,9 @@ public class GameCtrl : MonoBehaviour
     [Header("Safe")]
     public GameObject m_safe_door;
     DoorEffectManager DoorEffect;
+
+    [Header("1st floor door")]
+    public GameObject m_1st_door;
 
 
     void Start()
@@ -346,12 +351,6 @@ public class GameCtrl : MonoBehaviour
             m_antidote.gameObject.SetActive(false);
             //TODO: 인벤토리에 추가
         }
-        if(m_Key_Text.m_textTrigger)
-        {
-            m_safe_door.transform.localEulerAngles = new Vector3(0f, -120f, 0f);
-            DoorEffect.Play();
-            m_key_aquire=true;
-        }
         if(m_pressZ && m_acquire_Text.gameObject.activeInHierarchy && m_Key_Text.m_textTrigger)
         {
             m_key.gameObject.SetActive(false);
@@ -454,6 +453,15 @@ public class GameCtrl : MonoBehaviour
             m_Investigate_Text.gameObject.SetActive(true);
             m_Mouse_investigate=true;
         }
+        else if(m_Key_Text.m_textTrigger)
+        {
+            m_Investigate_Text.gameObject.SetActive(true);
+            
+        }
+        else if(m_Button_Text.m_textTrigger)
+        {
+            m_Investigate_Text.gameObject.SetActive(true);
+        }
         else
         {
             m_Investigate_Text.gameObject.SetActive(false);
@@ -471,6 +479,15 @@ public class GameCtrl : MonoBehaviour
             m_Lab_Report_investigate = false;
             m_Zombie_Mouse_investigate=false;
             m_Mouse_investigate=false;
+        }
+        if(m_pressR && m_Key_Text.m_textTrigger){
+            m_safe_door.transform.localEulerAngles = new Vector3(0f, -120f, 0f);
+            DoorEffect.Play();
+            m_key_aquire=true;
+        }
+        if(m_pressR && m_Investigate_Text.gameObject.activeInHierarchy)
+        {
+            m_1st_door.gameObject.SetActive(false);
         }
     }
 
