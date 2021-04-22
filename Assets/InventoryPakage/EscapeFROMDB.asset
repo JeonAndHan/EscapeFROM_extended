@@ -21,7 +21,7 @@ MonoBehaviour:
     type: 3}
   m_Description: 
   m_Category: {fileID: 4790584619267302717}
-  m_IsSellable: 1
+  m_IsSellable: 0
   m_BuyPrice: 0
   m_CanBuyBack: 1
   m_BuyCurrency: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 0}
   m_Description: 
   m_Category: {fileID: 4790584619267302717}
-  m_IsSellable: 1
+  m_IsSellable: 0
   m_BuyPrice: 0
   m_CanBuyBack: 1
   m_BuyCurrency: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_SellCurrency: {fileID: 0}
   m_Stack: 1
   m_MaxStack: 1
-  m_IsDroppable: 1
+  m_IsDroppable: 0
   m_DropSound: {fileID: 0}
   m_OverridePrefab: {fileID: 0}
   m_IsCraftable: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
     type: 3}
   m_Description: 
   m_Category: {fileID: 4790584619267302717}
-  m_IsSellable: 1
+  m_IsSellable: 0
   m_BuyPrice: 0
   m_CanBuyBack: 1
   m_BuyCurrency: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_SellCurrency: {fileID: 0}
   m_Stack: 1
   m_MaxStack: 1
-  m_IsDroppable: 1
+  m_IsDroppable: 0
   m_DropSound: {fileID: 0}
   m_OverridePrefab: {fileID: 0}
   m_IsCraftable: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
   - {fileID: 7151103955876033866}
   - {fileID: 3426596589855734864}
   - {fileID: -2111493324413642678}
+  - {fileID: 7847235331123951169}
   currencies: []
   raritys: []
   categories:
@@ -387,7 +388,7 @@ MonoBehaviour:
     type: 3}
   m_Description: 
   m_Category: {fileID: 4790584619267302717}
-  m_IsSellable: 1
+  m_IsSellable: 0
   m_BuyPrice: 0
   m_CanBuyBack: 1
   m_BuyCurrency: {fileID: 0}
@@ -395,7 +396,7 @@ MonoBehaviour:
   m_SellCurrency: {fileID: 0}
   m_Stack: 1
   m_MaxStack: 1
-  m_IsDroppable: 1
+  m_IsDroppable: 0
   m_DropSound: {fileID: 0}
   m_OverridePrefab: {fileID: 0}
   m_IsCraftable: 0
@@ -430,7 +431,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 0}
   m_Description: 
   m_Category: {fileID: 4790584619267302717}
-  m_IsSellable: 1
+  m_IsSellable: 0
   m_BuyPrice: 0
   m_CanBuyBack: 1
   m_BuyCurrency: {fileID: 0}
@@ -438,7 +439,7 @@ MonoBehaviour:
   m_SellCurrency: {fileID: 0}
   m_Stack: 1
   m_MaxStack: 1
-  m_IsDroppable: 1
+  m_IsDroppable: 0
   m_DropSound: {fileID: 0}
   m_OverridePrefab: {fileID: 0}
   m_IsCraftable: 0
@@ -523,7 +524,7 @@ MonoBehaviour:
     type: 3}
   m_Description: 
   m_Category: {fileID: 4790584619267302717}
-  m_IsSellable: 1
+  m_IsSellable: 0
   m_BuyPrice: 0
   m_CanBuyBack: 1
   m_BuyCurrency: {fileID: 0}
@@ -566,7 +567,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 0}
   m_Description: 
   m_Category: {fileID: 4790584619267302717}
-  m_IsSellable: 1
+  m_IsSellable: 0
   m_BuyPrice: 0
   m_CanBuyBack: 1
   m_BuyCurrency: {fileID: 0}
@@ -574,7 +575,51 @@ MonoBehaviour:
   m_SellCurrency: {fileID: 0}
   m_Stack: 1
   m_MaxStack: 1
-  m_IsDroppable: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 2
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: Blacksmithy
+  m_CraftingModifier:
+    modifiers: []
+  ingredients: []
+  properties: []
+--- !u!114 &7847235331123951169
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14be5e3e6cf2204293682bf65bce5dc, type: 3}
+  m_Name: Key
+  m_EditorClassIdentifier: 
+  m_Id: e565aa15-26ce-4245-91bd-ecad1215d355
+  m_ItemName: Key
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 21300000, guid: 59b6786784e793c4a80e639bc999e376, type: 3}
+  m_Prefab: {fileID: 7032414749113971676, guid: 85f3a5b4e7cb98a40aa98336fc983aae,
+    type: 3}
+  m_Description: 
+  m_Category: {fileID: 4790584619267302717}
+  m_IsSellable: 0
+  m_BuyPrice: 0
+  m_CanBuyBack: 1
+  m_BuyCurrency: {fileID: 0}
+  m_SellPrice: 0
+  m_SellCurrency: {fileID: 0}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
   m_DropSound: {fileID: 0}
   m_OverridePrefab: {fileID: 0}
   m_IsCraftable: 0
