@@ -47,6 +47,8 @@ public class GameCtrl : MonoBehaviour
     public TextMeshProUGUI m_Investigate_Text;
     public TextMeshProUGUI m_acquire_Text;
     public Canvas m_canvas;
+    public GameObject m_zombie_mouse_UI;
+    public GameObject m_mouse_UI;
 
 
     [Header("TimeAttack")]
@@ -258,6 +260,24 @@ public class GameCtrl : MonoBehaviour
         else
         {
             m_Lab_Report_UI.SetActive(false);
+        }
+
+        if(m_pressR && m_Zombie_Mouse_investigate)
+        {
+            m_zombie_mouse_UI.SetActive(true);
+        }
+        else
+        {
+            m_zombie_mouse_UI.SetActive(false);
+        }
+
+        if(m_pressR && m_Mouse_investigate)
+        {
+            m_mouse_UI.SetActive(true);
+        }
+        else
+        {
+            m_mouse_UI.SetActive(false);
         }
 
 
