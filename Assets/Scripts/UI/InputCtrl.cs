@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Input : MonoBehaviour
+public class InputCtrl : MonoBehaviour
 {
     public InputField m_InputField;
     public Text m_Text;
