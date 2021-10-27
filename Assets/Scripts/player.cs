@@ -263,10 +263,12 @@ public class player : MonoBehaviour
         if (moveDirX != 0 || moveDirZ != 0)
         {
             isMove = true;
+            m_Anim.SetBool("IDLE", false);
         }
         else
         {
             isMove = false;
+            m_Anim.SetBool("IDLE", true);
         }
 
         m_Anim.SetBool("WALK", isMove);
