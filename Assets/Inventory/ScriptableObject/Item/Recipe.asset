@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 065368519fced7d44bfaa584aaf23ef5, type: 3}
-  m_Name: ZombieSyringe
+  m_Name: Recipe
   m_EditorClassIdentifier: 
-  uiDisplay: {fileID: 21300000, guid: c1740abd6a6264e529dc6728307519cb, type: 3}
-  stackable: 0
-  type: 0
-  description: "\uCD08\uB85D\uC0C9 \uC57D\uC774 \uB4E0 \uC8FC\uC0AC\uAE30\uC774\uB2E4."
+  uiDisplay: {fileID: 21300000, guid: 5de0bba441f2248ea875cd4d9720204f, type: 3}
+  stackable: 1
+  type: 1
+  description: "\uBB3C\uAC74\uC744 \uB9CC\uB4E4 \uC218 \uC788\uB294 \uB808\uC2DC\uD53C\uAC00
+    \uB4E4\uC5B4\uC788\uB294 \uBB38\uC11C\uB2E4."
   data:
-    Name: Green_Syringe
+    Name: Recipe
     Id: 4
     buffs: []
     itemType: 0

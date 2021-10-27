@@ -14,7 +14,8 @@ public class ItemDatabaseObject : ScriptableObject
     {
         for (int i = 0; i < ItemObjects.Length; i++)
         {
-            ItemObjects[i].data.Id = i;
+            if(ItemObjects[i] != null)
+                ItemObjects[i].data.Id = i;
         }
     }
 }

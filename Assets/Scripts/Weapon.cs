@@ -18,7 +18,7 @@ public class Weapon : MonoBehaviour
     public GameObject m_Gun_UI;
     public GameObject m_Gun;
 
-    private float fireTimer;
+    private float fireTimer = 0f;
 
     public Transform shootPoint;
 
@@ -27,6 +27,7 @@ public class Weapon : MonoBehaviour
     {
         currentBullets = bulletsPerMag;
         m_bullet_info_text.text = currentBullets + "/" + bulletsTotal;
+        fireTimer = 0f;
     }
 
     // Update is called once per frame
@@ -51,11 +52,16 @@ public class Weapon : MonoBehaviour
             {
                 Reload();
             }
+
+            if (fireTimer < fireRate)
+                fireTimer += Time.deltaTime;
+            else
+                fireTimer = 0f;
         }
 
-        if(fireTimer < fireRate)
+        if (Input.GetMouseButtonUp(0))
         {
-            fireTimer += Time.deltaTime;
+            fireTimer = 0f;
         }
     }
 
@@ -73,7 +79,7 @@ public class Weapon : MonoBehaviour
     private void Fire()
     {
         if (fireTimer < fireRate)
-            return;
+            return;        
 
         Debug.Log("Shot Fired");
         RaycastHit hit;
@@ -83,7 +89,7 @@ public class Weapon : MonoBehaviour
             {
                 hit.collider.gameObject.SendMessage("Hit", 80);
                 Debug.Log("Hit");
-            }
+            }            
             Debug.Log("hit" + hit.collider.gameObject.name);
         }
 

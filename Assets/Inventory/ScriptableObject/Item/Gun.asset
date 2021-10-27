@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 065368519fced7d44bfaa584aaf23ef5, type: 3}
-  m_Name: Water
+  m_Name: Gun
   m_EditorClassIdentifier: 
-  uiDisplay: {fileID: 21300000, guid: 1a7dd052ef570468faf927188948ab73, type: 3}
-  stackable: 1
+  uiDisplay: {fileID: 21300000, guid: 236d1f8d057094fbc87cdfacec863591, type: 3}
+  stackable: 0
   type: 2
-  description: "\uBB3C"
+  description: "\uCD1D"
   data:
-    Name: Water
-    Id: 2
+    Name: Gun
+    Id: 3
     buffs: []
-    itemType: 2
+    itemType: 0
   RecipeData:
     result: {fileID: 0}
     resultamount: 1
