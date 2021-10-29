@@ -27,9 +27,6 @@ public class ActionController : MonoBehaviour
     private GameObject inventoryScreen, craftingScreen;
 
 
-    [SerializeField]
-    private int treeLoggingTime = 3;
-
     private bool inventoryOpen = false;
     private bool CraftingOpen = false;
 
