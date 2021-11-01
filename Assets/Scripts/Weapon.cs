@@ -22,6 +22,12 @@ public class Weapon : MonoBehaviour
 
     public Transform shootPoint;
 
+    [SerializeField]
+    private InventoryObject inventory;
+
+    [SerializeField]
+    private ItemObject GunItem;
+
     // Start is called before the first frame update
     void Start()
     {

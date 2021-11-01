@@ -11,7 +11,7 @@ public class GUICtrl : MonoBehaviour
         if (uiInstance == null)
         {
             uiInstance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
             Destroy(gameObject);

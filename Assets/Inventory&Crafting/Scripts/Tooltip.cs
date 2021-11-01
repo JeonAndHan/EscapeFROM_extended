@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Tooltip : MonoBehaviour
 {
     [SerializeField]
     private GameObject go_Base;
 
+    //[SerializeField]
+    //private Text txt_ItemName;
+    //[SerializeField]
+    //private Text txt_ItemDesc;
+
     [SerializeField]
-    private Text txt_ItemName;
+    private TextMeshProUGUI txt_ItemName;
     [SerializeField]
-    private Text txt_ItemDesc;
-    [SerializeField]
-    private Text txt_ItemHowtoUsed;
+    private TextMeshProUGUI txt_ItemDesc;
+    //[SerializeField]
+    //private Text txt_ItemHowtoUsed;
 
     //툴팁을 마우스커서 기준으로 아래에 출력시킨다
     public void ShowToolTip(ItemObject _item, Vector3 _pos)

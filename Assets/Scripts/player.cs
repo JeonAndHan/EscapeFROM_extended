@@ -21,7 +21,10 @@ public class player : MonoBehaviour
     private int m_JumpCount = 0;
     private bool m_isRun;
     private bool m_isGunWithRun;
-    
+
+    [SerializeField]
+    ActionController m_actionController;
+
     [Header("ShortCape변수")]
     public bool m_wearCape;
     [SerializeField]
@@ -117,93 +120,95 @@ public class player : MonoBehaviour
 
         if (!m_isDead)
         {
-            if (!m_gameCtrl.m_pressR)
+            if (!m_actionController.playerLock)
             {
-                Move();
-                camera_Rotation();
-                character_Rotation();
-            }
-         
-            if (Input.GetMouseButton(0) && !m_gameCtrl.m_pressR)
-            {
-                
-                if (m_player_weapon.activeInHierarchy)
+                if (!m_gameCtrl.m_pressR)
                 {
-                    m_Anim.SetBool("WEAPONATTACK", true);
-                    m_Anim.SetBool("WALK", false);
-                    m_is_Weapon_attack = true;
-                    Effect.EffectPlay(2);
-                }
-                else if (m_Gun.activeInHierarchy)
-                {
-                    m_Anim.SetBool("SHOOT", true);
-                    m_Anim.SetBool("WALK", false);
-                }
-                else
-                {
-                    m_Anim.SetBool("ATTACK", true);
-                    m_is_Weapon_attack = false;
+                    Move();
+                    camera_Rotation();
+                    character_Rotation();
                 }
 
-            }
-            else
-            {
-                if (m_player_weapon.activeInHierarchy)
+                if (Input.GetMouseButton(0) && !m_gameCtrl.m_pressR)
                 {
-                    m_Anim.SetBool("WEAPONATTACK", false);                  
-                    // m_weaponAttackArea.SetActive(false);
-                }
-                else if(m_Gun.activeInHierarchy)
-                {
-                    m_Anim.SetBool("SHOOT", false);
+
+                    if (m_player_weapon.activeInHierarchy)
+                    {
+                        m_Anim.SetBool("WEAPONATTACK", true);
+                        m_Anim.SetBool("WALK", false);
+                        m_is_Weapon_attack = true;
+                        Effect.EffectPlay(2);
+                    }
+                    else if (m_Gun.activeInHierarchy)
+                    {
+                        m_Anim.SetBool("SHOOT", true);
+                        m_Anim.SetBool("WALK", false);
+                    }
+                    else
+                    {
+                        m_Anim.SetBool("ATTACK", true);
+                        m_is_Weapon_attack = false;
+                    }
+
                 }
                 else
                 {
-                    m_Anim.SetBool("ATTACK", false);
-                    //m_handAttackArea.SetActive(false);
+                    if (m_player_weapon.activeInHierarchy)
+                    {
+                        m_Anim.SetBool("WEAPONATTACK", false);
+                        // m_weaponAttackArea.SetActive(false);
+                    }
+                    else if (m_Gun.activeInHierarchy)
+                    {
+                        m_Anim.SetBool("SHOOT", false);
+                    }
+                    else
+                    {
+                        m_Anim.SetBool("ATTACK", false);
+                        //m_handAttackArea.SetActive(false);
+                    }
+
                 }
 
-            }
+                if (Input.GetKey(KeyCode.Z) && !m_gameCtrl.m_pressR)
+                {
+                    m_Anim.SetBool("PICKUP", true);
+                }
+                else
+                {
+                    m_Anim.SetBool("PICKUP", false);
+                }
 
-            if (Input.GetKey(KeyCode.Z) && !m_gameCtrl.m_pressR)
-            {
-                m_Anim.SetBool("PICKUP", true);
-            }
-            else
-            {
-                m_Anim.SetBool("PICKUP", false);
-            }
+                if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !m_gameCtrl.m_pressR)
+                {
+                    m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 6, m_rigidbody.velocity.z);
+                    m_JumpCount++;
+                }
+                m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
 
-            if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !m_gameCtrl.m_pressR)
-            {
-                m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 6, m_rigidbody.velocity.z);
-                m_JumpCount++;
-            }
-            m_Anim.SetFloat("JUMP", m_rigidbody.velocity.y);
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    m_isRun = true;
+                    m_isGunWithRun = true;
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                m_isRun = true;
-                m_isGunWithRun = true;
+                }
 
-            }
+                if (Input.GetKeyUp(KeyCode.LeftShift))
+                {
+                    m_isRun = false;
+                    m_isGunWithRun = false;
+                }
 
-            if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                m_isRun = false;
-                m_isGunWithRun = false;
-            }
-
-            if (m_ShortCape.activeInHierarchy)
-            {
-                m_wearCape = true;
-            }
-            else
-            {
-                m_wearCape = false;
+                if (m_ShortCape.activeInHierarchy)
+                {
+                    m_wearCape = true;
+                }
+                else
+                {
+                    m_wearCape = false;
+                }
             }
         }
-
     }
 
 
