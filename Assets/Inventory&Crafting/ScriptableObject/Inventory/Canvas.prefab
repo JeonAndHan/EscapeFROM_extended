@@ -31,7 +31,7 @@ RectTransform:
   m_Children:
   - {fileID: 3535238498461299520}
   m_Father: {fileID: 3535238498792407918}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -294,10 +294,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 3535238499058728821}
   - {fileID: 3535238499174485052}
   - {fileID: 3535238498416756852}
   - {fileID: 218311301513358985}
-  - {fileID: 3535238499058728821}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -459,7 +459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3535238499058728821
 RectTransform:
   m_ObjectHideFlags: 0
@@ -473,7 +473,7 @@ RectTransform:
   m_Children:
   - {fileID: 3535238499888460866}
   m_Father: {fileID: 3535238498792407918}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -527,7 +527,7 @@ RectTransform:
   m_Children:
   - {fileID: 3535238499773183369}
   m_Father: {fileID: 3535238498792407918}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -855,7 +855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3535238499888460866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -958,7 +958,7 @@ PrefabInstance:
     - target: {fileID: 8150413160309972969, guid: caaa3d5c257b20242919548084b01333,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8150413160309972969, guid: caaa3d5c257b20242919548084b01333,
         type: 3}
@@ -1029,6 +1029,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CursorOnItemText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150413161687936916, guid: caaa3d5c257b20242919548084b01333,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150413161687936916, guid: caaa3d5c257b20242919548084b01333,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150413161687936922, guid: caaa3d5c257b20242919548084b01333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caaa3d5c257b20242919548084b01333, type: 3}

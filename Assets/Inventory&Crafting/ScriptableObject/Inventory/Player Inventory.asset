@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
   savePath: /inventory.save
-  database: {fileID: 0}
+  database: {fileID: 11400000, guid: 1808edea240d75f4e8be965f875fb5fb, type: 2}
   type: 0
   Container:
     Slots:
