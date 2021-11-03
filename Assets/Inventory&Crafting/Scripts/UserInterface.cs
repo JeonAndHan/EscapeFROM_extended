@@ -21,6 +21,8 @@ public abstract class UserInterface : MonoBehaviour
 
     private MouseButton mouseButton;
 
+    public bool enterFirst = false;
+
     //게임 실행시 인터페이스 구성
     public void Awake()
     {
@@ -30,8 +32,8 @@ public abstract class UserInterface : MonoBehaviour
             inventory.GetSlots[i].parent = this;
             inventory.GetSlots[i].onAfterUpdated += OnSlotUpdate;
         }
-        AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
-        AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });        
+        //AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
+        //AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });        
     }
 
     private void OnEnable()
@@ -85,33 +87,58 @@ public abstract class UserInterface : MonoBehaviour
         trigger.triggers.Add(eventTrigger);
     }
 
+    protected void ClearEvent(GameObject obj)
+    {
+        EventTrigger trigger = obj.GetComponent<EventTrigger>();
+        if (!trigger) { Debug.LogWarning("No EventTrigger component found!"); return; }
+        trigger.triggers.Clear();
+    }
+
     public void OnEnter(GameObject obj)
     {
-        MouseData.slotHoveredOver = obj;
-        if (MouseData.interfaceMouseIsOver)
+        //if (enterFirst)
         {
-            InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
-            if (mouseHoverSlotData.item.Id > -1 && MouseData.interfaceMouseIsOver)
+            Debug.Log(" 2) --- OnEnter ---");
+            MouseData.interfaceMouseIsOver = gameObject.GetComponent<UserInterface>();
+            MouseData.slotHoveredOver = obj;
+            if (MouseData.interfaceMouseIsOver)
             {
-                theItemEffectDatabase.ShowToolTip(mouseHoverSlotData.GetItemObject(), obj.transform.position);
+                Debug.Log("--- MouseData.interfaceMouseIsOver ---");
+                InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
+                if (mouseHoverSlotData.item.Id > -1 && MouseData.interfaceMouseIsOver)
+                {
+                    Debug.Log("--- if (mouseHoverSlotData.item.Id > -1 && MouseData.interfaceMouseIsOver) ---");
+                    theItemEffectDatabase.ShowToolTip(mouseHoverSlotData.GetItemObject(), obj.transform.position);
+                    //                Debug.Log("mouse on inventory");
+                }
             }
-        }       
+        }  
     }
 
     public void OnEnterInterface(GameObject obj)
     {
         MouseData.interfaceMouseIsOver = obj.GetComponent<UserInterface>();
+        Debug.Log(" 1) -- OnEnterInterface --- ");
+
+        enterFirst = true;
     }
 
     public void OnExitInterface(GameObject obj)
     {
         MouseData.interfaceMouseIsOver = null;
+        Debug.Log("-- OnExitInterface --");
     }
 
     public void OnExit(GameObject obj)
     {
         MouseData.slotHoveredOver = null;
         theItemEffectDatabase.HideToolTip();
+        Debug.Log("OnExit");
+
+        enterFirst = false;
+
+        //null로 바꿔주기
+        //MouseData.interfaceMouseIsOver = gameObject.GetComponent<UserInterface>();
     }
 
     public void OnDragStart(GameObject obj)

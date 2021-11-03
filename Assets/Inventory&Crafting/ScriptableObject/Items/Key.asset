@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 0}
   stackable: 0
   type: 2
-  description: "2\uCE35 \uBB38\uC744 \uC5F4 \uC218 \uC788\uB294 \uC5F4\uC1E0"
+  description: The key to opening the door on the 2nd floor.
   data:
     Name: Key
     Id: -1
