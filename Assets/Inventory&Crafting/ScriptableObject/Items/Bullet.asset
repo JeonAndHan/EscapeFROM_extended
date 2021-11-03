@@ -15,10 +15,10 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 31f69347040b3fd4cb409687b1c5bc42, type: 3}
   stackable: 1
   type: 2
-  description: "\uCD1D\uC54C"
+  description: Each time it is used, it is loaded ten times.
   data:
     Name: Bullet
-    Id: 0
+    Id: 2
     buffs: []
     itemType: 2
   RecipeData:

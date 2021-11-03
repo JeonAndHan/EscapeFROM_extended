@@ -15,7 +15,8 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 75fbf91503cc140839f1cf52259a08dc, type: 3}
   stackable: 0
   type: 2
-  description: "\uB3C4\uB07C"
+  description: An ax that you don't know where to use it. It would be nice to have
+    it.
   data:
     Name: Axe
     Id: 1
