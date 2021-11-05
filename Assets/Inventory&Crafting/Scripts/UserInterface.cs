@@ -96,49 +96,36 @@ public abstract class UserInterface : MonoBehaviour
 
     public void OnEnter(GameObject obj)
     {
-        //if (enterFirst)
-        {
-            Debug.Log(" 2) --- OnEnter ---");
+      
             MouseData.interfaceMouseIsOver = gameObject.GetComponent<UserInterface>();
             MouseData.slotHoveredOver = obj;
-            if (MouseData.interfaceMouseIsOver)
+        if (MouseData.interfaceMouseIsOver)
+        {
+            InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
+            if (mouseHoverSlotData.item.Id > -1 && MouseData.interfaceMouseIsOver)
             {
-                Debug.Log("--- MouseData.interfaceMouseIsOver ---");
-                InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
-                if (mouseHoverSlotData.item.Id > -1 && MouseData.interfaceMouseIsOver)
-                {
-                    Debug.Log("--- if (mouseHoverSlotData.item.Id > -1 && MouseData.interfaceMouseIsOver) ---");
-                    theItemEffectDatabase.ShowToolTip(mouseHoverSlotData.GetItemObject(), obj.transform.position);
-                    //                Debug.Log("mouse on inventory");
-                }
+                theItemEffectDatabase.ShowToolTip(mouseHoverSlotData.GetItemObject(), obj.transform.position);
             }
-        }  
+        }
+     
     }
 
     public void OnEnterInterface(GameObject obj)
     {
         MouseData.interfaceMouseIsOver = obj.GetComponent<UserInterface>();
-        Debug.Log(" 1) -- OnEnterInterface --- ");
-
-        enterFirst = true;
     }
 
     public void OnExitInterface(GameObject obj)
     {
         MouseData.interfaceMouseIsOver = null;
-        Debug.Log("-- OnExitInterface --");
     }
 
     public void OnExit(GameObject obj)
     {
         MouseData.slotHoveredOver = null;
         theItemEffectDatabase.HideToolTip();
-        Debug.Log("OnExit");
 
-        enterFirst = false;
-
-        //null로 바꿔주기
-        //MouseData.interfaceMouseIsOver = gameObject.GetComponent<UserInterface>();
+        MouseData.interfaceMouseIsOver = null;
     }
 
     public void OnDragStart(GameObject obj)

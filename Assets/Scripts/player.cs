@@ -22,9 +22,6 @@ public class player : MonoBehaviour
     private bool m_isRun;
     private bool m_isGunWithRun;
 
-    [SerializeField]
-    ActionController m_actionController;
-
     [Header("ShortCape변수")]
     public bool m_wearCape;
     [SerializeField]
@@ -62,7 +59,11 @@ public class player : MonoBehaviour
     [SerializeField]
     private Weapon m_weaponScript;
 
-
+    [Header("Inventory 변수")]
+    [SerializeField]
+    ActionController m_actionController;
+    public InventoryObject inventory;
+    public bool b_itemTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -310,6 +311,14 @@ public class player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             m_JumpCount = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Item"))
+        {
+            b_itemTrigger = true;
         }
     }
 
