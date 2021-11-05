@@ -9,11 +9,6 @@ public class Tooltip : MonoBehaviour
     [SerializeField]
     private GameObject go_Base;
 
-    //[SerializeField]
-    //private Text txt_ItemName;
-    //[SerializeField]
-    //private Text txt_ItemDesc;
-
     [SerializeField]
     private TextMeshProUGUI txt_ItemName;
     [SerializeField]
