@@ -18,6 +18,11 @@ public class ItemEffectDatabase : MonoBehaviour
     [SerializeField]
     private Tooltip theSlotToolTip;
 
+    [SerializeField]
+    private Weapon GunCtrl;
+
+    private const string RedSyringe = "RedSyringe", GreenSyringe = "GreenSyringe";
+
     // private AudioSource pickup;
 
     private void Awake()
@@ -30,7 +35,7 @@ public class ItemEffectDatabase : MonoBehaviour
         theSlotToolTip = GameObject.Find("GUI").transform.Find("Tooltip").GetComponent<Tooltip>();
     }
 
-    //아이템 사용시 발생할 효과 현재 Food만 구현
+    //아이템 사용 시 불릴 함수
     public void UseItem(Item item)
     {
         for (int i = 0; i < itemEffects.Length; i++)
@@ -41,28 +46,34 @@ public class ItemEffectDatabase : MonoBehaviour
 
                 if (itemEffects[i]._item.data.itemType == ItemType.Food)
                 {
-                    for (int j = 0; j < itemEffects[i].part.Length; j++)
+                    if (item.Name == "RedSyringe")
                     {
-                        //switch (itemEffects[i].part[j])
-                        //{
-                        //    case HP:
-                        //        timer.UpdateTimer(0, itemEffects[i].num[j]);
-                        //        break;
-                        //    case TP:
-                        //        timer.UpdateTimer(1, itemEffects[i].num[j]);
-                        //        break;
-                        //    case O2:
-                        //        timer.UpdateTimer(2, itemEffects[i].num[j]);
-                        //        break;
-                        //    default:
-                        //        Debug.Log("잘못된 Status 부위.");
-                        //        break;
+                        //좀비 치료제 사용 -> 아무 효과도 없을듯?
                     }
-                    Debug.Log(item.Name + " 을 사용했습니다.");
+                    else if (item.Name == "GreenSyringe")
+                    {
+                        //좀비로 만드는 약 얻음 -> 좀비가 되면서 game over
+                    }
                 }
-                return;
+                else if (itemEffects[i]._item.data.itemType == ItemType.Tool)
+                {
+                    if (item.Name == "Bullet")
+                    {
+                        //bullet 사용시 reload 함수 호출
+                        GunCtrl.Reload();
+                    }
+                    else if (item.Name == "Gun")
+                    {
+                        //총 장착 -> 장착되어 있다면 못 누르게 하거나 inventory에서 없애기
+                    }
+                    else if(item.Name == "Axe")
+                    {
+                        //도끼 장착 -> 장착되어 있다면 못 누르게 하거나 inventory에서 없애기
+                    }
+                }
             }
         }
+        Debug.Log("itemEffectDatabase에 일치하는 itemName이 없습니다.");
     }
 
 

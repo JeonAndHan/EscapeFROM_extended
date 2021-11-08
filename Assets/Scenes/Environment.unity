@@ -29573,6 +29573,7 @@ MonoBehaviour:
     part: []
     num: 
   theSlotToolTip: {fileID: 530411127341286346}
+  GunCtrl: {fileID: 172332542}
 --- !u!4 &861808354
 Transform:
   m_ObjectHideFlags: 0
@@ -55762,7 +55763,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1717156100167254, guid: b0802966540a22a4e9046424ac4e393c, type: 3}
       propertyPath: m_Name
-      value: Weapon
+      value: Axe
       objectReference: {fileID: 0}
     - target: {fileID: 1717156100167254, guid: b0802966540a22a4e9046424ac4e393c, type: 3}
       propertyPath: m_IsActive
@@ -70793,13 +70794,13 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: a5f26efdc1e8cc34aae11e6f485c97f2, type: 2}
   theItemEffectDatabase: {fileID: 0}
   enterFirst: 0
-  inventoryPrefab: {fileID: 2139199679936113701, guid: 273c777b0df91f143b491b37bb04f6b4,
+  inventoryPrefab: {fileID: 2139199679936113701, guid: e25d6c6d3405d924593e1a99c9dabf3b,
     type: 3}
-  X_START: -50
-  Y_START: 170
-  X_SPACE_BETWEEN_ITEM: 50
-  NUMBER_OF_COLUMN: 3
-  Y_SPACE_BETWEEN_ITEMS: 50
+  X_START: 0
+  Y_START: 110
+  X_SPACE_BETWEEN_ITEM: 52
+  NUMBER_OF_COLUMN: 1
+  Y_SPACE_BETWEEN_ITEMS: 110
 --- !u!1 &530411126763786235
 GameObject:
   m_ObjectHideFlags: 0
@@ -70879,7 +70880,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -704, y: -42}
-  m_SizeDelta: {x: 170, y: 350}
+  m_SizeDelta: {x: 130, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &530411126763786239
 CanvasRenderer:
@@ -71206,8 +71207,8 @@ MonoBehaviour:
   enterFirst: 0
   inventoryPrefab: {fileID: 2139199679936113701, guid: 273c777b0df91f143b491b37bb04f6b4,
     type: 3}
-  X_START: -82
-  Y_START: 120
+  X_START: -80
+  Y_START: 122
   X_SPACE_BETWEEN_ITEM: 53
   NUMBER_OF_COLUMN: 4
   Y_SPACE_BETWEEN_ITEMS: 61
@@ -77276,6 +77277,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1271570089893329052, guid: aa2679393a5d0504897d7d646bc89136,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 2c3499a930b25664489c160f38b7658a, type: 3}
     - target: {fileID: 1271570089894323356, guid: aa2679393a5d0504897d7d646bc89136,
         type: 3}
       propertyPath: m_Name
@@ -77285,6 +77291,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271570089894323356, guid: aa2679393a5d0504897d7d646bc89136,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271570089894323356, guid: aa2679393a5d0504897d7d646bc89136,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1271570089894323359, guid: aa2679393a5d0504897d7d646bc89136,
         type: 3}
@@ -77346,7 +77362,7 @@ PrefabInstance:
     - target: {fileID: 1271570089894623420, guid: aa2679393a5d0504897d7d646bc89136,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1271570089894623420, guid: aa2679393a5d0504897d7d646bc89136,
         type: 3}

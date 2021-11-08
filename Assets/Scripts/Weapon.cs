@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
     public TextMeshProUGUI m_bullet_info_text;  //총알 개수 UI
     public GameObject m_Gun_UI;
     public GameObject m_Gun;
+    public bool b_canFire;
 
     private float fireTimer = 0f;
 
@@ -34,6 +35,7 @@ public class Weapon : MonoBehaviour
         currentBullets = bulletsPerMag;
         m_bullet_info_text.text = currentBullets + "/" + bulletsTotal;
         fireTimer = 0f;
+        b_canFire = false;
     }
 
     // Update is called once per frame
@@ -53,10 +55,11 @@ public class Weapon : MonoBehaviour
             if (currentBullets > 0)
             {
                 Fire();
+                b_canFire = true;
             }
             else
             {
-                Reload();
+                b_canFire = false;
             }
 
             if (fireTimer < fireRate)
