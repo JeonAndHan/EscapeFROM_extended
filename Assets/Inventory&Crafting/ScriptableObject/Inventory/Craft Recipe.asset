@@ -19,8 +19,15 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: Wood
-        Id: 2
+        Name: R_GreenSyringe
+        Id: 8
+        buffs: []
+        itemType: 1
+      amount: 1
+    - AllowedItems: 
+      item:
+        Name: R_RedSyringe
+        Id: 9
         buffs: []
         itemType: 1
       amount: 1
@@ -29,5 +36,5 @@ MonoBehaviour:
         Name: 
         Id: -1
         buffs: []
-        itemType: 0
+        itemType: 1
       amount: 0
