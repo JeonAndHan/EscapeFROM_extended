@@ -4,7 +4,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 
-
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject
 {
@@ -95,43 +94,11 @@ public class InventoryObject : ScriptableObject
 
     }
 
-    [ContextMenu("Save")]
-    public void Save()
+    public void CraftingUpdate()
     {
-        #region Optional Save
-        //string saveData = JsonUtility.ToJson(Container, true);
-        //BinaryFormatter bf = new BinaryFormatter();
-        //FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
-        //bf.Serialize(file, saveData);
-        //file.Close();
-        #endregion
-
-        IFormatter formatter = new BinaryFormatter();
-        Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
-        formatter.Serialize(stream, Container);
-        stream.Close();
-    }
-
-    [ContextMenu("Load")]
-    public void Load()
-    {
-        if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+        for (int i = 0; i < GetSlots.Length; i++)
         {
-            #region Optional Load
-            //BinaryFormatter bf = new BinaryFormatter();
-            //FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
-            //JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), Container);
-            //file.Close();
-            #endregion
-
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
-            Inventory newContainer = (Inventory)formatter.Deserialize(stream);
-            for (int i = 0; i < GetSlots.Length; i++)
-            {
-                GetSlots[i].UpdateSlot(newContainer.Slots[i].item, newContainer.Slots[i].amount);
-            }
-            stream.Close();
+            GetSlots[i].UpdateSlot(this.Container.Slots[i].item, this.Container.Slots[i].amount);
         }
     }
 

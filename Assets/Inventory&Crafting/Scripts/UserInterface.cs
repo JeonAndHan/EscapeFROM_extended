@@ -21,7 +21,6 @@ public abstract class UserInterface : MonoBehaviour
 
     private MouseButton mouseButton;
 
-    public bool enterFirst = false;
 
     //게임 실행시 인터페이스 구성
     public void Awake()
@@ -32,8 +31,8 @@ public abstract class UserInterface : MonoBehaviour
             inventory.GetSlots[i].parent = this;
             inventory.GetSlots[i].onAfterUpdated += OnSlotUpdate;
         }
-        //AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
-        //AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });        
+        AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
+        AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });        
     }
 
     private void OnEnable()

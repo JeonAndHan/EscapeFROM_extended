@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Syringe
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 21300000, guid: c6fa049794b4f47eb9f45cac3e6d698c, type: 3}
-  stackable: 0
+  stackable: 1
   type: 2
   description: Empty Syringe
   data:
