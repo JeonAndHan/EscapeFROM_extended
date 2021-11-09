@@ -19,22 +19,15 @@ MonoBehaviour:
     Slots:
     - AllowedItems: 
       item:
-        Name: R_GreenSyringe
+        Name: RecipeGreenSyringe
         Id: 8
         buffs: []
         itemType: 1
       amount: 1
     - AllowedItems: 
       item:
-        Name: R_RedSyringe
+        Name: RecipeRedSyringe
         Id: 9
         buffs: []
         itemType: 1
       amount: 1
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-        itemType: 1
-      amount: 0

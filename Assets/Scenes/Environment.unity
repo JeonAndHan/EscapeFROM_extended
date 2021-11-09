@@ -42063,7 +42063,8 @@ RectTransform:
   - {fileID: 1484858380}
   - {fileID: 601447269}
   - {fileID: 2127691367}
-  - {fileID: 1778768508}
+  - {fileID: 530411126917379274}
+  - {fileID: 530411127124603010}
   - {fileID: 530411127341286347}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -56481,43 +56482,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778203491}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1778768507
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1778768508}
-  m_Layer: 5
-  m_Name: Inventory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1778768508
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778768507}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 530411127124603010}
-  - {fileID: 530411126917379274}
-  m_Father: {fileID: 1318957154}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 452.7425, y: 312.6316}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1780037344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70779,28 +70743,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &530411126763786234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530411126763786235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d789aaa610bc35e40bbe7de7eeb8314b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: a5f26efdc1e8cc34aae11e6f485c97f2, type: 2}
-  theItemEffectDatabase: {fileID: 0}
-  enterFirst: 0
-  inventoryPrefab: {fileID: 2139199679936113701, guid: e25d6c6d3405d924593e1a99c9dabf3b,
-    type: 3}
-  X_START: 0
-  Y_START: 110
-  X_SPACE_BETWEEN_ITEM: 52
-  NUMBER_OF_COLUMN: 1
-  Y_SPACE_BETWEEN_ITEMS: 110
 --- !u!1 &530411126763786235
 GameObject:
   m_ObjectHideFlags: 0
@@ -70813,7 +70755,7 @@ GameObject:
   - component: {fileID: 530411126763786239}
   - component: {fileID: 530411126763786236}
   - component: {fileID: 530411126763786237}
-  - component: {fileID: 530411126763786234}
+  - component: {fileID: 530411126763786240}
   m_Layer: 5
   m_Name: CraftingScreen
   m_TagString: Untagged
@@ -70880,7 +70822,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -704, y: -42}
-  m_SizeDelta: {x: 130, y: 350}
+  m_SizeDelta: {x: 100, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &530411126763786239
 CanvasRenderer:
@@ -70890,6 +70832,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530411126763786235}
   m_CullTransparentMesh: 0
+--- !u!114 &530411126763786240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530411126763786235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d789aaa610bc35e40bbe7de7eeb8314b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: a5f26efdc1e8cc34aae11e6f485c97f2, type: 2}
+  theItemEffectDatabase: {fileID: 0}
+  inventoryPrefab: {fileID: 2139199679936113701, guid: e25d6c6d3405d924593e1a99c9dabf3b,
+    type: 3}
+  X_START: 0
+  Y_START: 90
+  X_SPACE_BETWEEN_ITEM: 0
+  NUMBER_OF_COLUMN: 1
+  Y_SPACE_BETWEEN_ITEMS: 90
 --- !u!224 &530411126917379274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70899,15 +70862,15 @@ RectTransform:
   m_GameObject: {fileID: 530411126917379275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5789474, y: 1.5789474, z: 1.5789474}
+  m_LocalScale: {x: 1.5789473, y: 1.5789473, z: 1.5789473}
   m_Children:
   - {fileID: 530411126763786238}
-  m_Father: {fileID: 1778768508}
-  m_RootOrder: 1
+  m_Father: {fileID: 1318957154}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 86, y: -262.6316}
+  m_AnchoredPosition: {x: 1415.4409, y: 539.99994}
   m_SizeDelta: {x: 1216, y: 684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &530411126917379275
@@ -70992,15 +70955,15 @@ RectTransform:
   m_GameObject: {fileID: 530411127124603134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5789474, y: 1.5789474, z: 1.5789474}
+  m_LocalScale: {x: 1.5789473, y: 1.5789473, z: 1.5789473}
   m_Children:
   - {fileID: 530411127742023991}
-  m_Father: {fileID: 1778768508}
-  m_RootOrder: 0
+  m_Father: {fileID: 1318957154}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -402.74255, y: -262.6316}
+  m_AnchoredPosition: {x: 926.69836, y: 539.99994}
   m_SizeDelta: {x: 1216, y: 684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &530411127124603011
@@ -71087,7 +71050,7 @@ RectTransform:
   m_Children:
   - {fileID: 530411128658544892}
   m_Father: {fileID: 1318957154}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -71204,7 +71167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 02717259b55cbef4595eb93e8ee01274, type: 2}
   theItemEffectDatabase: {fileID: 0}
-  enterFirst: 0
   inventoryPrefab: {fileID: 2139199679936113701, guid: 273c777b0df91f143b491b37bb04f6b4,
     type: 3}
   X_START: -80
@@ -105466,12 +105428,6 @@ MonoBehaviour:
   inventoryScreen: {fileID: 530411127742023988}
   craftingScreen: {fileID: 530411126763786235}
   playerLock: 0
-  _item:
-    Name: 
-    Id: -1
-    buffs: []
-    itemType: 0
-  m_item: {fileID: 0}
   effectDatabase: {fileID: 861808353}
 --- !u!135 &5998523887044935602
 SphereCollider:

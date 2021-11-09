@@ -32,8 +32,8 @@ public class ActionController : MonoBehaviour
 
     public bool playerLock = false;
 
-    public Item _item;
-    public GameObject m_item;
+    private Item _item;
+    private GameObject m_item;
 
 
     [SerializeField]
@@ -43,7 +43,7 @@ public class ActionController : MonoBehaviour
     private void Start()
     {
         CloseInventory();
-        crafting.Load();
+        crafting.CraftingUpdate();
         CloseCrafting();
 
         actionText = GameObject.Find("GUI").transform.Find("CursorOnItemText").transform.Find("ActionText").GetComponent<TextMeshProUGUI>();       
@@ -51,8 +51,6 @@ public class ActionController : MonoBehaviour
 
     void Update()
     {
-        //CheckItem();
-        //TryAction();
 
         if(Input.GetKeyDown(KeyCode.F) && pickupActivated)
         {
@@ -115,6 +113,7 @@ public class ActionController : MonoBehaviour
     public void CloseCrafting()
     {
         CraftingOpen = false;
+        craftingScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         craftingScreen.SetActive(false);
         PlayLock();
     }
@@ -145,17 +144,6 @@ public class ActionController : MonoBehaviour
         playerLock = Lock;
     }
 
-    public void SaveGame()
-    {
-        inventory.Save();
-        crafting.Save();
-    }
-
-    public void LoadGame()
-    {
-        inventory.Load();
-        crafting.Load();
-    }
 
     private void OnTriggerStay(Collider other)
     {

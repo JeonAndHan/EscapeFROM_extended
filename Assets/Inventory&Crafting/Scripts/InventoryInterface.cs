@@ -16,10 +16,7 @@ public class InventoryInterface : UserInterface
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWEEN_ITEMS;
 
-    private void Start()
-    {
-        //ClearEvent(gameObject);
-    }
+
     //인벤토리 슬롯을 생성하고 위치, 이벤트 트리거, 아이콘을 생성한다.
     public override void CreateSlots()
     {
