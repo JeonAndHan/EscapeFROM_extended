@@ -20,7 +20,7 @@ MonoBehaviour:
     Name: RedSyringe
     Id: 0
     buffs: []
-    itemType: 0
+    itemType: 3
   RecipeData:
     result: {fileID: 0}
     resultamount: 1

@@ -20,7 +20,7 @@ MonoBehaviour:
     Name: Key
     Id: 8
     buffs: []
-    itemType: 0
+    itemType: 2
   RecipeData:
     result: {fileID: 0}
     resultamount: 1
