@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 21300000, guid: 0c5f2e34eb5c981458d1e7653634314d, type: 3}
   stackable: 1
-  type: 3
+  type: 2
   description: "It's water you don't know where to use it.\r"
   data:
     Name: Water

@@ -21,7 +21,7 @@ MonoBehaviour:
     Name: Gun
     Id: 3
     buffs: []
-    itemType: 0
+    itemType: 2
   RecipeData:
     result: {fileID: 0}
     resultamount: 1

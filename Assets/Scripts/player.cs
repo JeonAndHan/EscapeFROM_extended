@@ -189,15 +189,26 @@ public class player : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
-                    m_isRun = true;
-                    m_isGunWithRun = true;
-
+                    if (m_Gun.activeInHierarchy)
+                    {
+                        m_isGunWithRun = true;
+                    }
+                    else
+                    {
+                        m_isRun = true;
+                    }
                 }
 
                 if (Input.GetKeyUp(KeyCode.LeftShift))
                 {
-                    m_isRun = false;
-                    m_isGunWithRun = false;
+                    if (m_Gun.activeInHierarchy)
+                    {
+                        m_isGunWithRun = false;
+                    }
+                    else
+                    {
+                        m_isRun = false;
+                    }
                 }
 
                 if (m_ShortCape.activeInHierarchy)
@@ -275,28 +286,35 @@ public class player : MonoBehaviour
         {
             isMove = false;
             m_Anim.SetBool("IDLE", true);
+            m_Anim.SetBool("WALK", false);
+            m_Anim.SetBool("RUN", false);
+            m_Anim.SetBool("RUNWITHGUN", false);
+
         }
 
-        m_Anim.SetBool("WALK", isMove);
 
         if (isMove)
         {
+            m_Anim.SetBool("IDLE", false);
+
             m_rigidbody.MovePosition(transform.position + m_velocity * Time.deltaTime);
 
 
-            if (m_isRun && !m_Gun.activeInHierarchy) //달리는것
+            if (m_isRun && !m_Gun.activeInHierarchy) //총 없이 달리는것
             {
                 m_Anim.SetBool("RUN", true);
                 m_Anim.SetBool("RUNWITHGUN", false);
+                m_Anim.SetBool("WALK", false);
                 m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
             }
-            else if (m_isGunWithRun && m_Gun.activeInHierarchy)
+            else if (m_isGunWithRun && m_Gun.activeInHierarchy) //총이 있을 때 달리는 것
             {
                 m_Anim.SetBool("RUN", false);
                 m_Anim.SetBool("RUNWITHGUN", true);
+                m_Anim.SetBool("WALK", false);
                 m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
             }
-            else
+            else  //walk
             {
                 m_Anim.SetBool("RUN", false);
                 m_Anim.SetBool("RUNWITHGUN", false);
