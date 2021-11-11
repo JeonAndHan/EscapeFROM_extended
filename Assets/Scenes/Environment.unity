@@ -29755,7 +29755,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemEffects:
+  - _item: {fileID: 11400000, guid: 3ea6d342f2acd5145aa8ccb25380ca2f, type: 2}
+    part:
+    - 
+    num: 
   - _item: {fileID: 11400000, guid: 208cd2dce58f46440b8e1806a6f19118, type: 2}
+    part: []
+    num: 
+  - _item: {fileID: 11400000, guid: 7e8b2c3808d568943a5682c08fdf38a3, type: 2}
+    part: []
+    num: 
+  - _item: {fileID: 11400000, guid: 2469844f42ac5e04288615c77c748f02, type: 2}
+    part: []
+    num: 
+  - _item: {fileID: 11400000, guid: 7cc3e23cdde72d94691fd0c7b89dc890, type: 2}
+    part: []
+    num: 
+  - _item: {fileID: 11400000, guid: 4d3ba2ae449b7d04c802c2659feb7b06, type: 2}
+    part: []
+    num: 
+  - _item: {fileID: 11400000, guid: fb6a72dff47710d4abd284667213d7bc, type: 2}
+    part: []
+    num: 
+  - _item: {fileID: 11400000, guid: a460edd40b108d9439ed33b700475ec7, type: 2}
+    part: []
+    num: 
+  - _item: {fileID: 11400000, guid: 1d1aa26154396644b9dd7b78cc20f94d, type: 2}
     part: []
     num: 
   theSlotToolTip: {fileID: 530411127341286346}
