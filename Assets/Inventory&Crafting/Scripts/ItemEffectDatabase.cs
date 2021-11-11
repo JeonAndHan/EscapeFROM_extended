@@ -43,17 +43,21 @@ public class ItemEffectDatabase : MonoBehaviour
 
             if (itemEffects[i]._item.data.Name == item.Name)
             {
-
                 if (itemEffects[i]._item.data.itemType == ItemType.Food)
                 {
-                    if (item.Name == "RedSyringe")
+                    for (int j = 0; j < itemEffects[i].part.Length; j++)
                     {
-                        //좀비 치료제 사용 -> 아무 효과도 없을듯?
+                        if (item.Id == 0)
+                        {
+                            //좀비 치료제 사용 -> 아무 효과도 없을듯?
+                        }
+                        else if (item.Id == 6)
+                        {
+                            //좀비로 만드는 약 얻음 -> 좀비가 되면서 game over
+                        }
+                        Debug.Log(item.Name + " 을 사용했습니다.");
                     }
-                    else if (item.Name == "GreenSyringe")
-                    {
-                        //좀비로 만드는 약 얻음 -> 좀비가 되면서 game over
-                    }
+                    return;
                 }
                 else if (itemEffects[i]._item.data.itemType == ItemType.Tool)
                 {
@@ -66,12 +70,14 @@ public class ItemEffectDatabase : MonoBehaviour
                     {
                         //총 장착 -> 장착되어 있다면 못 누르게 하거나 inventory에서 없애기
                     }
-                    else if(item.Name == "Axe")
+                    else if (item.Name == "Axe")
                     {
                         //도끼 장착 -> 장착되어 있다면 못 누르게 하거나 inventory에서 없애기
                     }
                 }
+                
             }
+             
         }
         Debug.Log("itemEffectDatabase에 일치하는 itemName이 없습니다.");
     }
