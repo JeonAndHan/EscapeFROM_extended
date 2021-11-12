@@ -152,7 +152,6 @@ public class ActionController : MonoBehaviour
             actionText.gameObject.SetActive(true);
             actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to pick up " + other.gameObject.GetComponent<GroundItem>().item.name;
             pickupActivated = true;
-            Debug.Log(other.gameObject.GetComponent<GroundItem>().item.name);
 
             _item = new Item(other.gameObject.GetComponent<GroundItem>().item);
             m_item = other.gameObject;
