@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TextTrigger : MonoBehaviour
 {
-    public bool m_textTrigger = false;
+    public bool b_textTrigger = false;
+
+    public TextMeshProUGUI m_Investigate_text;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,8 @@ public class TextTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("player enter");
-            m_textTrigger = true;
+            b_textTrigger = true;
+            m_Investigate_text.gameObject.SetActive(true);
         }
     }
 
@@ -32,7 +36,8 @@ public class TextTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("player out");
-            m_textTrigger = false;
+            b_textTrigger = false;
+            m_Investigate_text.gameObject.SetActive(false);
         }
     }
 
