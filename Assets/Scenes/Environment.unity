@@ -2846,7 +2846,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -6022,11 +6022,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164908988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.501, y: -9.132, z: 18.673}
+  m_LocalPosition: {x: 19.798, y: -9.132, z: 18.935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 447767046}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &164908990
 MonoBehaviour:
@@ -6037,11 +6037,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 164908988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e7ef1f01546b3a4cb3c0f88a3d0d334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Acquire_text: {fileID: 1844294695}
+  ingameCtrl: {fileID: 1180471240}
+  m_player_cape: {fileID: 1211060352}
+  m_hanger_cape: {fileID: 1686029850}
 --- !u!65 &164908991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6463,11 +6466,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 174773093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 6624a81e90246cd46aeb6e7dc00e8844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Trick: {fileID: 127201021}
 --- !u!65 &174773096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7855,7 +7860,7 @@ GameObject:
   - component: {fileID: 196958688}
   - component: {fileID: 196958687}
   m_Layer: 0
-  m_Name: Room2_Board_Text_Trigger2
+  m_Name: Room2_Board_Text_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7870,11 +7875,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 196958686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 190d790d54d248c4080aa58aed600303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Room2_Board_UI: {fileID: 28616952}
 --- !u!65 &196958688
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8095,7 +8102,7 @@ GameObject:
   - component: {fileID: 219175127}
   - component: {fileID: 219175126}
   m_Layer: 0
-  m_Name: Safe_Text_Trigger
+  m_Name: Room1_Safe_Text_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8110,11 +8117,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 219175125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: fe45fabc358cb4741abd1e85bcd91cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Player_Axe: {fileID: 1639644277}
+  m_Safe_Axe: {fileID: 1717156688133712}
+  m_Acquire_text: {fileID: 1844294695}
+  m_Safe_UI: {fileID: 1562219977}
+  m_keypad: {fileID: 0}
 --- !u!65 &219175127
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9192,7 +9205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247314627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.678, y: -9.435, z: 24.031}
+  m_LocalPosition: {x: 6.678, y: -9.065, z: 23.448}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 447767046}
@@ -9207,11 +9220,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 247314627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: bb22c4651f783084ea0f0b79abb9e8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Zombie_UI: {fileID: 1885061242}
 --- !u!65 &247314630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15708,7 +15723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416897729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.68, y: 1.352, z: 1.49}
+  m_LocalPosition: {x: 8.68, y: 1.352, z: 1.16}
   m_LocalScale: {x: 0.08874526, y: 0.07554716, z: 0.075547166}
   m_Children: []
   m_Father: {fileID: 447767046}
@@ -15723,11 +15738,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 416897729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 330081fa7c964ad4f8990cf37df3e47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
   m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Room1_Board_UI: {fileID: 1899451489}
 --- !u!1 &419160313
 GameObject:
   m_ObjectHideFlags: 0
@@ -18568,9 +18585,9 @@ Transform:
   - {fileID: 786747409}
   - {fileID: 247314628}
   - {fileID: 690112194}
-  - {fileID: 1547995340}
   - {fileID: 164908989}
   - {fileID: 1783465928}
+  - {fileID: 1699450483}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24704,7 +24721,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690112193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.999, y: -9.435, z: 23.903}
+  m_LocalPosition: {x: 8.214, y: -9.089, z: 23.455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 447767046}
@@ -24719,11 +24736,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 690112193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: c625425eeb518114585bb65d40f9d618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Mouse_UI: {fileID: 970855104}
 --- !u!65 &690112196
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28001,11 +28020,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 786747406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 37e0006093a62294493ca7794e036570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Prayer_UI: {fileID: 1031997279}
 --- !u!65 &786747408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30216,7 +30237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897281589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.092, y: 1.323, z: 0.896}
+  m_LocalPosition: {x: 15.092, y: 1.323, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 447767046}
@@ -30231,11 +30252,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 897281589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ab9fd625e3a79241b167a5feec106e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Desk_UI: {fileID: 1647513076}
 --- !u!65 &897281592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31883,7 +31906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4351349087935228, guid: ba04b8d03f30146f58b58231278be18f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56
+      value: 56.076
       objectReference: {fileID: 0}
     - target: {fileID: 4351349087935228, guid: ba04b8d03f30146f58b58231278be18f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -38044,8 +38067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7692893ca3882fa40920b6232855a62d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Room1_Board_Text: {fileID: 416897732}
-  m_Room1_Board_UI: {fileID: 1899451489}
   m_pressR: 0
   m_pressZ: 0
 --- !u!4 &1180471241
@@ -45304,8 +45325,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1414084186}
-  - component: {fileID: 1414084188}
   - component: {fileID: 1414084187}
+  - component: {fileID: 1414084188}
   m_Layer: 0
   m_Name: Computer_Text_Trigger
   m_TagString: Untagged
@@ -45349,11 +45370,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1414084185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: a06432b70e525ff4cac5f215cf703381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_TimeAttack_UI: {fileID: 4526978631874866097}
+  m_Time_Text: {fileID: 1340074649}
+  m_explosion: {fileID: 1053592580}
+  m_explosion_true: 0
 --- !u!1001 &1417798624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48216,7 +48242,6 @@ Transform:
   - {fileID: 967292255}
   - {fileID: 1885138685}
   - {fileID: 269704837}
-  - {fileID: 1699450483}
   - {fileID: 1827910555}
   m_Father: {fileID: 1955537957}
   m_RootOrder: 2
@@ -49140,11 +49165,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1539873850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 52da17a69f7c1814991d42d9c89dbc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_room1_pw: {fileID: 1223550014}
+  m_PW_UI: {fileID: 1223550012}
 --- !u!65 &1539873853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49273,65 +49301,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1541232297}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1547995339
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1547995340}
-  - component: {fileID: 1547995342}
-  - component: {fileID: 1547995341}
-  m_Layer: 0
-  m_Name: Room_Bullet_Text_Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1547995340
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547995339}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.52, y: -9.132, z: 18.817}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 447767046}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1547995341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547995339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
---- !u!65 &1547995342
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547995339}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1550064030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49894,7 +49863,7 @@ GameObject:
   - component: {fileID: 1562219979}
   - component: {fileID: 1562219981}
   m_Layer: 5
-  m_Name: Safe_UI
+  m_Name: Room1_Safe_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50825,7 +50794,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 23006330e69064940bbc83e550bcf857,
         type: 3}
       propertyPath: m_Name
-      value: ShortCape
+      value: Prayer's_ShortCape
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23006330e69064940bbc83e550bcf857,
         type: 3}
@@ -53173,11 +53142,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1659094826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: a7aa3da171d16884095205f3ba365131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
 --- !u!65 &1659094829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53621,38 +53591,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6564b895fdee74988aba57b4a89f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Room1_Board_Text: {fileID: 416897732}
-  m_Room2_Board_Text: {fileID: 196958687}
-  m_Computer_Text: {fileID: 1414084188}
-  m_Desk_Text: {fileID: 897281591}
-  m_Safe_Text: {fileID: 219175126}
-  m_Room1PW_Text: {fileID: 1539873852}
-  m_Statue1_Text: {fileID: 1659094828}
-  m_Statue2_Text: {fileID: 1821647538}
-  m_Statue3_Text: {fileID: 174773095}
-  m_Room2PW_Text: {fileID: 2058949945}
-  m_PrayerRoom_Text: {fileID: 786747407}
-  m_Lab_Report_Text: {fileID: 1699450484}
-  m_Zombie_Mouse_Text: {fileID: 247314629}
-  m_Mouse_Text: {fileID: 690112195}
-  m_Cape_Text: {fileID: 164908990}
-  m_Button_Text: {fileID: 1783465929}
-  m_Room1_Board_UI: {fileID: 1899451489}
-  m_Room2_Board_UI: {fileID: 28616952}
-  m_Desk_UI: {fileID: 1647513076}
-  m_safe_UI: {fileID: 1562219977}
-  m_Room1PW_UI: {fileID: 1223550012}
-  m_Room2PW_UI: {fileID: 2107133934}
+  m_Lab_Report_Text: {fileID: 0}
   m_Trick: {fileID: 127201021}
-  m_Prayer_Diary_UI: {fileID: 1031997279}
   m_Lab_Report_UI: {fileID: 1895966741}
-  m_Investigate_Text: {fileID: 2001257388}
-  m_acquire_Text: {fileID: 1844294695}
   m_canvas: {fileID: 1318957153}
-  m_zombie_mouse_UI: {fileID: 1885061242}
-  m_mouse_UI: {fileID: 1675326096}
-  m_TimeAttack_UI: {fileID: 4526978631874866097}
-  m_Time_Text: {fileID: 1340074649}
   m_pressR: 0
   m_pressZ: 0
   m_keypad: {fileID: 1562219981}
@@ -53662,6 +53604,18 @@ MonoBehaviour:
   m_safe_weapon: {fileID: 1717156688133712}
   m_explosion: {fileID: 1053592580}
   m_explosion_true: 0
+  m_key: {fileID: 0}
+  m_toilet_bullet: {fileID: 0}
+  m_room_bullet: {fileID: 0}
+  m_zombie_drug: {fileID: 0}
+  m_antidote: {fileID: 0}
+  m_water: {fileID: 0}
+  m_recipe_zombie_drug: {fileID: 0}
+  m_recipe_antidote: {fileID: 0}
+  m_player_cape: {fileID: 0}
+  m_hanger_cape: {fileID: 0}
+  m_safe_door: {fileID: 0}
+  m_1st_door: {fileID: 0}
 --- !u!1001 &1678321203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53918,6 +53872,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 73c2999be80b3be4e816d348fea624e1,
     type: 3}
   m_PrefabInstance: {fileID: 1684922735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1686029850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 23006330e69064940bbc83e550bcf857,
+    type: 3}
+  m_PrefabInstance: {fileID: 1595175699}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1686361085 stripped
 GameObject:
@@ -54349,12 +54309,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699450482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.36, y: -7.22, z: 12.82}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.418228, y: -9.12, z: -1.0799999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1518599298}
-  m_RootOrder: 27
+  m_Father: {fileID: 447767046}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1699450484
 MonoBehaviour:
@@ -54365,11 +54325,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699450482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 75648a87287aab8469c759ce1f2923fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Lab_UI: {fileID: 1895966741}
 --- !u!65 &1699450485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56117,7 +56079,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1717156100167254, guid: b0802966540a22a4e9046424ac4e393c, type: 3}
       propertyPath: m_Name
-      value: Axe
+      value: Player_Axe
       objectReference: {fileID: 0}
     - target: {fileID: 1717156100167254, guid: b0802966540a22a4e9046424ac4e393c, type: 3}
       propertyPath: m_IsActive
@@ -57096,8 +57058,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1783465928}
-  - component: {fileID: 1783465929}
   - component: {fileID: 1783465930}
+  - component: {fileID: 1783465929}
   m_Layer: 0
   m_Name: Button_Text_Trigger
   m_TagString: Untagged
@@ -57113,11 +57075,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783465927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.47, y: 7.31, z: 0.02}
+  m_LocalPosition: {x: 4.747, y: 7.31, z: 0.217}
   m_LocalScale: {x: 3.4998, y: 3.4998, z: 3.4998}
   m_Children: []
   m_Father: {fileID: 447767046}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1783465929
 MonoBehaviour:
@@ -57128,11 +57090,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1783465927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 7000f4ad875cc444aa6ce383dc3b8087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
 --- !u!65 &1783465930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57144,7 +57107,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1788673601
 PrefabInstance:
@@ -58117,11 +58080,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1821647536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: fe092410f9f56be4fb024359c4bd9e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
 --- !u!65 &1821647539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58180,7 +58144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b7b9112f4651c5341af4f4f45a166e03, type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b7b9112f4651c5341af4f4f45a166e03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -65588,8 +65552,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2058949943}
-  - component: {fileID: 2058949945}
   - component: {fileID: 2058949944}
+  - component: {fileID: 2058949945}
   m_Layer: 0
   m_Name: Room2PW_Text_Trigger
   m_TagString: Untagged
@@ -65633,11 +65597,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2058949942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b6e6be874cfdd48a5c215cbfc9ed94, type: 3}
+  m_Script: {fileID: 11500000, guid: 325d2454e39a45e47a6bd72d86ae42c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   b_textTrigger: 0
-  m_Investigate_text: {fileID: 0}
+  m_Investigate_text: {fileID: 2001257388}
+  ingameCtrl: {fileID: 1180471240}
+  m_Room2_PW_UI: {fileID: 2107133934}
 --- !u!1 &2064996633
 GameObject:
   m_ObjectHideFlags: 0
@@ -125819,7 +125785,7 @@ PrefabInstance:
     - target: {fileID: 8810076457369714336, guid: bfc1b9e08c25eb945bfadff0f117529c,
         type: 3}
       propertyPath: m_Name
-      value: Axe
+      value: Safe_Axe
       objectReference: {fileID: 0}
     - target: {fileID: 8811879805221638372, guid: bfc1b9e08c25eb945bfadff0f117529c,
         type: 3}

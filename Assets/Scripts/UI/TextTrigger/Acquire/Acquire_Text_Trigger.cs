@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TextTrigger : MonoBehaviour
+public class Acquire_Text_Trigger : MonoBehaviour
 {
     public bool b_textTrigger = false;
 
-    public TextMeshProUGUI m_Investigate_text;
+    public TextMeshProUGUI m_Acquire_text;
 
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +16,7 @@ public class TextTrigger : MonoBehaviour
         {
             Debug.Log("player enter");
             b_textTrigger = true;
-            m_Investigate_text.gameObject.SetActive(true);
+            m_Acquire_text.gameObject.SetActive(true);
         }
     }
 
@@ -26,8 +26,7 @@ public class TextTrigger : MonoBehaviour
         {
             Debug.Log("player out");
             b_textTrigger = false;
-            m_Investigate_text.gameObject.SetActive(false);
+            m_Acquire_text.gameObject.SetActive(false);
         }
     }
-
 }

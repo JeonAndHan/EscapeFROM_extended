@@ -37,14 +37,6 @@ public class keyPadCtrl : MonoBehaviour
         DoorEffect = FindObjectOfType<DoorEffectManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        
-         
-    }
-
     public void check_password()
     {
         if(m_clicked[0]=="2" && m_clicked[1]=="4" && m_clicked[2]=="3" && m_clicked[3] == "6")
