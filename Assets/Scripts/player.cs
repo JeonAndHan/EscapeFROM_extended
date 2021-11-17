@@ -42,7 +42,7 @@ public class player : MonoBehaviour
     public Camera m_camera;
     public Transform m_cameraArm;
     public GameCtrl m_gameCtrl;
-    private float m_lookSensitivity = 2f;
+    private float m_lookSensitivity = 1.3f;
     private float m_cameraRotationLimit = 30f;
     private float m_currentCameraRotationX;
 

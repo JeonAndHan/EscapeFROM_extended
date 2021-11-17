@@ -37,11 +37,6 @@ public class Room1Pw : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    { 
-
-    }
 
     public void check_password()
     {

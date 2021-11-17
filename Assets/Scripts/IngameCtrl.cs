@@ -6,13 +6,9 @@ public class IngameCtrl : MonoBehaviour
 {
   //  [Header("TextTriggerScript")]
     //public TextTrigger m_TextTrigger;
-    public TextTrigger m_Room1_Board_Text;
-
-    [Header("TextTriggerUI")]
-    public GameObject m_Room1_Board_UI;
 
 
-    [Header("KeyBoardBool")]
+    [Header("Press key Bool")]
     public bool m_pressR;
     public bool m_pressZ;
 
@@ -41,15 +37,6 @@ public class IngameCtrl : MonoBehaviour
         {
             m_pressZ = false;
             Debug.Log("z에서 손 뗌");
-        }
-
-       if(m_pressR && m_Room1_Board_Text.b_textTrigger)
-        {
-            m_Room1_Board_UI.gameObject.SetActive(true);
-        }
-        else
-        {
-            m_Room1_Board_UI.gameObject.SetActive(false);
         }
     }
 }
