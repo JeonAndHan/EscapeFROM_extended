@@ -27,6 +27,8 @@ public class Room2_Statue_Text_Trigger3 : TextTrigger
         {
             Effect.EffectPlay(8);
             m_Trick.gameObject.SetActive(true);
+            m_Investigate_text.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
 
     }

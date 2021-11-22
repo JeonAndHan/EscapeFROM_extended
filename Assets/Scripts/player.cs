@@ -22,6 +22,9 @@ public class player : MonoBehaviour
     private bool m_isRun;
     private bool m_isGunWithRun;
 
+    public Computer_Text_Trigger computer_text_Trigger;
+    public IngameCtrl ingameCtrl;
+
     [Header("ShortCape변수")]
     public bool m_wearCape;
     [SerializeField]
@@ -41,7 +44,6 @@ public class player : MonoBehaviour
     [Header("camera변수")]
     public Camera m_camera;
     public Transform m_cameraArm;
-    public GameCtrl m_gameCtrl;
     private float m_lookSensitivity = 1.3f;
     private float m_cameraRotationLimit = 30f;
     private float m_currentCameraRotationX;
@@ -62,7 +64,7 @@ public class player : MonoBehaviour
     [Header("Inventory 변수")]
     [SerializeField]
     ActionController m_actionController;
-    public InventoryObject inventory;
+  //  public InventoryObject inventory;
     public bool b_itemTrigger;
 
     // Start is called before the first frame update
@@ -113,7 +115,7 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_gameCtrl.m_explosion_true && !m_isDead)
+        if (computer_text_Trigger.m_explosion_true && !m_isDead)
         {
             m_Anim.SetTrigger("DIE");
             m_isDead = true;
@@ -123,14 +125,14 @@ public class player : MonoBehaviour
         {
             if (!m_actionController.playerLock)
             {
-                if (!m_gameCtrl.m_pressR)
+                if (!ingameCtrl.m_pressR)
                 {
                     Move();
                     camera_Rotation();
                     character_Rotation();
                 }
 
-                if (Input.GetMouseButton(0) && !m_gameCtrl.m_pressR)
+                if (Input.GetMouseButton(0) && !ingameCtrl.m_pressR)
                 {
 
                     if (m_player_weapon.activeInHierarchy)
@@ -171,7 +173,7 @@ public class player : MonoBehaviour
 
                 }
 
-                if (Input.GetKey(KeyCode.Z) && !m_gameCtrl.m_pressR)
+                if (Input.GetKey(KeyCode.Z) && !ingameCtrl.m_pressR)
                 {
                     m_Anim.SetBool("PICKUP", true);
                 }
@@ -180,7 +182,7 @@ public class player : MonoBehaviour
                     m_Anim.SetBool("PICKUP", false);
                 }
 
-                if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !m_gameCtrl.m_pressR)
+                if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !ingameCtrl.m_pressR)
                 {
                     m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 6, m_rigidbody.velocity.z);
                     m_JumpCount++;
@@ -209,15 +211,6 @@ public class player : MonoBehaviour
                     {
                         m_isRun = false;
                     }
-                }
-
-                if (m_ShortCape.activeInHierarchy)
-                {
-                    m_wearCape = true;
-                }
-                else
-                {
-                    m_wearCape = false;
                 }
             }
         }
@@ -272,8 +265,10 @@ public class player : MonoBehaviour
         float moveDirZ = Input.GetAxisRaw("Vertical");
 
         Vector3 moveHorizontal = transform.right * moveDirX;
-        Vector3 moveVertical = transform.forward * -moveDirZ;
-        Vector3 m_velocity = (moveHorizontal - moveVertical) * m_speed;
+        Vector3 moveVertical = transform.forward * moveDirZ;
+        Vector3 m_velocity = (moveHorizontal + moveVertical).normalized * m_speed;
+
+        //벡터의 크기가 달라서 속도 차이? -> .normalize
 
         bool isMove = false;
 
@@ -305,14 +300,14 @@ public class player : MonoBehaviour
                 m_Anim.SetBool("RUN", true);
                 m_Anim.SetBool("RUNWITHGUN", false);
                 m_Anim.SetBool("WALK", false);
-                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
+                m_rigidbody.MovePosition(transform.position + (moveHorizontal + moveVertical).normalized * m_runSpeed * Time.deltaTime);
             }
             else if (m_isGunWithRun && m_Gun.activeInHierarchy) //총이 있을 때 달리는 것
             {
                 m_Anim.SetBool("RUN", false);
                 m_Anim.SetBool("RUNWITHGUN", true);
                 m_Anim.SetBool("WALK", false);
-                m_rigidbody.MovePosition(transform.position + (moveHorizontal - moveVertical) * m_runSpeed * Time.deltaTime);
+                m_rigidbody.MovePosition(transform.position + (moveHorizontal + moveVertical).normalized * m_runSpeed * Time.deltaTime);
             }
             else  //walk
             {

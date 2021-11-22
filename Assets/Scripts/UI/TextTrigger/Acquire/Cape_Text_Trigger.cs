@@ -8,6 +8,8 @@ public class Cape_Text_Trigger : Acquire_Text_Trigger
     [SerializeField]
     private IngameCtrl ingameCtrl;
 
+    public bool b_wear_cape = false;
+
     [Header("Cape")]
     public GameObject m_player_cape;
     public GameObject m_hanger_cape;
@@ -19,11 +21,16 @@ public class Cape_Text_Trigger : Acquire_Text_Trigger
         {
             m_player_cape.SetActive(true);
             m_hanger_cape.SetActive(false);
+
+            b_wear_cape = true;
+
+            m_Acquire_text.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
         else
         {
-            m_player_cape.SetActive(false);
-            m_hanger_cape.SetActive(true);
+            b_wear_cape = false;
         }
+ 
     }
 }

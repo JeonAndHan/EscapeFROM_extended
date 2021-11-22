@@ -5,6 +5,12 @@ using TMPro;
 
 public class Room1_Safe_Text_Trigger : TextTrigger
 {
+    //Todo
+    //1. 트리거에 들어가면 investigate 알림 메세지 나와야함.
+    //2. 알림 메세지대로 R 누르면 key pad 나와서 pw 맞춰야함.
+    //3. 맞추면 door effect, acquire 메세지 나와야함 -> key pad ctrl에서 해줌
+    //4. acquire했다면 알림 메세지 다 끄기.
+
     [SerializeField]
     private IngameCtrl ingameCtrl;
 
@@ -23,30 +29,37 @@ public class Room1_Safe_Text_Trigger : TextTrigger
     //금고 pw 관리 스크립트
     public keyPadCtrl m_keypad;
 
+
+
     private void Update()
     {
-        if (ingameCtrl.m_pressR && b_textTrigger)
+        //text 트리거에 있고, R 버튼을 눌렀다면
+        if (ingameCtrl.m_pressR && b_textTrigger && !m_Player_Axe.gameObject.activeInHierarchy)
         {
             m_Safe_UI.gameObject.SetActive(true);
+            m_Investigate_text.gameObject.SetActive(false);
+            b_PlayerLock = true;
         }
         else
         {
             m_Safe_UI.gameObject.SetActive(false);
+            b_PlayerLock = false;
         }
 
+        //키패드가 맞았고 트리거에 있고, 도끼가 플레이어한테 없다면
         if (m_keypad.m_right && b_textTrigger && !m_Player_Axe.gameObject.activeInHierarchy)
         {
             m_Acquire_text.gameObject.SetActive(true);
+            m_Investigate_text.gameObject.SetActive(false);
 
             if (ingameCtrl.m_pressZ)
             {
                 m_Player_Axe.SetActive(true);
                 m_Safe_Axe.SetActive(false);
                 m_Acquire_text.gameObject.SetActive(false);
+                this.gameObject.SetActive(false);
             }
         }
     }
 
-
-    // 문열리는 effect 추가
 }

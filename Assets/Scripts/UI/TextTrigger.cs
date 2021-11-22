@@ -7,6 +7,8 @@ public class TextTrigger : MonoBehaviour
 {
     public bool b_textTrigger = false;
 
+    public bool b_PlayerLock = false;
+
     public TextMeshProUGUI m_Investigate_text;
 
 
