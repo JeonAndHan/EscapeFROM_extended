@@ -27,6 +27,8 @@ public class PrayRoomEnding : MonoBehaviour
     private Animator m_Anim18;
     private Animator m_Anim19;
 
+    public Cape_Text_Trigger cape_text_Trigger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +65,7 @@ public class PrayRoomEnding : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("player enter");
-            bool wearCape = other.gameObject.GetComponent<player>().m_wearCape;
+            bool wearCape = cape_text_Trigger.b_wear_cape;
             Debug.Log(wearCape);
             if (!wearCape)
             {
@@ -94,8 +96,8 @@ public class PrayRoomEnding : MonoBehaviour
 
     IEnumerator gameover()
     {
-        WaitForSeconds Delay2sec = new WaitForSeconds(10f);
-        yield return Delay2sec;
+        WaitForSeconds Delay3sec = new WaitForSeconds(3f);
+        yield return Delay3sec;
 
         SceneManager.LoadScene("GameOver");
     }

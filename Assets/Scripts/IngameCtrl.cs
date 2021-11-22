@@ -12,6 +12,10 @@ public class IngameCtrl : MonoBehaviour
     public bool m_pressR;
     public bool m_pressZ;
 
+    [Header("TextTriggerBool_Aquire")]
+    private bool m_weapon_acquire;
+    private bool m_cape_acquire;
+
 
     // Update is called once per frame
     void Update()

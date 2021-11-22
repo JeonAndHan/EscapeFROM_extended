@@ -7,6 +7,9 @@ public class Room2_PW_Text_Trigger : TextTrigger
     [SerializeField]
     private IngameCtrl ingameCtrl;
 
+    [SerializeField]
+    private Room2PW Room2_PW_Ctrl;
+
     [Header("TextTriggerUI")]
     public GameObject m_Room2_PW_UI;
 
@@ -15,10 +18,18 @@ public class Room2_PW_Text_Trigger : TextTrigger
         if (ingameCtrl.m_pressR && b_textTrigger)
         {
             m_Room2_PW_UI.gameObject.SetActive(true);
+            b_PlayerLock = true;
         }
         else
         {
             m_Room2_PW_UI.gameObject.SetActive(false);
+            b_PlayerLock = false;
+        }
+
+        if (Room2_PW_Ctrl.m_right)
+        {
+            m_Investigate_text.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 }

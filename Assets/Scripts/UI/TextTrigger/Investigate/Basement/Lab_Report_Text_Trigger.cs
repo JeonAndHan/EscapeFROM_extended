@@ -15,10 +15,12 @@ public class Lab_Report_Text_Trigger : TextTrigger
         if (ingameCtrl.m_pressR && b_textTrigger)
         {
             m_Lab_UI.gameObject.SetActive(true);
+            b_PlayerLock = true;
         }
         else
         {
             m_Lab_UI.gameObject.SetActive(false);
+            b_PlayerLock = false;
         }
     }
 }

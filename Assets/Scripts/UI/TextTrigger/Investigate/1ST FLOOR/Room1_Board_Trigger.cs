@@ -15,10 +15,12 @@ public class Room1_Board_Trigger : TextTrigger
         if (ingameCtrl.m_pressR && b_textTrigger)
         {
             m_Room1_Board_UI.gameObject.SetActive(true);
+            b_PlayerLock = true;
         }
         else
         {
             m_Room1_Board_UI.gameObject.SetActive(false);
+            b_PlayerLock = false;
         }
     }
 }

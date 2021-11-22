@@ -23,6 +23,8 @@ public class Room2_Statue_Trigger2 : TextTrigger
         if (ingameCtrl.m_pressR & b_textTrigger)
         {
             Effect.EffectPlay(7);
+            m_Investigate_text.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
 
     }
