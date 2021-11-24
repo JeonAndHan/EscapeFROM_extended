@@ -52,7 +52,7 @@ public class ActionController : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.F) && pickupActivated)
+        if(Input.GetKeyDown(KeyCode.Z) && pickupActivated)
         {
             inventory.AddItem(_item, 1);
             Destroy(m_item);
@@ -150,7 +150,7 @@ public class ActionController : MonoBehaviour
         if (other.gameObject.CompareTag("Item"))
         {
             actionText.gameObject.SetActive(true);
-            actionText.text = "Press " + "<color=yellow>" + "(F)" + "</color>" + " to pick up " + other.gameObject.GetComponent<GroundItem>().item.name;
+            actionText.text = "Press " + "<color=yellow>" + "'Z'" + "</color>" + " to aquire " + other.gameObject.GetComponent<GroundItem>().item.name;
             pickupActivated = true;
 
             _item = new Item(other.gameObject.GetComponent<GroundItem>().item);

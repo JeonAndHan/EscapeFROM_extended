@@ -49,7 +49,9 @@ public class Room1_Safe_Text_Trigger : TextTrigger
         //키패드가 맞았고 트리거에 있고, 도끼가 플레이어한테 없다면
         if (m_keypad.m_right && b_textTrigger && !m_Player_Axe.gameObject.activeInHierarchy)
         {
+            Debug.Log("Acquire text");
             m_Acquire_text.gameObject.SetActive(true);
+            m_Acquire_text.text = "Press " + "<color=yellow>" + "'Z'" + "</color>" + " to aquire " + "Axe";
             m_Investigate_text.gameObject.SetActive(false);
 
             if (ingameCtrl.m_pressZ)
