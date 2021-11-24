@@ -21,7 +21,7 @@ public class Tooltip : MonoBehaviour
     {
         go_Base.SetActive(true);
         _pos += new Vector3(go_Base.GetComponent<RectTransform>().rect.width * 0f,
-                            -go_Base.GetComponent<RectTransform>().rect.height * 0.8f, 0);
+                            -go_Base.GetComponent<RectTransform>().rect.height * 0.9f, 0);
         go_Base.transform.position = _pos;
 
         txt_ItemName.text = _item.data.Name;

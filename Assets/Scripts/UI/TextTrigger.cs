@@ -19,6 +19,7 @@ public class TextTrigger : MonoBehaviour
             Debug.Log("player enter");
             b_textTrigger = true;
             m_Investigate_text.gameObject.SetActive(true);
+            m_Investigate_text.text = "Press " + "<color=yellow>" + "'R'" + "</color>" + " to investigate"; 
         }
     }
 
