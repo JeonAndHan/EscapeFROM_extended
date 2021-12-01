@@ -68,6 +68,11 @@ public class Weapon : MonoBehaviour
                 fireTimer = 0f;
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
+
         if (Input.GetMouseButtonUp(0))
         {
             fireTimer = 0f;

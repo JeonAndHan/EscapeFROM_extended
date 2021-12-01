@@ -94,6 +94,12 @@ public class InventoryObject : ScriptableObject
 
     }
 
+    //public void RemoveItem(Item item)
+    //{
+    //    InventorySlot slot = FindItemOnInventory(item);
+    //    slot.RemoveItem();
+    //}
+
     public void CraftingUpdate()
     {
         for (int i = 0; i < GetSlots.Length; i++)

@@ -75,13 +75,18 @@ public class ActionController : MonoBehaviour
         //단축키 c를 입력받으면 제작 창을 띄우거나 닫는다.
         else if(Input.GetKeyDown(KeyCode.C))
         {
-            if (CraftingOpen)
+            //recipe를 습득 후 사용했다면
+            if (effectDatabase.b_canCraft)
             {
-                CloseCrafting();
-            }
-            else
-            {
-                OpenCrafting();
+                Debug.Log("bool can craft : " + effectDatabase.b_canCraft);
+                if (CraftingOpen)
+                {
+                    CloseCrafting();
+                }
+                else
+                {
+                    OpenCrafting();
+                }
             }
         }
     }
@@ -156,7 +161,6 @@ public class ActionController : MonoBehaviour
             _item = new Item(other.gameObject.GetComponent<GroundItem>().item);
             m_item = other.gameObject;
         }
- 
     }
 
     private void OnTriggerExit(Collider other)
