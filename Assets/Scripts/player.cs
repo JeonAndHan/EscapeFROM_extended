@@ -45,7 +45,7 @@ public class player : MonoBehaviour
     public Camera m_camera;
     public Transform m_cameraArm;
     private float m_lookSensitivity = 1.3f;
-    private float m_cameraRotationLimit = 35f;
+    private float m_cameraRotationLimit = 38f;
     private float m_currentCameraRotationX;
 
     [Header("playerHP변수")]

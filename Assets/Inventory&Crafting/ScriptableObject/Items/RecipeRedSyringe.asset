@@ -24,4 +24,6 @@ MonoBehaviour:
   RecipeData:
     result: {fileID: 11400000, guid: fb6a72dff47710d4abd284667213d7bc, type: 2}
     resultamount: 1
-    ingredients: []
+    ingredients:
+    - item: {fileID: 11400000, guid: 1d1aa26154396644b9dd7b78cc20f94d, type: 2}
+      amount: 1

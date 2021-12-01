@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class IngameCtrl : MonoBehaviour
 {
-  //  [Header("TextTriggerScript")]
-    //public TextTrigger m_TextTrigger;
-
 
     [Header("Press key Bool")]
     public bool m_pressR;
@@ -15,6 +13,9 @@ public class IngameCtrl : MonoBehaviour
     [Header("TextTriggerBool_Aquire")]
     private bool m_weapon_acquire;
     private bool m_cape_acquire;
+
+    [SerializeField]
+    private TextMeshProUGUI m_recipeGuide_text;
 
 
     // Update is called once per frame
@@ -42,5 +43,24 @@ public class IngameCtrl : MonoBehaviour
             m_pressZ = false;
             Debug.Log("z에서 손 뗌");
         }
+    }
+
+    public void recipeGuide()
+    {
+        m_recipeGuide_text.gameObject.SetActive(true);
+        m_recipeGuide_text.text = "Now you can make somthing!\n" + "Press " + "<color=yellow>" + "'C'" + "</color>" + " to use Recipe";
+    }
+
+    public void CoroutineDeleteRecipeGuide()
+    {
+        StartCoroutine(deleteRecipeGuide());
+    }
+
+    IEnumerator deleteRecipeGuide()
+    {
+        WaitForSeconds three = new WaitForSeconds(3f);
+        yield return three;
+
+        m_recipeGuide_text.gameObject.SetActive(false);
     }
 }

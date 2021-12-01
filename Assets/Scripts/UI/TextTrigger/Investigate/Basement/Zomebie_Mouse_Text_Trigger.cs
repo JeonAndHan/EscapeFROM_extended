@@ -15,6 +15,7 @@ public class Zomebie_Mouse_Text_Trigger : TextTrigger
         if (ingameCtrl.m_pressR && b_textTrigger)
         {
             m_Zombie_UI.gameObject.SetActive(true);
+            m_Investigate_text.gameObject.SetActive(false);
             b_PlayerLock = true;
         }
         else

@@ -15,6 +15,7 @@ public class Lab_Report_Text_Trigger : TextTrigger
         if (ingameCtrl.m_pressR && b_textTrigger)
         {
             m_Lab_UI.gameObject.SetActive(true);
+            m_Investigate_text.gameObject.SetActive(false);
             b_PlayerLock = true;
         }
         else

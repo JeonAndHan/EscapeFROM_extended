@@ -20,8 +20,16 @@ public class Tooltip : MonoBehaviour
     public void ShowToolTip(ItemObject _item, Vector3 _pos)
     {
         go_Base.SetActive(true);
-        _pos += new Vector3(go_Base.GetComponent<RectTransform>().rect.width * 0f,
-                            -go_Base.GetComponent<RectTransform>().rect.height * 0.9f, 0);
+        if (_item.name == "RecipeGreenSyringe" || _item.name == "RecipeRedSyringe")
+        {
+            _pos += new Vector3(go_Base.GetComponent<RectTransform>().rect.width * 0f,
+                    -go_Base.GetComponent<RectTransform>().rect.height * 1.1f, 0);
+        }
+        else
+        {
+            _pos += new Vector3(go_Base.GetComponent<RectTransform>().rect.width * 0f,
+                                -go_Base.GetComponent<RectTransform>().rect.height * 1f, 0);
+        }
         go_Base.transform.position = _pos;
 
         txt_ItemName.text = _item.data.Name;
