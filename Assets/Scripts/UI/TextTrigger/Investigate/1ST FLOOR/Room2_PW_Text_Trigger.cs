@@ -18,6 +18,7 @@ public class Room2_PW_Text_Trigger : TextTrigger
         if (ingameCtrl.m_pressR && b_textTrigger)
         {
             m_Room2_PW_UI.gameObject.SetActive(true);
+            m_Investigate_text.gameObject.SetActive(false);
             b_PlayerLock = true;
         }
         else
@@ -29,6 +30,7 @@ public class Room2_PW_Text_Trigger : TextTrigger
         if (Room2_PW_Ctrl.m_right)
         {
             m_Investigate_text.gameObject.SetActive(false);
+            m_Room2_PW_UI.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
         }
     }
