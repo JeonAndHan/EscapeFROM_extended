@@ -36,39 +36,19 @@ public class EnemyMelee : Enemy
         m_animCtrl = GetComponent<MonsterAnimCtrl>();
     }
 
-
-    //public void Hit(float damage)
-    //{
-    //    m_currentHP -= damage;
-    //    if (m_currentHP > 0)
-    //    {
-    //        m_isHit = true;
-    //        currentState = State.HIT;
-    //    }
-
-    //    if (m_currentHP <= 0 && !m_isDead)
-    //    {
-    //        m_Anim.SetTrigger("DEATH");
-    //        currentState = State.DEATH;
-    //        m_isDead = true;
-    //        m_collider.isTrigger = true;
-    //        m_isHit = false;
-    //        StopAllCoroutines();
-    //    }
-    //}
-
     protected virtual IEnumerator FSM()
     {
         yield return null;
         //player가 방을 벗어나지 않았다면 idle 상태로 대기
         while (!m_zombieTrigger.m_Trigger)
         {
-            yield return Delay500;
+            yield return Delay250;
         }
 
         while (true)
         {
             yield return StartCoroutine(currentState.ToString());
+
         }
     }
 
@@ -85,7 +65,7 @@ public class EnemyMelee : Enemy
 
         if (CanAttackState())
         {
-            if (canAttack)
+            if (canAttack && !m_isHit)
             {
                 currentState = State.ATTACK;
             }
@@ -112,11 +92,8 @@ public class EnemyMelee : Enemy
 
         m_nav.stoppingDistance = 2f;
         m_nav.isStopped = true;
-        //m_nav.SetDestination(m_player.transform.position);
-        //yield return Delay500;
 
         m_nav.isStopped = false;
-        //m_nav.speed = 2.5f;
         canAttack = false;
 
         if (!m_Anim.GetCurrentAnimatorStateInfo(0).IsName("ATTACK"))
@@ -168,25 +145,5 @@ public class EnemyMelee : Enemy
             m_nav.SetDestination(m_player.transform.position);
         }
     }
-
-    //protected virtual IEnumerator HIT()
-    //{
-    //    yield return null;
-
-    //    if (m_isHit)
-    //    {
-    //        currentState = State.HIT;
-    //        m_Anim.SetTrigger("HIT");
-    //        m_Anim.ResetTrigger("WALK");
-    //        m_Anim.ResetTrigger("ATTACK");
-    //        WaitForSeconds one = new WaitForSeconds(1);
-    //        yield return one;
-    //        currentState = State.IDLE;
-    //    }
-    //    else
-    //    {
-    //        currentState = State.IDLE;
-    //    }
-    //}
 
 }

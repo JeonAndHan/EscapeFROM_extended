@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
         {
             m_currentHP -= damage;
             m_isHit = true;
+            m_Anim.SetTrigger("HIT");
         }
 
         if (m_currentHP <= 0 && !m_isDead)
@@ -57,29 +58,12 @@ public class Enemy : MonoBehaviour
 
     protected bool CanAttackState()
     {
-        Vector3 targetDir = new Vector3(m_player.transform.position.x - transform.position.x,
-            0f, m_player.transform.position.z - transform.position.z);
-
-        Physics.Raycast(new Vector3(transform.position.x, 0.5f, transform.position.z),
-            targetDir, out RaycastHit hit, 30f, m_layerMask);
-
         distance = Vector3.Distance(m_player.transform.position, transform.position);
 
-            if (hit.transform == null)
-            {
-                //Debug.Log("hit.transform == null");
-                return false;
-            }
-
-
-            if (hit.transform.CompareTag("Player") && distance <= attackRange)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        if ( distance <= attackRange )
+            return true;
+        else
+            return false;
     }
 
     protected virtual IEnumerator CalcCoolTime()
