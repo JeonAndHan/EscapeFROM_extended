@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
 
         if (m_currentHP <= 0 && !m_isDead)
         {
+            m_Anim.ResetTrigger("HIT");
             m_Anim.SetTrigger("DEATH");
             m_isDead = true;
             m_collider.isTrigger = true;
