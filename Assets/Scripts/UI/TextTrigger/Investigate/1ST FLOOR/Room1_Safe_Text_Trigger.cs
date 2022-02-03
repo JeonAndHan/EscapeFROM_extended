@@ -20,6 +20,8 @@ public class Room1_Safe_Text_Trigger : TextTrigger
     [SerializeField]
     private GameObject m_Safe_Axe;
 
+    public player playerCtrl;
+
     [SerializeField]
     private TextMeshProUGUI m_Acquire_text;
 
@@ -58,6 +60,7 @@ public class Room1_Safe_Text_Trigger : TextTrigger
             {
                 m_Player_Axe.SetActive(true);
                 m_Safe_Axe.SetActive(false);
+                playerCtrl.b_getAxe = true;
                 m_Acquire_text.gameObject.SetActive(false);
                 this.gameObject.SetActive(false);
             }

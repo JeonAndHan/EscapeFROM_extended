@@ -68,10 +68,6 @@ public class Weapon : MonoBehaviour
                 fireTimer = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reload();
-        }
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -79,31 +75,20 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public void Reload()
-    {
-        int bulletsToReload = bulletsPerMag - currentBullets;
-        if (bulletsToReload > bulletsTotal)
-            bulletsToReload = bulletsTotal;
-
-        currentBullets += bulletsToReload;
-        bulletsTotal -= bulletsToReload;
-        m_bullet_info_text.text = currentBullets + " / " + bulletsTotal; 
-    }
-
     private void Fire()
     {
         if (fireTimer < fireRate)
-            return;        
+            return;
 
         Debug.Log("Shot Fired");
         RaycastHit hit;
-        if(Physics.Raycast(shootPoint.position, shootPoint.transform.up, out hit, range))
+        if (Physics.Raycast(shootPoint.position, shootPoint.transform.up, out hit, range))
         {
-            if (hit.collider.gameObject.CompareTag("BossZombie")|| hit.collider.gameObject.CompareTag("Zombie"))
+            if (hit.collider.gameObject.CompareTag("BossZombie") || hit.collider.gameObject.CompareTag("Zombie"))
             {
                 hit.collider.gameObject.SendMessage("Hit", 80);
                 Debug.Log("Hit");
-            }            
+            }
             Debug.Log("hit" + hit.collider.gameObject.name);
         }
 

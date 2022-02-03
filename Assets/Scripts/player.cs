@@ -31,21 +31,22 @@ public class player : MonoBehaviour
     GameObject m_ShortCape;
 
 
-    [Header("Weapon변수")]
+    [Header("Axe변수")]
     [SerializeField]
     GameObject m_handAttackArea;
     [SerializeField]
     GameObject m_weaponAttackArea;
-    public GameObject m_player_weapon;
+    public GameObject m_Axe;
     public bool m_is_Weapon_attack = false;
+    public bool b_getAxe;
     private float m_weapon_Damage = 50f;
     private float m_hand_Damage = 20f;
 
     [Header("camera변수")]
     public Camera m_camera;
     public Transform m_cameraArm;
-    private float m_lookSensitivity = 1.3f;
-    private float m_cameraRotationLimit = 38f;
+    private float m_lookSensitivity = 1.2f;
+    private float m_cameraRotationLimit = 40f;
     private float m_currentCameraRotationX;
 
     [Header("playerHP변수")]
@@ -60,11 +61,11 @@ public class player : MonoBehaviour
     public GameObject m_Gun;
     [SerializeField]
     private Weapon m_weaponScript;
+    public bool b_getGun;
 
     [Header("Inventory 변수")]
     [SerializeField]
     ActionController m_actionController;
-  //  public InventoryObject inventory;
     public bool b_itemTrigger;
 
     // Start is called before the first frame update
@@ -101,7 +102,7 @@ public class player : MonoBehaviour
     public void attackTarget(GameObject target)
     {
 
-        if (m_player_weapon.activeInHierarchy) //player가 무기를 들고있다면
+        if (m_Axe.activeInHierarchy) //player가 무기를 들고있다면
         {
             target.SendMessage("Hit", m_weapon_Damage);
         }
@@ -130,12 +131,11 @@ public class player : MonoBehaviour
                     Move();
                     camera_Rotation();
                     character_Rotation();
-                }
+                 }
 
                 if (Input.GetMouseButton(0) && !ingameCtrl.m_pressR)
                 {
-
-                    if (m_player_weapon.activeInHierarchy)
+                    if (m_Axe.activeInHierarchy)
                     {
                         m_Anim.SetBool("WEAPONATTACK", true);
                         m_Anim.SetBool("WALK", false);
@@ -156,7 +156,7 @@ public class player : MonoBehaviour
                 }
                 else
                 {
-                    if (m_player_weapon.activeInHierarchy)
+                    if (m_Axe.activeInHierarchy)
                     {
                         m_Anim.SetBool("WEAPONATTACK", false);
                         // m_weaponAttackArea.SetActive(false);
@@ -184,6 +184,7 @@ public class player : MonoBehaviour
 
                 if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !ingameCtrl.m_pressR)
                 {
+                    Debug.Log("press space bar");
                     m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 6, m_rigidbody.velocity.z);
                     m_JumpCount++;
                 }
@@ -219,7 +220,7 @@ public class player : MonoBehaviour
 
     public void AttackAreaTrue()
     {
-        if (m_player_weapon.activeInHierarchy)
+        if (m_Axe.activeInHierarchy)
         {
             m_weaponAttackArea.SetActive(true);
         }
@@ -231,7 +232,7 @@ public class player : MonoBehaviour
 
     public void AttackAreaFalse()
     {
-        if (m_player_weapon.activeInHierarchy)
+        if (m_Axe.activeInHierarchy)
         {
             m_weaponAttackArea.SetActive(false);
         }
