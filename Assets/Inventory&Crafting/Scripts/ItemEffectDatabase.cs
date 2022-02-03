@@ -73,8 +73,9 @@ public class ItemEffectDatabase : MonoBehaviour
                 {
                     if (item.Name == "Bullet")
                     {
-                        //bullet 사용시 총알 개수 + 10
-                        GunCtrl.bulletsTotal += 10;
+                        //bullet 사용시 총알 개수 + 5
+                        GunCtrl.currentBullets += 5;
+                        GunCtrl.m_bullet_info_text.text = GunCtrl.currentBullets + "/" + GunCtrl.bulletsTotal; ;
                     }
                     else if (item.Name == "Gun")
                     {
