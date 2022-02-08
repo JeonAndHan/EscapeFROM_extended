@@ -94,9 +94,14 @@ public class player : MonoBehaviour
                 m_isDead = true;
                 Sound.Stop();
                 Effect.EffectPlay(1);
-                StartCoroutine(gameover());
+                gameover_fun();
             }
         }
+    }
+
+    public void gameover_fun()
+    {
+        StartCoroutine(gameover());
     }
 
     public void attackTarget(GameObject target)
