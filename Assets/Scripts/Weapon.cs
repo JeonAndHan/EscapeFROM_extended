@@ -24,6 +24,9 @@ public class Weapon : MonoBehaviour
     public Transform shootPoint;
 
     [SerializeField]
+    private AudioSource gunfire_sound;
+
+    [SerializeField]
     private InventoryObject inventory;
 
     [SerializeField]
@@ -81,6 +84,12 @@ public class Weapon : MonoBehaviour
             return;
 
         Debug.Log("Shot Fired");
+
+        if (!gunfire_sound.isPlaying)
+        {
+            gunfire_sound.Play();
+        }
+
         RaycastHit hit;
         if (Physics.Raycast(shootPoint.position, shootPoint.transform.up, out hit, range))
         {
