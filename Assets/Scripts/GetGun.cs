@@ -15,7 +15,7 @@ public class GetGun : MonoBehaviour
     SphereCollider m_collider;
 
     [SerializeField]
-    private player playerScript;
+    private player playerCtrl;
 
     [SerializeField]
     private TextMeshProUGUI acquire_text;
@@ -52,7 +52,15 @@ public class GetGun : MonoBehaviour
             if (manager_assassinate_trigger.b_manager_dead)
             {
                 player_Gun.gameObject.SetActive(true);
+                playerCtrl.b_getGun = true;
                 acquire_text.gameObject.SetActive(false);
+
+                //총을 얻고 도끼가 켜져있다면 Axe는 꺼두기
+                if (playerCtrl.m_Axe.activeInHierarchy)
+                {
+                    playerCtrl.m_Axe.SetActive(false);
+                }
+
                 this.gameObject.SetActive(false);
             }
             else
@@ -82,6 +90,6 @@ public class GetGun : MonoBehaviour
             gunfire_sound.Play();
         }
         BlackOut.gameObject.SetActive(true);
-        playerScript.gameover_fun();
+        playerCtrl.gameover_fun();
     }
 }
