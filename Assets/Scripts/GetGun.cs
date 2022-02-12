@@ -55,6 +55,8 @@ public class GetGun : MonoBehaviour
                 playerCtrl.b_getGun = true;
                 acquire_text.gameObject.SetActive(false);
 
+                ingameCtrl.toggleTextTrue();
+
                 //총을 얻고 도끼가 켜져있다면 Axe는 꺼두기
                 if (playerCtrl.m_Axe.activeInHierarchy)
                 {
@@ -83,7 +85,7 @@ public class GetGun : MonoBehaviour
 
     IEnumerator blackOut_coroutine()
     {
-        WaitForSeconds two = new WaitForSeconds(2);
+        WaitForSeconds two = new WaitForSeconds(2f);
         yield return two;
         if (!gunfire_sound.isPlaying)
         {
@@ -92,4 +94,5 @@ public class GetGun : MonoBehaviour
         BlackOut.gameObject.SetActive(true);
         playerCtrl.gameover_fun();
     }
+
 }
