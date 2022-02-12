@@ -19,6 +19,9 @@ public class IngameCtrl : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI m_recipeGuide_text;
 
+    [SerializeField]
+    private TextMeshProUGUI toggle_text;
+
 
     // Update is called once per frame
     void Update()
@@ -59,7 +62,7 @@ public class IngameCtrl : MonoBehaviour
         }
     }
 
-
+    //Recipe Guild Text
     public void recipeGuide()
     {
         m_recipeGuide_text.gameObject.SetActive(true);
@@ -77,5 +80,21 @@ public class IngameCtrl : MonoBehaviour
         yield return three;
 
         m_recipeGuide_text.gameObject.SetActive(false);
+    }
+
+    //Gun and Axe toggle Guide Text
+    public void toggleTextTrue()
+    {
+        toggle_text.gameObject.SetActive(true);
+        toggle_text.text = "Now you can change the Gun and Axe\n" + "Press " + "<color=yellow>" + "'E'" + "</color>" + " to change";
+        StartCoroutine(toggleTextOff());
+    }
+
+    IEnumerator toggleTextOff()
+    {
+        WaitForSeconds three = new WaitForSeconds(3f);
+        yield return three;
+
+        toggle_text.gameObject.SetActive(false);
     }
 }
