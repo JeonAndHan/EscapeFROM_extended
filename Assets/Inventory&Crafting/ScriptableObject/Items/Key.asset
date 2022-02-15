@@ -18,7 +18,7 @@ MonoBehaviour:
   description: The key to opening the door on the 2nd floor.
   data:
     Name: Key
-    Id: 8
+    Id: 10
     buffs: []
     itemType: 2
   RecipeData:

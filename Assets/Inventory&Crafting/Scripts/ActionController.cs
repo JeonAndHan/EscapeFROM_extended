@@ -52,7 +52,7 @@ public class ActionController : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.Z) && pickupActivated)
+        if(Input.GetKeyDown(KeyCode.Z) && pickupActivated && m_item.gameObject.activeInHierarchy)
         {
             inventory.AddItem(_item, 1);
             Destroy(m_item);
