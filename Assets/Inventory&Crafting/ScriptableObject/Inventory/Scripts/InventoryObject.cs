@@ -22,7 +22,16 @@ public class InventoryObject : ScriptableObject
         InventorySlot slot = FindItemOnInventory(item);
         if (!database.ItemObjects[item.Id].stackable || slot == null)
         {
-            GetEmptySlot().UpdateSlot(item, amount);
+            //물, 물약들, 빈 주사기는 2개씩 습득되도록
+            if (item.Id == 5 || item.Id == 6 || item.Id == 0 || item.Id == 7)
+            {
+                Debug.Log("물약 또는 물 습득");
+                GetEmptySlot().UpdateSlot(item, amount + 1);
+            }
+            else
+            {
+                GetEmptySlot().UpdateSlot(item, amount);
+            }
             return true;
         }
         slot.AddAmount(amount);
@@ -81,18 +90,18 @@ public class InventoryObject : ScriptableObject
         return null;
     }
     //인벤토리 내의 두 아이템의 위치를 바꾼다.
-    public void SwapItems(InventorySlot item1, InventorySlot item2)
-    {
-        if (item1 == item2)
-            return;
-        if (item2.CanPlaceInSlot(item1.GetItemObject()) && item1.CanPlaceInSlot(item2.GetItemObject()))
-        {
-            InventorySlot temp = new InventorySlot(item2.item, item2.amount);
-            item2.UpdateSlot(item1.item, item1.amount);
-            item1.UpdateSlot(temp.item, temp.amount);
-        }
+    //public void SwapItems(InventorySlot item1, InventorySlot item2)
+    //{
+    //    if (item1 == item2)
+    //        return;
+    //    if (item2.CanPlaceInSlot(item1.GetItemObject()) && item1.CanPlaceInSlot(item2.GetItemObject()))
+    //    {
+    //        InventorySlot temp = new InventorySlot(item2.item, item2.amount);
+    //        item2.UpdateSlot(item1.item, item1.amount);
+    //        item1.UpdateSlot(temp.item, temp.amount);
+    //    }
 
-    }
+    //}
 
     //public void RemoveItem(Item item)
     //{
