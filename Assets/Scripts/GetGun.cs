@@ -46,6 +46,7 @@ public class GetGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //2층으로 진입했다면을 추가하기
         if(ingameCtrl.m_pressZ && acquire_text.gameObject.activeInHierarchy)
         {
             //매니저가 죽었다면
