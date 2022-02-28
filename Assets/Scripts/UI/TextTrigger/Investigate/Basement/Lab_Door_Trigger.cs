@@ -9,7 +9,7 @@ public class Lab_Door_Trigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_left_door.transform.position = new Vector3(0.9, 0, 0);
+        m_left_door.transform.position = new Vector3(0.9f, 0, 0);
     }
 
     // Update is called once per frame
