@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1stFloorKey
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 21300000, guid: 17e1daa974818eb4e8801cc8b121d1e5, type: 3}
-  stackable: 0
+  stackable: 1
   type: 4
   description: 1st Floor key
   data:

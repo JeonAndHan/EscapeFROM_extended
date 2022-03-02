@@ -22,6 +22,9 @@ public class IngameCtrl : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI toggle_text;
 
+    public bool b_fistFloor_DoorOpen;
+    public bool b_secondFloor_DoorOpen;
+
 
     // Update is called once per frame
     void Update()

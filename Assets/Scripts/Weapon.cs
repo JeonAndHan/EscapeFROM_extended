@@ -29,8 +29,8 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private InventoryObject inventory;
 
-    [SerializeField]
-    private ItemObject GunItem;
+    //[SerializeField]
+    //private ItemObject GunItem;
 
     // Start is called before the first frame update
     void Start()
