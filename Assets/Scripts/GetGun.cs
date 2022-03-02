@@ -37,18 +37,23 @@ public class GetGun : MonoBehaviour
 
     public bool player_die_2ndfloor;
 
+    private Slot slot;
+
     // Start is called before the first frame update
     void Start()
     {
-        m_collider = GetComponent<SphereCollider>();    
+        m_collider = GetComponent<SphereCollider>();
+        slot = FindObjectOfType<Slot>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //2층으로 진입했다면을 추가하기
-        if(ingameCtrl.m_pressZ && acquire_text.gameObject.activeInHierarchy)
+        //총을 획득하고 && 이층으로 진입했다면  && slot.b_secondFloor_DoorOpen
+        if (ingameCtrl.m_pressZ && acquire_text.gameObject.activeInHierarchy && ingameCtrl.b_secondFloor_DoorOpen)
         {
+            Debug.Log("Z를 누르고 텍스트 떠있고 2층 문이 열렸다면");
             //매니저가 죽었다면
             if (manager_assassinate_trigger.b_manager_dead)
             {
@@ -81,6 +86,15 @@ public class GetGun : MonoBehaviour
         {
            acquire_text.gameObject.SetActive(true);
             Debug.Log("player enter");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            acquire_text.gameObject.SetActive(false);
+            Debug.Log("player exit");
         }
     }
 

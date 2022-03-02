@@ -54,10 +54,13 @@ public class ActionController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Z) && pickupActivated && m_item.gameObject.activeInHierarchy)
         {
-            inventory.AddItem(_item, 1);
-            Destroy(m_item);
-            actionText.gameObject.SetActive(false);
-            //pickup sound
+            if (!m_item.gameObject.CompareTag("Gun"))
+            {
+                inventory.AddItem(_item, 1);
+                Destroy(m_item);
+                actionText.gameObject.SetActive(false);
+                //pickup sound
+            }
         }
 
         //단축키 i를 입력받으면 인벤토리 창을 띄우거나 닫는다.
