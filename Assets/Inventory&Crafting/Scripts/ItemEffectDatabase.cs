@@ -25,6 +25,9 @@ public class ItemEffectDatabase : MonoBehaviour
     private IngameCtrl ingameCtrl;
 
     public bool b_canCraft = false;
+    public bool b_UseRedSyringe = false;
+    public bool b_UseGreenSyringe = false;
+    
 
     private const string RedSyringe = "RedSyringe", GreenSyringe = "GreenSyringe";
 
@@ -52,11 +55,11 @@ public class ItemEffectDatabase : MonoBehaviour
                 {
                     if (item.Name == "GreenSyringe")
                     {
-                        //좀비 치료제 사용 -> 아무 효과도 없을듯?
+                        b_UseGreenSyringe = true;
                     }
                     else if (item.Name == "RedSyringe")
                     {
-                        //좀비로 만드는 약 얻음 -> 좀비가 되면서 game over
+                        b_UseRedSyringe = true;
                     }
                     else if (item.Name == "Recipe")
                     {
