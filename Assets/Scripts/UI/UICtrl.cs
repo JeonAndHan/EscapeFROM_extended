@@ -9,12 +9,20 @@ public class UICtrl : MonoBehaviour
     public static UICtrl Instance;
 
     [SerializeField]
+    private ActionController actionctrl;
+
+    [SerializeField]
     private HealthBar m_playerHpBar;
     public Button m_help_bth;
-    public Button m_close_btn;
+    public Button m_helpUI_close_btn;
+    public Button m_StartStory_Close_btn;
+
     public GameObject m_manipulation_UI;
+    public GameObject m_StartStoryUI;
 
     private bool m_press_btn = false; //true
+
+    private bool b_StoryClose_btn = true;
 
     private void Awake()
     {
@@ -33,22 +41,24 @@ public class UICtrl : MonoBehaviour
         m_playerHpBar.ShowHPbar(current, max);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (m_press_btn)
         {
-            m_manipulation_UI.SetActive(true);
+            m_manipulation_UI.gameObject.SetActive(true);
+            actionctrl.playerLock = true;
         }
         else
         {
-            m_manipulation_UI.SetActive(false);
+            m_manipulation_UI.gameObject.SetActive(false);
+            actionctrl.playerLock = false;
+        }
+
+        if (!b_StoryClose_btn)
+        {
+            actionctrl.playerLock = false;
+            m_StartStoryUI.gameObject.SetActive(false);
         }
     }
 
@@ -57,8 +67,13 @@ public class UICtrl : MonoBehaviour
         m_press_btn = true;
     }
 
-    public void pressClose()
+    public void ManipulationpressClose()
     {
         m_press_btn = false;
+    }
+
+    public void startStoryUI_Close()
+    {
+        b_StoryClose_btn = false;
     }
 }
