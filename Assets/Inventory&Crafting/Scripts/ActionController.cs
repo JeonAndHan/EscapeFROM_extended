@@ -26,6 +26,12 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private GameObject inventoryScreen, craftingScreen;
 
+    [SerializeField]
+    private GameObject StartStory_UI;
+
+    [SerializeField]
+    private GameObject Manipulation_UI;
+
 
     private bool inventoryOpen = false;
     private bool CraftingOpen = false;
@@ -126,8 +132,9 @@ public class ActionController : MonoBehaviour
         PlayLock();
     }
 
-    private void PlayLock()
+    public void PlayLock()
     {
+        //&& !Manipulation_UI.activeInHierarchy && !StartStory_UI.activeInHierarchy
         if (CraftingOpen == false && inventoryOpen == false)
         {
             playerLock = false;

@@ -80,6 +80,7 @@ public class player : MonoBehaviour
         Effect = FindObjectOfType<EffectManager>();
         Sound = FindObjectOfType<SoundManager>();
 
+        m_actionController.playerLock = true;
     }
 
     public void Hit(float damage)
