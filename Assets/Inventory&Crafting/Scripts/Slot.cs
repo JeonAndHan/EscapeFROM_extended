@@ -17,6 +17,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     private Mouse_Text_Trigger mouse_TextTrigger;
     private Zomebie_Mouse_Text_Trigger zombie_TextTrigger;
 
+    private firstFloorDoorCtrl firstDoorCtrl;
+    private secondDoorCtrl secondDoorCtrl;
+
     private IngameCtrl ingameCtrl;
 
     public bool b_Normal_to_ZombieMouse;
@@ -33,6 +36,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         mouse_TextTrigger = FindObjectOfType<Mouse_Text_Trigger>();
         zombie_TextTrigger = FindObjectOfType<Zomebie_Mouse_Text_Trigger>();
         ingameCtrl = FindObjectOfType<IngameCtrl>();
+        firstDoorCtrl = FindObjectOfType<firstFloorDoorCtrl>();
+        secondDoorCtrl = FindObjectOfType<secondDoorCtrl>();
     }
 
     public void OnPointerClick(PointerEventData eventData)      //PointerEventData를 이용하기 위해 프리팹에 직접 붙여준다.
@@ -49,6 +54,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                     if (firstFloor_DoorTrigger.b_FirstDoor)
                     {
                         ingameCtrl.b_fistFloor_DoorOpen = true;
+                        firstDoorCtrl.b_useKey = true;
                         Debug.Log("1층 문 열림");
                         _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
                         _inventory.AddItem(mouseHoverSlotData.item, -1);
@@ -63,6 +69,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                     if (secondFloor_DoorTrigger.b_SecondFloor_DoorTrigger)
                     {
                         ingameCtrl.b_secondFloor_DoorOpen = true;
+                        secondDoorCtrl.b_useKey = true;
                         Debug.Log("2층 문 열림");
                         _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
                         _inventory.AddItem(mouseHoverSlotData.item, -1);
