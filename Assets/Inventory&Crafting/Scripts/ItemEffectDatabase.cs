@@ -24,6 +24,12 @@ public class ItemEffectDatabase : MonoBehaviour
     [SerializeField]
     private IngameCtrl ingameCtrl;
 
+    [SerializeField]
+    private firstFloorDoorCtrl firstDoorCtrl;
+
+    [SerializeField]
+    private secondDoorCtrl secondDoorCtrl;
+
     public bool b_canCraft = false;
     public bool b_UseRedSyringe = false;
     public bool b_UseGreenSyringe = false;
@@ -41,6 +47,7 @@ public class ItemEffectDatabase : MonoBehaviour
     private void Start()
     {
         theSlotToolTip = GameObject.Find("GUI").transform.Find("Tooltip").GetComponent<Tooltip>();
+
     }
 
     //아이템 사용 시 불릴 함수
@@ -79,14 +86,6 @@ public class ItemEffectDatabase : MonoBehaviour
                         //bullet 사용시 총알 개수 + 5
                         GunCtrl.currentBullets += 5;
                         GunCtrl.m_bullet_info_text.text = GunCtrl.currentBullets + "/" + GunCtrl.bulletsTotal; ;
-                    }
-                    else if (item.Name == "Gun")
-                    {
-                        //총 장착 -> 장착되어 있다면 못 누르게 하거나 inventory에서 없애기
-                    }
-                    else if (item.Name == "Axe")
-                    {
-                        //도끼 장착 -> 장착되어 있다면 못 누르게 하거나 inventory에서 없애기
                     }
                     Debug.Log(item.Name + " 을 사용했습니다.");
                     return;
