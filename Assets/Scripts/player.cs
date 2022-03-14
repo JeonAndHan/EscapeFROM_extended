@@ -25,6 +25,9 @@ public class player : MonoBehaviour
     public Computer_Text_Trigger computer_text_Trigger;
     public IngameCtrl ingameCtrl;
 
+    [SerializeField]
+    private GameObject explain_UI;
+
     [Header("ShortCape변수")]
     public bool m_wearCape;
     [SerializeField]
@@ -79,8 +82,6 @@ public class player : MonoBehaviour
         UICtrl.Instance.showHp(m_currentHP, m_maxHP);
         Effect = FindObjectOfType<EffectManager>();
         Sound = FindObjectOfType<SoundManager>();
-
-        m_actionController.playerLock = true;
     }
 
     public void Hit(float damage)
@@ -128,7 +129,7 @@ public class player : MonoBehaviour
             m_isDead = true;
         }
 
-        if (!m_isDead)
+        if (!m_isDead && !explain_UI.gameObject.activeInHierarchy)
         {
             if (!m_actionController.playerLock)
             {
