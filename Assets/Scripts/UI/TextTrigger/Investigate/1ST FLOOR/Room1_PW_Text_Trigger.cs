@@ -18,6 +18,7 @@ public class Room1_PW_Text_Trigger : TextTrigger
         if (ingameCtrl.m_pressR && b_textTrigger && !m_room1_pw.m_right)
         {
             m_PW_UI.gameObject.SetActive(true);
+            m_Investigate_text.gameObject.SetActive(false);
             b_PlayerLock = true;
         }
         else
