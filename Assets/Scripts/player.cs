@@ -131,7 +131,7 @@ public class player : MonoBehaviour
 
         if (!m_isDead && !explain_UI.gameObject.activeInHierarchy)
         {
-            if (!m_actionController.playerLock)
+            if (!m_actionController.inventoryScreen.activeInHierarchy && !m_actionController.craftingScreen.activeInHierarchy)
             {
                 if (!ingameCtrl.m_pressR)
                 {

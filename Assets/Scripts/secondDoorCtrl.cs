@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class firstsecondDoorCtrl : MonoBehaviour
+public class secondDoorCtrl : MonoBehaviour
 {
     BoxCollider m_boxCollider;
 

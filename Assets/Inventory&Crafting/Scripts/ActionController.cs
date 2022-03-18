@@ -23,8 +23,7 @@ public class ActionController : MonoBehaviour
 
     public InventoryObject inventory, crafting;
 
-    [SerializeField]
-    private GameObject inventoryScreen, craftingScreen;
+    public GameObject inventoryScreen, craftingScreen;
 
     [SerializeField]
     private GameObject StartStory_UI;
@@ -134,13 +133,16 @@ public class ActionController : MonoBehaviour
 
     public void PlayLock()
     {
-        //&& !Manipulation_UI.activeInHierarchy && !StartStory_UI.activeInHierarchy
         if (CraftingOpen == false && inventoryOpen == false)
         {
             playerLock = false;
+            Debug.Log("player lock false : " + playerLock);
         }
         else
+        {
             playerLock = true;
+            Debug.Log("player lock true : " + playerLock);
+        }
     }
 
     //종료시 인벤토리와 퀵슬롯을 초기화한다.
