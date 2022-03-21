@@ -61,7 +61,10 @@ public class GetGun : MonoBehaviour
                 playerCtrl.b_getGun = true;
                 acquire_text.gameObject.SetActive(false);
 
-                ingameCtrl.toggleTextTrue();
+                if (playerCtrl.b_getAxe)
+                {
+                    ingameCtrl.toggleTextTrue();
+                }
 
                 //총을 얻고 도끼가 켜져있다면 Axe는 꺼두기
                 if (playerCtrl.m_Axe.activeInHierarchy)

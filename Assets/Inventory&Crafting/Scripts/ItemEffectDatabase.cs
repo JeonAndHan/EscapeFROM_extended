@@ -30,6 +30,9 @@ public class ItemEffectDatabase : MonoBehaviour
     [SerializeField]
     private secondDoorCtrl secondDoorCtrl;
 
+    [SerializeField]
+    private AudioSource reload_sound;
+
     public bool b_canCraft = false;
     public bool b_UseRedSyringe = false;
     public bool b_UseGreenSyringe = false;
@@ -85,7 +88,8 @@ public class ItemEffectDatabase : MonoBehaviour
                     {
                         //bullet 사용시 총알 개수 + 5
                         GunCtrl.currentBullets += 5;
-                        GunCtrl.m_bullet_info_text.text = GunCtrl.currentBullets + "/" + GunCtrl.bulletsTotal; ;
+                        GunCtrl.m_bullet_info_text.text = GunCtrl.currentBullets + "/" + GunCtrl.bulletsTotal;
+                        reload_sound.Play();
                     }
                     Debug.Log(item.Name + " 을 사용했습니다.");
                     return;

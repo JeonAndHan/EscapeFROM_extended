@@ -31,6 +31,9 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private GameObject Manipulation_UI;
 
+    [SerializeField]
+    private AudioSource pickup_sound;
+
 
     private bool inventoryOpen = false;
     private bool CraftingOpen = false;
@@ -59,12 +62,13 @@ public class ActionController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Z) && pickupActivated && m_item.gameObject.activeInHierarchy)
         {
+            pickup_sound.Play();
+
             if (!m_item.gameObject.CompareTag("Gun"))
             {
                 inventory.AddItem(_item, 1);
                 Destroy(m_item);
                 actionText.gameObject.SetActive(false);
-                //pickup sound
             }
         }
 

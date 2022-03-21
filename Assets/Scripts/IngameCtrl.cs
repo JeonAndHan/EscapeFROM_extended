@@ -22,8 +22,16 @@ public class IngameCtrl : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI toggle_text;
 
+    [SerializeField]
+    private AudioSource pray_sound;
+
     public bool b_fistFloor_DoorOpen;
     public bool b_secondFloor_DoorOpen;
+
+    private void Start()
+    {
+        pray_sound.Play();
+    }
 
 
     // Update is called once per frame
