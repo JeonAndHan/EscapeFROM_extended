@@ -85,10 +85,7 @@ public class Weapon : MonoBehaviour
 
         Debug.Log("Shot Fired");
 
-        if (!gunfire_sound.isPlaying)
-        {
-            gunfire_sound.Play();
-        }
+        gunfire_sound.Play();
 
         RaycastHit hit;
         if (Physics.Raycast(shootPoint.position, shootPoint.transform.up, out hit, range))
