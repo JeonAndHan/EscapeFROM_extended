@@ -35,6 +35,12 @@ public class GetGun : MonoBehaviour
     [SerializeField]
     private AudioSource gunfire_sound;
 
+    [SerializeField]
+    private AudioSource Spotted_sound;
+
+    [SerializeField]
+    private AudioSource BGM;
+
     public bool player_die_2ndfloor;
 
     private Slot slot;
@@ -78,6 +84,8 @@ public class GetGun : MonoBehaviour
             {
                 //매니저가 플레이어를 쳐다보고 화면이 검어지고 총소리 들리면서 game over
                 player_die_2ndfloor = true;
+                BGM.Stop();
+                Spotted_sound.Play();
                 StartCoroutine(blackOut_coroutine());
             }
         }

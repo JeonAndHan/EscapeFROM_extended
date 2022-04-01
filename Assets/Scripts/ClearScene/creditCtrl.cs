@@ -10,8 +10,6 @@ public class creditCtrl : MonoBehaviour
     [SerializeField]
     private float m_Speed;
     SoundManager Sound;
-    EffectManager Effect;
-    private bool effect_on = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +17,6 @@ public class creditCtrl : MonoBehaviour
         m_rectTransform = GetComponent<RectTransform>();
         Sound = FindObjectOfType<SoundManager>();
         Sound.EndingPlay();
-        Effect = FindObjectOfType<EffectManager>();
     }
 
     // Update is called once per frame
@@ -27,21 +24,16 @@ public class creditCtrl : MonoBehaviour
     {
         m_rectTransform.position = new Vector3(0, m_rectTransform.position.y+ m_Speed, m_rectTransform.position.z);
 
-        if(m_rectTransform.position.y + m_Speed > 140f)
-        {          
-            if(!effect_on){
-                Sound.Stop();
-                effect_on=true;
-                StartCoroutine(threesec());
-            }
-            
-       }
-        //Debug.Log(m_rectTransform.position.y + m_Speed);
+        if (m_rectTransform.position.y + m_Speed > 170f)
+        {
+            StartCoroutine(threesec());
+        }
+
+        Debug.Log(m_rectTransform.position.y + m_Speed);
     }
 
     IEnumerator threesec()
     {
-        Effect.EffectPlay(9);
         WaitForSeconds three = new WaitForSeconds(3f);
         yield return three;
         #if UNITY_EDITOR
@@ -50,11 +42,12 @@ public class creditCtrl : MonoBehaviour
             Application.Quit();
         #endif
     }
-    IEnumerator twosec()
-    {
-        WaitForSeconds two = new WaitForSeconds(2f);
-        yield return two;
-        StartCoroutine(threesec());
+
+    //IEnumerator twosec()
+    //{
+    //    WaitForSeconds two = new WaitForSeconds(2f);
+    //    yield return two;
+    //    StartCoroutine(threesec());
         
-    }
+    //}
 }

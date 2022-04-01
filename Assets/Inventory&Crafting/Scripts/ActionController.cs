@@ -140,12 +140,10 @@ public class ActionController : MonoBehaviour
         if (CraftingOpen == false && inventoryOpen == false)
         {
             playerLock = false;
-            Debug.Log("player lock false : " + playerLock);
         }
         else
         {
             playerLock = true;
-            Debug.Log("player lock true : " + playerLock);
         }
     }
 

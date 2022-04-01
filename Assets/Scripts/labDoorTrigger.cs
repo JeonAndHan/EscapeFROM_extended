@@ -35,7 +35,6 @@ public class labDoorTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player enter");
             animator.SetBool("isOpen", false);
         }
     }
