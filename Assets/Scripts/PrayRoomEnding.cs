@@ -27,6 +27,15 @@ public class PrayRoomEnding : MonoBehaviour
     private Animator m_Anim18;
     private Animator m_Anim19;
 
+    [SerializeField]
+    private AudioSource Spotted_Sound;
+
+    [SerializeField]
+    private AudioSource BGM;
+
+    [SerializeField]
+    private AudioSource praySound;
+
     public Cape_Text_Trigger cape_text_Trigger;
 
     // Start is called before the first frame update
@@ -64,11 +73,12 @@ public class PrayRoomEnding : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player enter");
             bool wearCape = cape_text_Trigger.b_wear_cape;
-            Debug.Log(wearCape);
             if (!wearCape)
             {
+                Spotted_Sound.Play();
+                praySound.Stop();
+                BGM.Stop();
                 m_Anim0.SetBool("PrayRoomEnding", true);
                 m_Anim1.SetBool("PrayRoomEnding", true);
                 m_Anim2.SetBool("PrayRoomEnding", true);

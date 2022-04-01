@@ -29,6 +29,7 @@ public class SoundManager : MonoBehaviour
         source = GetComponent<AudioSource>();
         source.clip = clips[0];
         source.Play();
+        source.volume = 0.25f;
 
     }
     public void Play()
