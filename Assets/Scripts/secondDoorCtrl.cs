@@ -9,6 +9,9 @@ public class secondDoorCtrl : MonoBehaviour
     [SerializeField]
     private GameObject door;
 
+    [SerializeField]
+    private AudioSource door_open_sound;
+
     public bool b_useKey = false;
 
     // Start is called before the first frame update
@@ -24,6 +27,7 @@ public class secondDoorCtrl : MonoBehaviour
         {
             //door.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
             m_boxCollider.gameObject.SetActive(false);
+            door_open_sound.Play();
             b_useKey = false;
         }
     }

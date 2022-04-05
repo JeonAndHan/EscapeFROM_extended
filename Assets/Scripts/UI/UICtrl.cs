@@ -60,6 +60,14 @@ public class UICtrl : MonoBehaviour
             actionctrl.playerLock = false;
             m_StartStoryUI.gameObject.SetActive(false);
         }
+
+        if(m_StartStoryUI.activeInHierarchy)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                m_StartStoryUI.SetActive(false);
+            }
+        }
     }
 
     public void pressHelp()

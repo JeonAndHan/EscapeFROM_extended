@@ -133,6 +133,8 @@ public class player : MonoBehaviour
         {
             if (!m_actionController.inventoryScreen.activeInHierarchy && !m_actionController.craftingScreen.activeInHierarchy)
             {
+                Cursor.visible = false;
+
                 if (!ingameCtrl.m_pressR)
                 {
                     Move();

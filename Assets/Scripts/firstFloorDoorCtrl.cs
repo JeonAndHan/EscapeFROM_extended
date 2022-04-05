@@ -9,6 +9,9 @@ public class firstFloorDoorCtrl : MonoBehaviour
     [SerializeField]
     private GameObject door;
 
+    [SerializeField]
+    private AudioSource door_open_sound;
+
     public bool b_useKey = false;
 
     // Start is called before the first frame update
@@ -22,6 +25,7 @@ public class firstFloorDoorCtrl : MonoBehaviour
         if (b_useKey)
         {
             Debug.Log("인벤토리에서 1층 키 사용");
+            door_open_sound.Play();
             m_boxCollider.gameObject.SetActive(false);
             b_useKey = false;
         }
