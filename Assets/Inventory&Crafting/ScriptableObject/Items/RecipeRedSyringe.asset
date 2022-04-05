@@ -15,7 +15,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 1e3d85958339e4b3e96ea5bf115d456e, type: 3}
   stackable: 0
   type: 1
-  description: Ingredients require 0 and 0.
+  description: You can make Red Syringe.
   data:
     Name: RedSyringe
     Id: 9

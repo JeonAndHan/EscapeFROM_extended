@@ -17,6 +17,9 @@ public class Manager_Assassinate_Trigger : MonoBehaviour
     [SerializeField]
     private Animator manager_anim;
 
+    [SerializeField]
+    private AudioSource dead_sound;
+
     public bool b_manager_dead;
 
     // Start is called before the first frame update
@@ -34,6 +37,7 @@ public class Manager_Assassinate_Trigger : MonoBehaviour
             //매니저 암살 애니넣기
             manager_anim.SetTrigger("DIE");
             b_manager_dead = true;
+            dead_sound.Play();
             m_Assassinate_text.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
         }

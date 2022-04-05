@@ -107,6 +107,7 @@ public class ActionController : MonoBehaviour
     public void OpenInventory()
     {
         inventoryOpen = true;
+        Cursor.visible = true;
         inventoryScreen.SetActive(true);
         PlayLock();
     }
@@ -114,6 +115,7 @@ public class ActionController : MonoBehaviour
     public void CloseInventory()
     {
         inventoryOpen = false;
+        Cursor.visible = false;
         inventoryScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         inventoryScreen.SetActive(false);
         PlayLock();
@@ -122,6 +124,7 @@ public class ActionController : MonoBehaviour
     //제작 창 활성화
     public void OpenCrafting()
     {
+        Cursor.visible = true;
         CraftingOpen = true;
         craftingScreen.SetActive(true);
         PlayLock();
@@ -129,6 +132,7 @@ public class ActionController : MonoBehaviour
     //제작 창 비활성화
     public void CloseCrafting()
     {
+        Cursor.visible = false;
         CraftingOpen = false;
         craftingScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         craftingScreen.SetActive(false);
