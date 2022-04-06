@@ -82,6 +82,8 @@ public class player : MonoBehaviour
         UICtrl.Instance.showHp(m_currentHP, m_maxHP);
         Effect = FindObjectOfType<EffectManager>();
         Sound = FindObjectOfType<SoundManager>();
+
+        ingameCtrl.cursorFalse();
     }
 
     public void Hit(float damage)
@@ -133,7 +135,7 @@ public class player : MonoBehaviour
         {
             if (!m_actionController.inventoryScreen.activeInHierarchy && !m_actionController.craftingScreen.activeInHierarchy)
             {
-                Cursor.visible = false;
+                
 
                 if (!ingameCtrl.m_pressR)
                 {
@@ -193,7 +195,6 @@ public class player : MonoBehaviour
 
                 if (m_JumpCount < 1 && Input.GetButtonDown("Jump") && !ingameCtrl.m_pressR)
                 {
-                    Debug.Log("press space bar");
                     m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, 6, m_rigidbody.velocity.z);
                     m_JumpCount++;
                 }

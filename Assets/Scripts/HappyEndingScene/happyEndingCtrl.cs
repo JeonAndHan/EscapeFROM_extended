@@ -26,25 +26,25 @@ public class happyEndingCtrl : MonoBehaviour
         m_time += Time.deltaTime;
         Debug.Log(m_time);
 
-        if(m_time < 7)
+        if(m_time < 10)
         {
             m_narration[0].gameObject.SetActive(true);
         }
         
-        if(m_time >7 && m_time < 14)
+        if(m_time >10 && m_time < 20)
         {
             Debug.Log("time > 5 && time < 10");
             m_narration[0].gameObject.SetActive(false);
             m_narration[1].gameObject.SetActive(true);
         }
 
-        if(m_time > 14 && m_time < 21)
+        if(m_time > 20 && m_time < 30)
         {
             m_narration[1].gameObject.SetActive(false);
             m_narration[2].gameObject.SetActive(true);
         }
 
-        if(m_time > 21)
+        if(m_time > 30)
         {
             SceneManager.LoadScene("ClearEnding");
         }

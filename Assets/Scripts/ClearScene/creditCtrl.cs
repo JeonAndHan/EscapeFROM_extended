@@ -28,8 +28,6 @@ public class creditCtrl : MonoBehaviour
         {
             StartCoroutine(threesec());
         }
-
-        Debug.Log(m_rectTransform.position.y + m_Speed);
     }
 
     IEnumerator threesec()

@@ -99,4 +99,14 @@ public class IngameCtrl : MonoBehaviour
 
         toggle_text.gameObject.SetActive(false);
     }
+
+    public void cursorTrue()
+    {
+        Cursor.visible = true;
+    }
+
+    public void cursorFalse()
+    {
+        Cursor.visible = false;
+    }
 }

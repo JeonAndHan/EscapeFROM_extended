@@ -24,7 +24,7 @@ public class doorCtrl : MonoBehaviour
     void Update()
     {
         
-        if (m_hitCount >= 3)
+        if (m_hitCount >= 2)
         {
             transform.localEulerAngles = new Vector3(0f, -120f, 0f); 
             if(!door_open){
@@ -39,9 +39,8 @@ public class doorCtrl : MonoBehaviour
         //door에 부딪친 것이 player의 attackRange라면 count++;
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player hit doors");
             m_hitCount++;
-            if(m_hitCount<=3){
+            if(m_hitCount<=2){
                 Effect.EffectPlay(10);
             }
         }
