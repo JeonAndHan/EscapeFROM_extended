@@ -34,6 +34,9 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private AudioSource pickup_sound;
 
+    [SerializeField]
+    private IngameCtrl ingameCtrl;
+
 
     private bool inventoryOpen = false;
     private bool CraftingOpen = false;
@@ -53,6 +56,7 @@ public class ActionController : MonoBehaviour
         CloseInventory();
         crafting.CraftingUpdate();
         CloseCrafting();
+        OnQuit();
 
         actionText = GameObject.Find("GUI").transform.Find("CursorOnItemText").transform.Find("ActionText").GetComponent<TextMeshProUGUI>();       
     }
@@ -107,7 +111,7 @@ public class ActionController : MonoBehaviour
     public void OpenInventory()
     {
         inventoryOpen = true;
-        Cursor.visible = true;
+        ingameCtrl.cursorTrue();
         inventoryScreen.SetActive(true);
         PlayLock();
     }
@@ -115,7 +119,7 @@ public class ActionController : MonoBehaviour
     public void CloseInventory()
     {
         inventoryOpen = false;
-        Cursor.visible = false;
+        ingameCtrl.cursorFalse();
         inventoryScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         inventoryScreen.SetActive(false);
         PlayLock();
@@ -124,7 +128,7 @@ public class ActionController : MonoBehaviour
     //제작 창 활성화
     public void OpenCrafting()
     {
-        Cursor.visible = true;
+        ingameCtrl.cursorTrue();
         CraftingOpen = true;
         craftingScreen.SetActive(true);
         PlayLock();
@@ -132,7 +136,7 @@ public class ActionController : MonoBehaviour
     //제작 창 비활성화
     public void CloseCrafting()
     {
-        Cursor.visible = false;
+        ingameCtrl.cursorFalse();
         CraftingOpen = false;
         craftingScreen.GetComponent<UserInterface>().theItemEffectDatabase.HideToolTip();
         craftingScreen.SetActive(false);

@@ -22,6 +22,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     private IngameCtrl ingameCtrl;
 
+    private player player;
+
     public bool b_Normal_to_ZombieMouse;
     public bool b_Zombie_to_NormalMouse;
 
@@ -38,6 +40,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         ingameCtrl = FindObjectOfType<IngameCtrl>();
         firstDoorCtrl = FindObjectOfType<firstFloorDoorCtrl>();
         secondDoorCtrl = FindObjectOfType<secondDoorCtrl>();
+        player = FindObjectOfType<player>();
     }
 
     public void OnPointerClick(PointerEventData eventData)      //PointerEventData를 이용하기 위해 프리팹에 직접 붙여준다.
@@ -55,7 +58,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                     {
                         ingameCtrl.b_fistFloor_DoorOpen = true;
                         firstDoorCtrl.b_useKey = true;
-                        Debug.Log("1층 문 열림");
                         _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
                         _inventory.AddItem(mouseHoverSlotData.item, -1);
                     }
@@ -70,7 +72,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                     {
                         ingameCtrl.b_secondFloor_DoorOpen = true;
                         secondDoorCtrl.b_useKey = true;
-                        Debug.Log("2층 문 열림");
                         _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
                         _inventory.AddItem(mouseHoverSlotData.item, -1);
                     }
@@ -79,7 +80,17 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                         return;
                     }
                 }
-                else if(mouseHoverSlotData.item.Id == 0) //RedSyringe
+                else if (mouseHoverSlotData.item.Name == "Bullet")
+                {
+                    if (player.b_getGun)
+                    {
+                        _theItemEffectDatabase.UseItem(mouseHoverSlotData.item);
+                        _inventory.AddItem(mouseHoverSlotData.item, -1);
+                    }
+                    else
+                        return;
+                }
+                else if (mouseHoverSlotData.item.Id == 0) //RedSyringe
                 {
                     if (mouse_TextTrigger.b_NormalMouse_TextTrigger)
                     {
@@ -98,9 +109,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                     {
                         return;
                     }
-                    
+
                 }
-                else if(mouseHoverSlotData.item.Id == 6) //GreenSyringe
+                else if (mouseHoverSlotData.item.Id == 6) //GreenSyringe
                 {
                     if (mouse_TextTrigger.b_NormalMouse_TextTrigger)
                     {

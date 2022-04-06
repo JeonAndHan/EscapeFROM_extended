@@ -12,6 +12,8 @@ public class endingTrigger : MonoBehaviour
     [SerializeField]
     private ActionController Player;
 
+    private bool happyEnding = false;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,13 +24,15 @@ public class endingTrigger : MonoBehaviour
                 //만약 player의 인벤토리에 RedSyringe가 있다면 Happy Ending
                 if (Player.inventory.GetSlots[i].item.Id == 0)
                 {
+                    happyEnding = true;
                     SceneManager.LoadScene("HappyEnding");
                 }
-                else
-                {
-                    //없다면 Normal Ending
-                    SceneManager.LoadScene("ClearEnding");
-                }
+            }
+
+            if (!happyEnding)
+            {
+                //없다면 Normal Ending
+                SceneManager.LoadScene("ClearEnding");
             }
         }
     }
