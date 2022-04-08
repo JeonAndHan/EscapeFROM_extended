@@ -21,7 +21,7 @@ public class Room2_PW_Text_Trigger : TextTrigger
             m_Investigate_text.gameObject.SetActive(false);
             b_PlayerLock = true;
         }
-        else
+        else if(!b_textTrigger)
         {
             m_Room2_PW_UI.gameObject.SetActive(false);
             b_PlayerLock = false;
