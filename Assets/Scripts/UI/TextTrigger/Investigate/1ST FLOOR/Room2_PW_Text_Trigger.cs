@@ -13,27 +13,28 @@ public class Room2_PW_Text_Trigger : TextTrigger
     [Header("TextTriggerUI")]
     public GameObject m_Room2_PW_UI;
 
-    private void Update()
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (ingameCtrl.m_pressR && b_textTrigger)
+        if (other.gameObject.tag == "Player")
+        {
+             if (ingameCtrl.m_pressR)
         {
             m_Room2_PW_UI.gameObject.SetActive(true);
             ingameCtrl.cursorTrue();
             m_Investigate_text.gameObject.SetActive(false);
             b_PlayerLock = true;
         }
-        else if(!b_textTrigger)
+        }
+    }
+
+    private void ontriggerexit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
         {
             m_Room2_PW_UI.gameObject.SetActive(false);
             b_PlayerLock = false;
             ingameCtrl.cursorFalse();
         }
-
-        // if (Room2_PW_Ctrl.m_right)
-        // {
-        //     m_Investigate_text.gameObject.SetActive(false);
-        //     m_Room2_PW_UI.gameObject.SetActive(false);
-        //     this.gameObject.SetActive(false);
-        // }
     }
 }

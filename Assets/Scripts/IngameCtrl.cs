@@ -31,11 +31,13 @@ public class IngameCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             m_pressR = true;
+
         }
 
         if (Input.GetKeyUp(KeyCode.R))
         {
             m_pressR = false;
+       
         }
 
         if (Input.GetKeyDown(KeyCode.Z))
