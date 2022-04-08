@@ -11,6 +11,8 @@ public class UICtrl : MonoBehaviour
     [SerializeField]
     private ActionController actionctrl;
 
+    public IngameCtrl ingameCtrl;
+
     [SerializeField]
     private HealthBar m_playerHpBar;
     public Button m_help_bth;
@@ -66,6 +68,7 @@ public class UICtrl : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 m_StartStoryUI.SetActive(false);
+              ingameCtrl.cursorFalse();
             }
         }
     }

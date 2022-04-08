@@ -86,7 +86,7 @@ public class player : MonoBehaviour
         Effect = FindObjectOfType<EffectManager>();
         Sound = FindObjectOfType<SoundManager>();
 
-        ingameCtrl.cursorFalse();
+        ingameCtrl.cursorTrue();
     }
 
     public void Hit(float damage)

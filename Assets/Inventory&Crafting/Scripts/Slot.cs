@@ -147,5 +147,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                 io.Crafting();
             }
         }
+        else{
+            return;
+        }
     }
 }
