@@ -71,6 +71,9 @@ public class player : MonoBehaviour
     ActionController m_actionController;
     public bool b_itemTrigger;
 
+    [SerializeField]
+    private GameObject room2_pw_inputfield;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -131,7 +134,7 @@ public class player : MonoBehaviour
             m_isDead = true;
         }
 
-        if (!m_isDead && !explain_UI.gameObject.activeInHierarchy)
+        if (!m_isDead && !explain_UI.gameObject.activeInHierarchy && !room2_pw_inputfield.activeInHierarchy)
         {
             if (!m_actionController.inventoryScreen.activeInHierarchy && !m_actionController.craftingScreen.activeInHierarchy)
             {
