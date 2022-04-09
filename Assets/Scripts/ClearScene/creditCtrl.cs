@@ -16,7 +16,7 @@ public class creditCtrl : MonoBehaviour
     {
         m_rectTransform = GetComponent<RectTransform>();
         Sound = FindObjectOfType<SoundManager>();
-        Sound.EndingPlay();
+      //  Sound.EndingPlay();
     }
 
     // Update is called once per frame
