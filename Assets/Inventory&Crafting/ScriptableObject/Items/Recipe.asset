@@ -15,7 +15,8 @@ MonoBehaviour:
   uiDisplay: {fileID: 21300000, guid: 5de0bba441f2248ea875cd4d9720204f, type: 3}
   stackable: 1
   type: 3
-  description: It is a document containing a recipe for making things.
+  description: It is a document containing a recipe for making things. You can use
+    'right click' on inventory.
   data:
     Name: Recipe
     Id: 4
