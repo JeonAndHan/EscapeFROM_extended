@@ -8,16 +8,10 @@ public class ReloadScene : MonoBehaviour
 {
     public Button m_restart_Btn;
     public Button m_quit_Btn;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-
+        Cursor.visible = true;
     }
 
     public void restart()
@@ -29,10 +23,10 @@ public class ReloadScene : MonoBehaviour
     public void quit()
     {
         Debug.Log("quit 눌림");
-        #if UNITY_EDITOR
+    #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
+    #else
+                Application.Quit();
+    #endif
     }
 }
